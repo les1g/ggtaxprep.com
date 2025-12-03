@@ -23,13 +23,13 @@ export default function LoginPage() {
     if (result?.error) {
       setError("Invalid email or password.");
     }
-    // No need for manual redirect here — NextAuth handles it
   };
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-gray-100 px-4">
       <h1 className="text-2xl font-bold mb-6 text-green-400">Client Login</h1>
 
+      {/* Credentials form */}
       <form onSubmit={handleSubmit} className="flex flex-col space-y-4 w-full max-w-sm">
         <input
           type="email"
@@ -45,10 +45,12 @@ export default function LoginPage() {
           required
           className="p-3 w-full rounded bg-gray-800 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
         />
+
         {error && <p className="text-red-500 text-sm">{error}</p>}
+
         <button
           type="submit"
-          className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 rounded"
+          className="w-full p-3 rounded bg-green-500 hover:bg-green-600 text-white font-bold flex items-center justify-center"
         >
           Login
         </button>
@@ -56,42 +58,40 @@ export default function LoginPage() {
 
       <div className="mt-6 text-sm text-gray-400">or</div>
 
-      {/* OAuth buttons */}
+      {/* OAuth + Sign Up buttons */}
       <div className="mt-6 space-y-4 w-full max-w-sm">
-        <button
-          onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
-          className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-gray-100 hover:border-green-400 flex items-center space-x-3 justify-center"
-        >
-          <img src="/icons/google.svg" alt="Google" className="h-5 w-5" />
-          <span className="font-medium">Continue with Google</span>
-        </button>
+        {[
+          { provider: "google", label: "Google", icon: "google.svg" },
+          { provider: "apple", label: "Apple", icon: "apple.svg" },
+          { provider: "microsoft", label: "Microsoft", icon: "microsoft.svg" },
+        ].map(({ provider, label, icon }) => (
+          <button
+            key={provider}
+            onClick={() => signIn(provider, { callbackUrl: "/dashboard" })}
+            className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-gray-100 hover:border-green-400 flex items-center"
+          >
+            <div className="w-6 h-6 flex items-center justify-center mr-3">
+              <img
+                src={`/icons/${icon}`}
+                alt={label}
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
+            <div className="flex-1 text-center">
+              <span className="font-medium">Continue with {label}</span>
+            </div>
+          </button>
+        ))}
 
+        <div className="text-sm text-gray-400 text-center">Don't have an account yet?</div>
         <button
-          onClick={() => signIn("apple", { callbackUrl: "/dashboard" })}
-          className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-gray-100 hover:border-green-400 flex items-center space-x-3 justify-center"
+          type="button"
+          onClick={() => router.push("/signup")}
+          className="w-full p-3 rounded bg-green-500 hover:bg-green-600 text-white font-bold flex items-center justify-center"
         >
-          <img src="/icons/apple.svg" alt="Apple" className="h-5 w-5" />
-          <span className="font-medium">Continue with Apple</span>
-        </button>
-
-        <button
-          onClick={() => signIn("microsoft", { callbackUrl: "/dashboard" })}
-          className="w-full p-3 rounded bg-gray-800 border border-gray-700 text-gray-100 hover:border-green-400 flex items-center space-x-3 justify-center"
-        >
-          <img src="/icons/microsoft.svg" alt="Microsoft" className="h-5 w-5" />
-          <span className="font-medium">Continue with Microsoft</span>
+          Sign Up
         </button>
       </div>
-
-      <div className="mt-6 text-sm text-gray-400">Don't have an account yet?</div>
-
-      <button
-        type="button"
-        onClick={() => router.push("/signup")}
-        className="mt-4 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
-      >
-        Sign Up
-      </button>
     </div>
   );
 }
