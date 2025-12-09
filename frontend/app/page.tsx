@@ -11,7 +11,7 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-5xl md:text-6xl font-bold text-green-400 mb-6 leading-tight">
-              Tax Prep Made Simple
+              Taxes Made Simple
             </h1>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               Let GG Tax Services handle the complexity while you focus on growing your business. 

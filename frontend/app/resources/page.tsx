@@ -18,45 +18,57 @@ export default function Resources() {
     {
       title: "Deductions & Credits Checklist",
       description: "See which federal and Arizona deductions/credits you may qualify for",
-      icon: "✅",
+      icon: "🗎",
       link: "/deductions",
     },
     {
       title: "Tax Document Checklist",
       description: "Comprehensive list of documents to gather for your tax prep",
-      icon: "📋",
+      icon: "🗎",
       link: "/checklist",
     },
     {
-      title: "Tax Calculator Hub",
+      title: "W-4 Tax Calculator",
       description: "Use IRS and Arizona calculators with step-by-step guidance",
-      icon: "🧮",
+      icon: "🗎",
       link: "/tax-calculator",
     },
     {
       title: "Estimated Payments Guide",
       description: "When and how to make quarterly estimated tax payments",
-      icon: "📅",
+      icon: "🗎",
       link: "/estimated-payments",
     },
     {
       title: "IRS Forms & Publications",
       description: "Direct access to IRS forms, instructions, and publications",
-      icon: "📄",
+      icon: "🗎",
       link: "https://www.irs.gov/forms-instructions",
       external: true,
     },
     {
       title: "Track Your Refund",
       description: "Check the status of your federal and Arizona state tax refunds",
-      icon: "📊",
+      icon: "🗎",
       link: "/refund",
     },
     {
       title: "Tax Terms Glossary",
       description: "Common tax terms explained in plain English",
-      icon: "📚",
+      icon: "🗎",
       link: "/glossary",
+    },
+    {
+      title: "Newsletter",
+      description: "Subscribe to receive tax tips, updates, and deadline reminders.",
+      icon: "🗎",
+      link: "/newsletter",
+    },
+    {
+      title: "Tax Guides",
+      description: "Step-by-step guides on various tax topics to help you file with confidence.",
+      icon: "🗎",
+      link: "/guides",
     },
   ];
 
@@ -72,7 +84,7 @@ export default function Resources() {
 
         {/* Refund Status Section */}
         <section className="mb-12 bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-8">
-          <h2 className="text-3xl font-bold text-green-400 mb-4">📊 Check Your Refund Status</h2>
+          <h2 className="text-3xl font-bold text-green-400 mb-4">Check Your Refund Status</h2>
           <p className="text-gray-300 mb-6 leading-relaxed">
             Wondering when your refund will arrive? Check the status of your federal and state tax refunds 
             directly with the IRS and Arizona Department of Revenue.
@@ -125,16 +137,16 @@ export default function Resources() {
           <h2 className="text-2xl font-bold text-white mb-8">Other Ways We Can Help</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-3">📞 Ask Our Experts</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-3">Ask Our Experts</h3>
               <p className="text-gray-300 mb-4">
                 Have a tax question? Reach out directly. Our team is happy to provide guidance.
               </p>
-              <Link href="/contact" className="text-green-400 hover:text-green-300 font-semibold">
+              <Link href="tel:+4805358927" className="text-green-400 hover:text-green-300 font-semibold">
                 Contact us →
               </Link>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-3">📚 Learn More</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-3">Learn More</h3>
               <p className="text-gray-300 mb-4">
                 Check out our comprehensive guides and educational resources on various tax topics.
               </p>
@@ -143,11 +155,11 @@ export default function Resources() {
               </Link>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-3">🔒 Send Files Securely</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-3">Send Files Securely</h3>
               <p className="text-gray-300 mb-4">
                 Transfer documents securely without worrying about email security issues.
               </p>
-              <a href="#" className="text-green-400 hover:text-green-300 font-semibold">
+              <a href="/secure-send" className="text-green-400 hover:text-green-300 font-semibold">
                 SecureSend →
               </a>
             </div>

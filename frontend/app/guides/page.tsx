@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Guides - GG Tax Services",
   description: "Comprehensive tax guides and how-to articles",
@@ -7,36 +9,42 @@ export default function Guides() {
   const guides = [
     {
       title: "How to Organize Your Taxes",
+      link: "/guides/organize-taxes",
       category: "Getting Started",
       readTime: "5 min read",
       description: "Step-by-step guide to organizing your documents and information for tax season.",
     },
     {
       title: "Maximizing Your Tax Deductions",
+      link: "/guides/maximize-deductions",
       category: "Tax Tips",
       readTime: "7 min read",
       description: "Discover legitimate deductions you might be missing to lower your tax bill.",
     },
     {
       title: "Self-Employment Tax Explained",
+      link: "/guides/self-employment",
       category: "Self-Employment",
       readTime: "8 min read",
       description: "Complete guide to understanding self-employment taxes and quarterly payments.",
     },
     {
       title: "Home Office Deduction Guide",
+      link: "/guides/home-office-deduction",
       category: "Deductions",
       readTime: "6 min read",
       description: "Learn how to calculate and claim your home office deduction correctly.",
     },
     {
       title: "Crypto Taxes: What You Need to Know",
+      link: "/guides/crypto-taxes",
       category: "Advanced",
       readTime: "10 min read",
       description: "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
     },
     {
       title: "Tax Planning for Year-End",
+      link: "/guides/year-end-tax-planning",
       category: "Planning",
       readTime: "7 min read",
       description: "End-of-year strategies to minimize your tax liability in the upcoming year.",
@@ -76,9 +84,9 @@ export default function Guides() {
       {/* Guides List */}
       <div className="max-w-6xl mx-auto space-y-6 mb-12">
         {guides.map((guide, index) => (
-          <a
+          <Link
             key={index}
-            href="#"
+            href={guide.link}
             className="block bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 hover:shadow-lg hover:shadow-green-400/20 transition-all"
           >
             <div className="flex flex-col md:flex-row md:items-center md:justify-between">
@@ -96,7 +104,7 @@ export default function Guides() {
                 <span className="text-green-400 font-bold text-2xl">→</span>
               </div>
             </div>
-          </a>
+          </Link>
         ))}
       </div>
 
@@ -124,12 +132,12 @@ export default function Guides() {
         <p className="text-gray-300 mb-6">
           Our experts can provide personalized guidance based on your specific situation.
         </p>
-        <a
+        <Link
           href="/scheduling"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition-colors"
         >
           Book Your Consultation
-        </a>
+        </Link>
       </div>
     </div>
   );

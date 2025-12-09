@@ -1,13 +1,34 @@
-// app/newsletter/page.tsx
+"use client";
+
+import { useState } from "react";
+
 export default function NewsletterPage() {
+  const [email, setEmail] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/newsletter", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      if (!res.ok) throw new Error("fail");
+      setStatus("success");
+      setEmail("");
+    } catch {
+      setStatus("error");
+    } finally {
+      setStatus((s) => (s === "loading" ? "idle" : s));
+    }
+  };
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100 font-sans">
 
       {/* Page header */}
       <section className="text-center py-16 bg-gray-800">
-        <h2 className="text-4xl font-semibold text-green-400 mb-4">
-          GG Tax Services Newsletter
-        </h2>
         <h1 className="text-4xl font-semibold text-green-400 mb-4">
           December 2025
         </h1>
@@ -80,12 +101,30 @@ export default function NewsletterPage() {
 
       {/* Deadlines */}
       <section className="py-12 px-6 max-w-4xl mx-auto border-t border-gray-700">
-        <h3 className="text-2xl font-semibold text-green-400 mb-4">📅 Upcoming Deadlines</h3>
+        <h3 className="text-2xl font-semibold text-green-400 mb-4">Upcoming Deadlines</h3>
         <ul className="list-disc list-inside text-gray-300 space-y-2">
           <li><strong>Dec 15, 2025:</strong> Corporations must pay the fourth installment of estimated income taxes.</li>
           <li><strong>Jan 12, 2026:</strong> Employees must report December tip income of $20 or more to employers.</li>
         </ul>
       </section>
+
+      {/* Newsletter Signup */}
+      <div className="max-w-2xl mx-auto bg-gray-800 border border-green-400 rounded-lg p-8 text-center mb-12">
+        <h2 className="text-2xl font-bold text-white mb-2">Stay Updated</h2>
+        <p className="text-gray-300 mb-6">
+          Subscribe to our newsletter for new tax guides, tips, and updates delivered to your inbox.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-400 focus:outline-none"
+          />
+          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+      </div>
 
       {/* CTA */}
       <section className="text-center py-12 bg-gray-800">

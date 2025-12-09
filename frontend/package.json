@@ -9,7 +9,9 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.0.6",
+    "@mailerlite/mailerlite-nodejs": "^1.5.0",
+    "@sendgrid/mail": "^8.1.6",
+    "next": "^16.0.8",
     "next-auth": "^4.24.13",
     "react": "19.2.0",
     "react-dom": "19.2.0"

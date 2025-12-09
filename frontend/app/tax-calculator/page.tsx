@@ -9,7 +9,7 @@ export default function TaxCalculatorPage() {
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400">Tax Calculator Hub</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-400">Tax Calculator</h1>
           <p className="text-gray-300 text-lg leading-relaxed">
             Use the official IRS and Arizona tools to estimate withholding and projected taxes. Follow the quick steps below to get accurate results.
           </p>
