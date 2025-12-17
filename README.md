@@ -1,195 +1,209 @@
-# GG Tax Services
+<a id="readme-top"></a>
 
-A modern, professional tax preparation business web application built with Next.js, featuring client management, appointment scheduling, and comprehensive service information.
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![Unlicense License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-![GG Tax Services](https://img.shields.io/badge/Next.js-14-black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38bdf8)
-![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black)
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/les1g">
+    <img src="https://github.com/user-attachments/assets/bcd95f96-2441-459c-905c-7843c7812bf6" alt="Logo" width="100" height="100">
+  </a>
 
-## 🌐 Live Demo
+  <h3 align="center">GG Tax Services</h3>
 
-Visit the live application: [https://gg-tax.vercel.app/](https://gg-tax.vercel.app/)
+  <p align="center">
+    A modern, professional tax preparation business web application built with Next.js, featuring client management, appointment scheduling, and comprehensive service information.
+    <br />
+    <a href="https://github.com/les1g/GG-Tax"><strong>Explore the docs »</strong></a>
+    <br />
+    <br />
+    <a href="https://gg-tax.vercel.app/">View Demo</a> •
+    <a href="https://github.com/les1g/GG-Tax/issues/new">Report Bug</a> •
+    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+  </p>
+</div>
 
-## 📋 About
+<!-- TABLE OF CONTENTS -->
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About The Project</a>
+      <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
+    </li>
+    <li>
+      <a href="#getting-started">Getting Started</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#installation">Installation</a></li>
+      </ul>
+    </li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#contributing">Contributing</a></li>
+    <li><a href="#license">License</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#acknowledgments">Acknowledgments</a></li>
+  </ol>
+</details>
+
+<!-- ABOUT THE PROJECT -->
+
+## About The Project
+
+[![Product Name Screen Shot][product-screenshot]](https://gg-tax.vercel.app/)
 
 GG Tax Services is a professional tax preparation business based in Scottsdale, Arizona. This web application provides:
 
-- Comprehensive information about tax preparation services
-- Online appointment scheduling
-- Client portal for document management
-- Educational resources and tax guides
-- Transparent pricing information
-- Secure client authentication
+- Comprehensive information about tax preparation services  
+- Online appointment scheduling  
+- Client portal for document management  
+- Educational resources and tax guides  
+- Transparent pricing information  
+- Secure client authentication  
 
-## ✨ Features
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### For Clients
+### Built With
 
-- **Service Information**: Detailed descriptions of individual and business tax services
-- **Online Scheduling**: Easy appointment booking system
-- **Client Portal**: Secure login for document uploads and status tracking
-- **Resource Center**: Tax guides, calculators, and educational materials
-- **Transparent Pricing**: Clear pricing structure with no hidden fees
-- **Contact Forms**: Multiple ways to get in touch with our team
+- [![Next][Next.js]][Next-url]
+- [![TypeScript][TypeScript]][TypeScript-url]
+- [![Tailwind CSS][Tailwind]][Tailwind-url]
+- [![Vercel][Vercel]][Vercel-url]
 
-### For Business
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-- **Professional Design**: Modern, trustworthy interface that builds client confidence
-- **Mobile Responsive**: Seamless experience across all devices
-- **SEO Optimized**: Built for search engine visibility
-- **Fast Performance**: Optimized with Next.js for speed
-- **Secure**: Industry-standard security practices
+<!-- GETTING STARTED -->
 
-## 🛠️ Tech Stack
+## Getting Started
 
-- **Framework**: [Next.js 14](https://nextjs.org/) - React framework with App Router
-- **Language**: [TypeScript](https://www.typescriptlang.org/) - Type-safe development
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- **Deployment**: [Vercel](https://vercel.com/) - Serverless deployment platform
-- **Font**: [Geist](https://vercel.com/font) - Modern, professional typography
-
-## 🚀 Getting Started
+The site is live on: https://gg-tax.vercel.app/. Alternatively, you can get a local copy up and running by following these steps.
 
 ### Prerequisites
 
-- Node.js 18.x or higher
-- npm, yarn, pnpm, or bun package manager
+- Node.js 18.x or higher  
+- npm, yarn, pnpm, or bun package manager  
 
 ### Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/les1g/GG-Tax.git
-cd GG-Tax
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-3. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+1. Clone the repo
+   ```sh
+   git clone https://github.com/les1g/GG-Tax.git
+   cd GG-Tax
+   ```
+2. Install dependencies
+   ```sh
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+3. Start development server
+   ```sh
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+4. Open your browser and go to: http://localhost:3000
 
 ### Environment Variables
 
 Create a `.env.local` file in the root directory with the following variables:
 
 ```env
-# Add your environment variables here
 NEXT_PUBLIC_API_URL=your_api_url
 DATABASE_URL=your_database_url
 ```
 
-## 📁 Project Structure
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-```
-GG-Tax/
-├── app/                    # Next.js app directory
-│   ├── about/             # About page
-│   ├── contact/           # Contact page
-│   ├── login/             # Client login
-│   ├── pricing/           # Pricing information
-│   ├── resources/         # Tax resources
-│   ├── scheduling/        # Appointment scheduling
-│   ├── services/          # Services overview
-│   ├── signup/            # Client registration
-│   ├── layout.tsx         # Root layout
-│   └── page.tsx           # Home page
-├── public/                # Static assets
-│   ├── images/           # Image files
-│   ├── icons/            # Icon files
-│   └── logo.png          # Company logo
-├── components/            # Reusable components
-├── styles/               # Global styles
-├── next.config.js        # Next.js configuration
-├── tailwind.config.js    # Tailwind configuration
-├── tsconfig.json         # TypeScript configuration
-└── package.json          # Project dependencies
-```
+<!-- ROADMAP -->
 
-## 🎨 Key Pages
+## Roadmap
 
-- **Home** (`/`) - Landing page with service overview and CTAs
-- **About** (`/about`) - Company information and team details
-- **Services** (`/services`) - Detailed service descriptions
-- **Pricing** (`/pricing`) - Transparent pricing structure
-- **Resources** (`/resources`) - Tax guides and educational content
-- **Scheduling** (`/scheduling`) - Online appointment booking
-- **Contact** (`/contact`) - Contact information and inquiry form
-- **Login/Signup** - Client portal access
+- [x] App Router pages: Home, About, Services, Pricing, Resources, Scheduling, Contact, Login/Signup  
+- [x] Client portal with secure authentication  
+- [x] Appointment scheduling system  
+- [x] Resource center with tax guides and calculators  
+- [ ] Tests: Jest + React Testing Library for components  
+- [ ] CI: GitHub Actions for lint, typecheck, test  
+- [ ] Analytics: Vercel Analytics or GA4  
 
-## 🔧 Available Scripts
+See the [open issues](https://github.com/les1g/GG-Tax/issues) for a full list of proposed features (and known issues).
 
-```bash
-# Development
-npm run dev          # Start development server
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-# Production
-npm run build        # Build for production
-npm run start        # Start production server
+<!-- CONTRIBUTING -->
 
-# Code Quality
-npm run lint         # Run ESLint
-npm run type-check   # Run TypeScript type checking
-```
-
-## 🚢 Deployment
-
-This application is deployed on Vercel. Any push to the `main` branch automatically triggers a new deployment.
-
-### Manual Deployment
-
-```bash
-# Install Vercel CLI
-npm i -g vercel
-
-# Deploy to production
-vercel --prod
-```
-
-## 📱 Social Media & Reviews
-
-- **Instagram**: [@ggtaxservices_](https://www.instagram.com/ggtaxservices_/)
-- **Facebook**: [GG Tax Services](https://www.facebook.com/profile.php?id=61582094297032)
-- **Google Reviews**: [Leave a Review](https://share.google/6EWZ0fv9gCbniIfqF)
-
-## 🔒 Security
-
-- All client data is encrypted
-- HTTPS-only connections
-- Secure authentication system
-- Regular security updates
-- AFSP certified and IRS PTIN registered
-
-## 📄 License
-
-© 2025 GG Tax Preparation Services LLC. All rights reserved.
-
-## 🤝 Contributing
+## Contributing
 
 This is a private business application. For inquiries about collaboration or services, please visit [https://gg-tax.vercel.app/contact](https://gg-tax.vercel.app/contact).
 
-## 📞 Contact
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-**GG Tax Preparation Services LLC**
-- Website: [https://gg-tax.vercel.app/](https://gg-tax.vercel.app/)
-- Location: Scottsdale, Arizona
-- Services: Professional Tax Preparation
+<!-- CONTACT -->
 
----
+## Contact
 
-Built with ❤️ using Next.js and deployed on Vercel
+**GG Tax Preparation Services LLC**  
+- Website: [https://gg-tax.vercel.app/](https://gg-tax.vercel.app/)  
+- Location: Scottsdale, Arizona  
+- Services: Professional Tax Preparation  
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- ACKNOWLEDGMENTS -->
+
+## Acknowledgments
+
+- [Choose an Open Source License](https://choosealicense.com) 
+- [Img Shields](https://shields.io) 
+- [Next.js Documentation](https://nextjs.org/docs) 
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/) 
+- [Tailwind CSS](https://tailwindcss.com/docs) 
+- [Vercel](https://vercel.com/docs) 
+- [React Icons](https://react-icons.github.io/react-icons/search) 
+- [Font Awesome](https://fontawesome.com) 
+- [Geist Font](https://vercel.com/font) 
+- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet) 
+- [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)  
+- [Malven's Grid Cheatsheet](https://grid.malven.co/) 
+
+
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
+[contributors-shield]: https://img.shields.io/github/contributors/les1g/GG-Tax.svg?style=for-the-badge
+[contributors-url]: https://github.com/les1g/GG-Tax/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/les1g/GG-Tax.svg?style=for-the-badge
+[forks-url]: https://github.com/les1g/GG-Tax/network/members
+[stars-shield]: https://img.shields.io/github/stars/les1g/GG-Tax.svg?style=for-the-badge
+[stars-url]: https://github.com/les1g/GG-Tax/stargazers
+[issues-shield]: https://img.shields.io/github/issues/les1g/GG-Tax.svg?style=for-the-badge
+[issues-url]: https://github.com/les1g/GG-Tax/issues
+[license-shield]: https://img.shields.io/github/license/les1g/GG-Tax.svg?style=for-the-badge
+[license-url]: https://github.com/les1g/GG-Tax/blob/main/LICENSE
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
+[linkedin-url]: https://linkedin.com/in/gisel-garrido
+[product-screenshot]: https://github.com/user-attachments/assets/75c111e7-e80c-486d-8515-06a234232d46
+[Next.js]: https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white
+[Next-url]: https://nextjs.org/
+[TypeScript]: https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript&logoColor=white
+[TypeScript-url]: https://www.typescriptlang.org/
+[Tailwind]: https://img.shields.io/badge/Tailwind-38bdf8?style=for-the-badge&logo=tailwindcss&logoColor=white
+[Tailwind-url]: https://tailwindcss.com/
+[Vercel]: https://img.shields.io/badge/Vercel-black?style=for-the-badge&logo=vercel&logoColor=white
+[Vercel-url]: https://vercel.com/
+[React.js]: https://img.shields.io/badge/React-darkblue?style=for-the-badge&logo=react&logoColor=
