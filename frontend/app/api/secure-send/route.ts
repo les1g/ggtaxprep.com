@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
     if (!SENDGRID_API_KEY || !FROM_EMAIL || !ADMIN_EMAIL) {
       return NextResponse.json(
         { error: "Email service is not configured. Contact support." },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -24,7 +24,10 @@ export async function POST(request: NextRequest) {
     const files = formData.getAll("files") as File[];
 
     if (!email || !message || files.length === 0) {
-      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+      return NextResponse.json(
+        { error: "Missing required fields" },
+        { status: 400 },
+      );
     }
 
     const fileDetails = files.map((file) => ({
@@ -42,7 +45,7 @@ export async function POST(request: NextRequest) {
           type: file.type || "application/octet-stream",
           disposition: "attachment",
         };
-      })
+      }),
     );
 
     // Confirmation to client (no attachments)
@@ -77,11 +80,17 @@ export async function POST(request: NextRequest) {
     });
 
     return NextResponse.json(
-      { success: true, message: "Documents uploaded and emailed with attachments." },
-      { status: 200 }
+      {
+        success: true,
+        message: "Documents uploaded and emailed with attachments.",
+      },
+      { status: 200 },
     );
   } catch (error) {
     console.error("Upload error:", error);
-    return NextResponse.json({ error: "Failed to process upload" }, { status: 500 });
+    return NextResponse.json(
+      { error: "Failed to process upload" },
+      { status: 500 },
+    );
   }
 }

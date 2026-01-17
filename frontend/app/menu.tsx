@@ -12,7 +12,6 @@ export default function Navigation() {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
-    { href: "/pricing", label: "Pricing" },
     { href: "/resources", label: "Resources" },
   ];
 
@@ -42,21 +41,6 @@ export default function Navigation() {
           className="text-gray-300 hover:text-green-400 text-sm transition-colors"
         >
           Contact
-        </Link>
-
-        <span className="border-l border-gray-600 h-6"></span>
-
-        <Link
-          href="/login"
-          className="text-gray-300 hover:text-green-400 font-semibold text-sm transition-colors"
-        >
-          Login
-        </Link>
-        <Link
-          href="/signup"
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 text-sm rounded transition-colors"
-        >
-          Sign Up
         </Link>
       </div>
 
@@ -110,20 +94,6 @@ export default function Navigation() {
             onClick={() => setIsOpen(false)}
           >
             Contact
-          </Link>
-          <Link
-            href="/login"
-            className="text-gray-300 hover:text-green-400 transition-colors"
-            onClick={() => setIsOpen(false)}
-          >
-            Login
-          </Link>
-          <Link
-            href="/signup"
-            className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-3 rounded transition-colors inline-block"
-            onClick={() => setIsOpen(false)}
-          >
-            Sign Up
           </Link>
         </div>
       )}

@@ -111,49 +111,77 @@ export default function SecureSend() {
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
-        <Link href="/resources" className="text-green-400 hover:text-green-300 mb-6 inline-block">
+        <Link
+          href="/resources"
+          className="text-green-400 hover:text-green-300 mb-6 inline-block"
+        >
           ← Back to Resources
         </Link>
 
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">Secure Document Send</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+            Secure Document Send
+          </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
-            Upload your tax documents securely. All files are encrypted and transmitted directly to our secure servers.
+            Upload your tax documents securely. All files are encrypted and
+            transmitted directly.
           </p>
         </div>
 
         {/* Security Info */}
         <div className="bg-green-900/20 border border-green-400/50 rounded-lg p-6 mb-8">
-          <h2 className="text-lg font-bold text-green-400 mb-4">🔒 Your Security Matters</h2>
+          <h2 className="text-lg font-bold text-green-400 mb-4">
+            Your Security Matters
+          </h2>
           <ul className="space-y-3 text-gray-300 text-sm">
             <li className="flex items-start">
               <span className="text-green-400 mr-3 font-bold">✓</span>
-              <span><strong>End-to-End Encryption:</strong> All files are encrypted in transit using SSL/TLS 256-bit encryption</span>
+              <span>
+                <strong>End-to-End Encryption:</strong> All files are encrypted
+                in transit using SSL/TLS 256-bit encryption
+              </span>
             </li>
             <li className="flex items-start">
               <span className="text-green-400 mr-3 font-bold">✓</span>
-              <span><strong>Secure Servers:</strong> Files stored on HIPAA-compliant, encrypted servers</span>
+              <span>
+                <strong>Secure Servers:</strong> Files stored on
+                HIPAA-compliant, encrypted servers
+              </span>
             </li>
             <li className="flex items-start">
               <span className="text-green-400 mr-3 font-bold">✓</span>
-              <span><strong>No Email Attachments:</strong> Eliminates email security vulnerabilities</span>
+              <span>
+                <strong>No Email Attachments:</strong> Eliminates email security
+                vulnerabilities
+              </span>
             </li>
             <li className="flex items-start">
               <span className="text-green-400 mr-3 font-bold">✓</span>
-              <span><strong>Password Protected:</strong> Access requires authentication</span>
+              <span>
+                <strong>Password Protected:</strong> Access requires
+                authentication
+              </span>
             </li>
             <li className="flex items-start">
               <span className="text-green-400 mr-3 font-bold">✓</span>
-              <span><strong>Automatic Deletion:</strong> Files automatically deleted after 30 days</span>
+              <span>
+                <strong>Automatic Deletion:</strong> Files automatically deleted
+                after 30 days
+              </span>
             </li>
           </ul>
         </div>
 
         {/* Upload Form */}
-        <form onSubmit={handleSubmit} className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-8"
+        >
           {/* Email */}
           <div className="mb-6">
-            <label className="block text-white font-semibold mb-2">Your Email Address</label>
+            <label className="block text-white font-semibold mb-2">
+              Your Email Address
+            </label>
             <input
               type="email"
               value={email}
@@ -163,13 +191,16 @@ export default function SecureSend() {
               required
             />
             <p className="text-gray-400 text-sm mt-2">
-              We'll confirm receipt and notify you when we've reviewed your documents.
+              We&#39;ll confirm receipt and notify you when we&#39;ve reviewed
+              your documents.
             </p>
           </div>
 
           {/* File Upload */}
           <div className="mb-6">
-            <label className="block text-white font-semibold mb-2">Upload Documents</label>
+            <label className="block text-white font-semibold mb-2">
+              Upload Documents
+            </label>
             <div className="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-green-400 transition-colors cursor-pointer">
               <input
                 type="file"
@@ -181,9 +212,12 @@ export default function SecureSend() {
               />
               <label htmlFor="file-input" className="cursor-pointer">
                 <div className="text-4xl mb-2">📁</div>
-                <p className="text-white font-semibold mb-1">Click to upload or drag and drop</p>
+                <p className="text-white font-semibold mb-1">
+                  Click to upload or drag and drop
+                </p>
                 <p className="text-gray-400 text-sm">
-                  PDF, Images (JPG, PNG), Word, Excel • Max 25MB per file • Max 10 files
+                  PDF, Images (JPG, PNG), Word, Excel • Max 25MB per file • Max
+                  10 files
                 </p>
               </label>
             </div>
@@ -192,14 +226,21 @@ export default function SecureSend() {
           {/* File List */}
           {files.length > 0 && (
             <div className="mb-6">
-              <h3 className="text-white font-semibold mb-3">Selected Files ({files.length})</h3>
+              <h3 className="text-white font-semibold mb-3">
+                Selected Files ({files.length})
+              </h3>
               <div className="space-y-2">
                 {files.map((file, index) => (
-                  <div key={index} className="bg-gray-700 rounded-lg p-3 flex items-center justify-between">
+                  <div
+                    key={index}
+                    className="bg-gray-700 rounded-lg p-3 flex items-center justify-between"
+                  >
                     <div className="flex items-center">
                       <span className="text-green-400 mr-3">📄</span>
                       <div>
-                        <p className="text-white text-sm font-medium">{file.name}</p>
+                        <p className="text-white text-sm font-medium">
+                          {file.name}
+                        </p>
                         <p className="text-gray-400 text-xs">
                           {(file.size / (1024 * 1024)).toFixed(2)} MB
                         </p>
@@ -220,7 +261,9 @@ export default function SecureSend() {
 
           {/* Message */}
           <div className="mb-6">
-            <label className="block text-white font-semibold mb-2">Brief Description</label>
+            <label className="block text-white font-semibold mb-2">
+              Brief Description
+            </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -241,9 +284,11 @@ export default function SecureSend() {
           {/* Success Message */}
           {uploadComplete && (
             <div className="bg-green-900/20 border border-green-400/50 rounded-lg p-4 mb-6">
-              <p className="text-green-400 font-semibold">✓ Documents uploaded successfully!</p>
+              <p className="text-green-400 font-semibold">
+                ✓ Documents uploaded successfully!
+              </p>
               <p className="text-green-300 text-sm mt-1">
-                We've received your files and will review them shortly.
+                We&#39;ve received your files and will review them shortly.
               </p>
             </div>
           )}
@@ -254,43 +299,75 @@ export default function SecureSend() {
             disabled={uploading || uploadComplete}
             className="w-full bg-green-500 hover:bg-green-600 disabled:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
           >
-            {uploading ? "Uploading..." : uploadComplete ? "✓ Upload Complete" : "Send Securely"}
+            {uploading
+              ? "Uploading..."
+              : uploadComplete
+                ? "✓ Upload Complete"
+                : "Send Securely"}
           </button>
 
           {/* Terms */}
           <p className="text-gray-400 text-xs text-center mt-4">
-            By uploading, you agree that GG Tax Services will handle your documents in accordance with our 
-            <Link href="/privacy" className="text-green-400 hover:text-green-300"> Privacy Policy</Link> and 
-            <Link href="/terms" className="text-green-400 hover:text-green-300"> Terms of Service</Link>.
+            By uploading, you agree that GG Tax Services will handle your
+            documents in accordance with our
+            <Link
+              href="/privacy"
+              className="text-green-400 hover:text-green-300"
+            >
+              {" "}
+              Privacy Policy
+            </Link>{" "}
+            and
+            <Link href="/terms" className="text-green-400 hover:text-green-300">
+              {" "}
+              Terms of Service
+            </Link>
+            .
           </p>
         </form>
 
         {/* FAQ */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
-          <h2 className="text-2xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-2xl font-bold text-white mb-6">
+            Frequently Asked Questions
+          </h2>
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-2">What documents can I send?</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-2">
+                What documents can I send?
+              </h3>
               <p className="text-gray-300">
-                Tax returns, W-2s, 1099s, bank statements, receipts, and any other documents relevant to your tax situation.
+                Tax returns, W-2s, 1099s, bank statements, receipts, and any
+                other documents relevant to your tax situation.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-2">How long are documents stored?</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-2">
+                How long are documents stored?
+              </h3>
               <p className="text-gray-300">
-                Documents are automatically deleted 30 days after upload. If you need them retained longer, please contact us.
+                Documents are automatically deleted 30 days after upload. If you
+                need them retained longer, please contact us.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-2">Is this secure?</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-2">
+                Is this secure?
+              </h3>
               <p className="text-gray-300">
-                Yes. We use bank-level 256-bit SSL/TLS encryption, HIPAA-compliant servers, and follow all data protection regulations.
+                Yes. We use bank-level 256-bit SSL/TLS encryption,
+                HIPAA-compliant servers, and follow all data protection
+                regulations.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-green-400 mb-2">When will you receive my files?</h3>
+              <h3 className="text-lg font-semibold text-green-400 mb-2">
+                When will you receive my files?
+              </h3>
               <p className="text-gray-300">
-                Files are uploaded instantly. You'll receive an email confirmation within minutes. Our team will review and contact you within 1-2 business days.
+                Files are uploaded instantly. You&#39;ll receive an email
+                confirmation within minutes. Our team will review and contact
+                you within 1-2 business days.
               </p>
             </div>
           </div>

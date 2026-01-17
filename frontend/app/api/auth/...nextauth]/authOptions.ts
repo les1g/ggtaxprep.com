@@ -4,7 +4,6 @@ import GoogleProvider from "next-auth/providers/google";
 import AppleProvider from "next-auth/providers/apple";
 import AzureADProvider from "next-auth/providers/azure-ad";
 
-
 export const authOptions: NextAuthOptions = {
   providers: [
     CredentialsProvider({
