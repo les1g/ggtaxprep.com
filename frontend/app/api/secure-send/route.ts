@@ -50,19 +50,6 @@ export async function POST(request: NextRequest) {
       size: `${(file.size / (1024 * 1024)).toFixed(2)} MB`,
     }));
 
-    const attachments = await Promise.all(
-      files.map(async (file) => {
-        const buffer = await file.arrayBuffer();
-        const base64 = Buffer.from(buffer).toString("base64");
-        return {
-          content: base64,
-          filename: file.name,
-          type: file.type || "application/octet-stream",
-          disposition: "attachment",
-        };
-      }),
-    );
-
     // Confirmation to client (no attachments)
     await sgMail.send({
       to: email,
@@ -78,7 +65,7 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    // Notification to admin (with attachments)
+    // Notification to admin (no attachments - avoids Vercel 4.5MB limit)
     await sgMail.send({
       to: ADMIN_EMAIL,
       from: FROM_EMAIL,
@@ -89,9 +76,9 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong> ${message}</p>
         <h3>Files:</h3>
         <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
+        <p><strong>Note:</strong> Files are stored securely. Check your secure portal to download.</p>
         <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
       `,
-      attachments,
     });
 
     console.log("Upload successful for:", email);
