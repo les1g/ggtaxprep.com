@@ -17,6 +17,8 @@ export default function SecureSend() {
     "application/pdf",
     "image/jpeg",
     "image/png",
+    "image/heic",
+    "image/heif",
     "application/msword",
     "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
     "application/vnd.ms-excel",
@@ -216,8 +218,8 @@ export default function SecureSend() {
                   Click to upload or drag and drop
                 </p>
                 <p className="text-gray-400 text-sm">
-                  PDF, Images (JPG, PNG), Word, Excel • Max 25MB per file • Max
-                  10 files
+                  PDF, Images (JPG, JPEG, PNG, HEIC, HEIF), Word, Excel • Max
+                  25MB per file • Max 10 files
                 </p>
               </label>
             </div>
