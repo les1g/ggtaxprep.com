@@ -23,7 +23,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json();
-    const { email, message, fileNames, attachments } = body;
+    const { email, message, fileNames, fileUrls } = body;
 
     if (!email || !message) {
       return NextResponse.json(
@@ -34,10 +34,10 @@ export async function POST(request: NextRequest) {
 
     console.log("Processing submission:", {
       email,
-      fileCount: attachments?.length || 0,
+      fileCount: fileUrls?.length || 0,
     });
 
-    // Confirmation to client (no attachments)
+    // Confirmation to client
     await sgMail.send({
       to: email,
       from: FROM_EMAIL,
@@ -48,11 +48,11 @@ export async function POST(request: NextRequest) {
         <h3 style="color:#22c55e;">Files Received:</h3>
         <p>${fileNames}</p>
         <p><strong>Your Message:</strong> ${message}</p>
-        <p style="color:#666;font-size:13px;">Your documents are secure and will be deleted after processing.</p>
+        <p style="color:#666;font-size:13px;">Our team will review your documents within 1-2 business days.</p>
       `,
     });
 
-    // Notification to admin WITH attachments
+    // Notification to admin with secure download links
     await sgMail.send({
       to: ADMIN_EMAIL,
       from: FROM_EMAIL,
@@ -63,9 +63,12 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong> ${message}</p>
         <h3>Files:</h3>
         <p>${fileNames}</p>
+        <h3>Download Links (expires in 7 days):</h3>
+        <ul>
+          ${fileUrls?.map((url: string) => `<li><a href="${url}">Download File</a></li>`).join("") || ""}
+        </ul>
         <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
       `,
-      attachments: attachments || [],
     });
 
     console.log("Submission successful for:", email);
