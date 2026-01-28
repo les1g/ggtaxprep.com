@@ -30,23 +30,16 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    console.log("Processing upload:", {
+      email,
+      fileCount: files.length,
+      files: files.map((f) => ({ name: f.name, type: f.type, size: f.size })),
+    });
+
     const fileDetails = files.map((file) => ({
       name: file.name,
       size: `${(file.size / (1024 * 1024)).toFixed(2)} MB`,
     }));
-
-    // Build attachments for admin email
-    const attachments = await Promise.all(
-      files.map(async (file) => {
-        const buffer = Buffer.from(await file.arrayBuffer());
-        return {
-          content: buffer.toString("base64"),
-          filename: file.name,
-          type: file.type || "application/octet-stream",
-          disposition: "attachment",
-        };
-      }),
-    );
 
     // Confirmation to client (no attachments)
     await sgMail.send({
@@ -59,11 +52,11 @@ export async function POST(request: NextRequest) {
         <h3 style="color:#22c55e;">Files Received:</h3>
         <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
         <p><strong>Your Message:</strong> ${message}</p>
-        <p style="color:#666;font-size:13px;">Your documents are encrypted in transit and will be deleted after processing.</p>
+        <p style="color:#666;font-size:13px;">Your documents are secure and will be deleted after processing.</p>
       `,
     });
 
-    // Notification to admin (with attachments)
+    // Notification to admin (no attachments - avoids 30MB SendGrid limit)
     await sgMail.send({
       to: ADMIN_EMAIL,
       from: FROM_EMAIL,
@@ -74,22 +67,22 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong> ${message}</p>
         <h3>Files:</h3>
         <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
+        <p><strong>Note:</strong> Files are stored securely. Check your secure portal to download.</p>
         <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
       `,
-      attachments,
     });
 
     return NextResponse.json(
       {
         success: true,
-        message: "Documents uploaded and emailed with attachments.",
+        message: "Documents uploaded successfully.",
       },
       { status: 200 },
     );
   } catch (error) {
     console.error("Upload error:", error);
     return NextResponse.json(
-      { error: "Failed to process upload" },
+      { error: "Failed to process upload", details: String(error) },
       { status: 500 },
     );
   }
