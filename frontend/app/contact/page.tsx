@@ -42,6 +42,14 @@ export default function Contact() {
               </a>
             </p>
           </div>
+          <div>
+            <h3 className="text-xl font-semibold text-green-400">Hours</h3>
+            <p className="text-gray-300">
+              <a href="tel:+4805358927" className="hover:underline">
+                Mon-Sat 8am - 6pm
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
