@@ -12,6 +12,11 @@ if (SENDGRID_API_KEY) {
 export async function POST(request: NextRequest) {
   try {
     if (!SENDGRID_API_KEY || !FROM_EMAIL || !ADMIN_EMAIL) {
+      console.error("Missing env vars:", {
+        SENDGRID_API_KEY: !!SENDGRID_API_KEY,
+        FROM_EMAIL: !!FROM_EMAIL,
+        ADMIN_EMAIL: !!ADMIN_EMAIL,
+      });
       return NextResponse.json(
         { error: "Email service is not configured. Contact support." },
         { status: 500 },
@@ -32,6 +37,7 @@ export async function POST(request: NextRequest) {
 
     console.log("Processing upload:", {
       email,
+      messageLength: message?.length,
       fileCount: files.length,
       files: files.map((f) => ({ name: f.name, type: f.type, size: f.size })),
     });
@@ -40,6 +46,19 @@ export async function POST(request: NextRequest) {
       name: file.name,
       size: `${(file.size / (1024 * 1024)).toFixed(2)} MB`,
     }));
+
+    const attachments = await Promise.all(
+      files.map(async (file) => {
+        const buffer = await file.arrayBuffer();
+        const base64 = Buffer.from(buffer).toString("base64");
+        return {
+          content: base64,
+          filename: file.name,
+          type: file.type || "application/octet-stream",
+          disposition: "attachment",
+        };
+      }),
+    );
 
     // Confirmation to client (no attachments)
     await sgMail.send({
@@ -56,7 +75,7 @@ export async function POST(request: NextRequest) {
       `,
     });
 
-    // Notification to admin (no attachments - avoids 30MB SendGrid limit)
+    // Notification to admin (with attachments)
     await sgMail.send({
       to: ADMIN_EMAIL,
       from: FROM_EMAIL,
@@ -67,11 +86,12 @@ export async function POST(request: NextRequest) {
         <p><strong>Message:</strong> ${message}</p>
         <h3>Files:</h3>
         <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
-        <p><strong>Note:</strong> Files are stored securely. Check your secure portal to download.</p>
         <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
       `,
+      attachments,
     });
 
+    console.log("Upload successful for:", email);
     return NextResponse.json(
       {
         success: true,
@@ -80,9 +100,11 @@ export async function POST(request: NextRequest) {
       { status: 200 },
     );
   } catch (error) {
-    console.error("Upload error:", error);
+    const errorMessage = error instanceof Error ? error.message : String(error);
+    console.error("Upload error details:", errorMessage);
+    console.error("Full error:", error);
     return NextResponse.json(
-      { error: "Failed to process upload", details: String(error) },
+      { error: "Failed to process upload", details: errorMessage },
       { status: 500 },
     );
   }

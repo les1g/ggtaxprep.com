@@ -13,17 +13,6 @@ export default function SecureSend() {
 
   const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB per file
   const MAX_FILES = 10;
-  const ALLOWED_TYPES = [
-    "application/pdf",
-    "image/jpeg",
-    "image/png",
-    "image/heic",
-    "image/heif",
-    "application/msword",
-    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-    "application/vnd.ms-excel",
-    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-  ];
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFiles = Array.from(e.target.files || []);
@@ -35,13 +24,32 @@ export default function SecureSend() {
       return;
     }
 
-    // Validate each file
+    // Validate files
     for (const file of selectedFiles) {
+      if (file.size === 0) {
+        setError(`${file.name} is empty or unreadable`);
+        return;
+      }
+
       if (file.size > MAX_FILE_SIZE) {
         setError(`${file.name} exceeds 25MB limit`);
         return;
       }
-      if (!ALLOWED_TYPES.includes(file.type)) {
+
+      const ext = file.name.toLowerCase().split(".").pop();
+      const allowedExtensions = [
+        "pdf",
+        "jpg",
+        "jpeg",
+        "png",
+        "heic",
+        "heif",
+        "doc",
+        "docx",
+        "xls",
+        "xlsx",
+      ];
+      if (!allowedExtensions.includes(ext || "")) {
         setError(`${file.name} has invalid file type`);
         return;
       }
