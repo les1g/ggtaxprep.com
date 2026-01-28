@@ -94,11 +94,16 @@ export default function SecureSend() {
     setUploading(true);
 
     try {
-      // Build attachments
+      // Build attachments with browser-compatible base64
       const attachments = await Promise.all(
         files.map(async (file) => {
           const buffer = await file.arrayBuffer();
-          const base64 = Buffer.from(buffer).toString("base64");
+          const bytes = new Uint8Array(buffer);
+          let binary = "";
+          for (let i = 0; i < bytes.byteLength; i++) {
+            binary += String.fromCharCode(bytes[i]);
+          }
+          const base64 = btoa(binary);
           return {
             content: base64,
             filename: file.name,
@@ -113,7 +118,7 @@ export default function SecureSend() {
         size: `${(f.size / (1024 * 1024)).toFixed(2)} MB`,
       }));
 
-      // Send to your API (without files this time, just metadata)
+      // Send to your API
       const response = await fetch("/api/secure-send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -121,7 +126,7 @@ export default function SecureSend() {
           email,
           message,
           fileNames: fileDetails.map((f) => `${f.name} (${f.size})`).join(", "),
-          attachments, // Send attachments here instead
+          attachments,
         }),
       });
 
