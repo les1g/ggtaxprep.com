@@ -37,7 +37,7 @@ export default function Home() {
           </div>
           <div className="bg-gray-800 rounded-lg h-96 flex items-center justify-center border border-gray-700">
             <Image
-              src="/images/img678v.jpg"
+              src="/images/imghero526v5.png"
               alt="Tax preparation consultation"
               width={600}
               height={384}
