@@ -17,6 +17,13 @@ type Resource = {
 export default function Resources() {
   const resources: Resource[] = [
     {
+      title: "Track Your Refund",
+      description:
+        "Check the status of your federal and Arizona state tax refunds",
+      icon: "🗎",
+      link: "/refund",
+    },
+    {
       title: "Deductions & Credits Checklist",
       description:
         "See which federal and Arizona deductions/credits you may qualify for",
@@ -48,13 +55,6 @@ export default function Resources() {
       icon: "🗎",
       link: "https://www.irs.gov/forms-instructions",
       external: true,
-    },
-    {
-      title: "Track Your Refund",
-      description:
-        "Check the status of your federal and Arizona state tax refunds",
-      icon: "🗎",
-      link: "/refund",
     },
     {
       title: "Tax Terms Glossary",
