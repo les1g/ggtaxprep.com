@@ -15,40 +15,27 @@ if (SENDGRID_API_KEY) {
 export async function POST(request: NextRequest) {
   try {
     if (!SENDGRID_API_KEY || !FROM_EMAIL || !ADMIN_EMAIL) {
-      console.error("Missing env vars:", {
-        SENDGRID_API_KEY: !!SENDGRID_API_KEY,
-        FROM_EMAIL: !!FROM_EMAIL,
-        ADMIN_EMAIL: !!ADMIN_EMAIL,
-      });
+      console.error("Missing env vars");
       return NextResponse.json(
-        { error: "Email service is not configured. Contact support." },
+        { error: "Email service is not configured." },
         { status: 500 },
       );
     }
 
-    const formData = await request.formData();
-    const email = formData.get("email") as string;
-    const message = formData.get("message") as string;
-    const files = formData.getAll("files") as File[];
+    const body = await request.json();
+    const { email, message, fileNames, attachments } = body;
 
-    if (!email || !message || files.length === 0) {
+    if (!email || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
         { status: 400 },
       );
     }
 
-    console.log("Processing upload:", {
+    console.log("Processing submission:", {
       email,
-      messageLength: message?.length,
-      fileCount: files.length,
-      files: files.map((f) => ({ name: f.name, type: f.type, size: f.size })),
+      fileCount: attachments?.length || 0,
     });
-
-    const fileDetails = files.map((file) => ({
-      name: file.name,
-      size: `${(file.size / (1024 * 1024)).toFixed(2)} MB`,
-    }));
 
     // Confirmation to client (no attachments)
     await sgMail.send({
@@ -59,13 +46,13 @@ export async function POST(request: NextRequest) {
         <h2 style="color:#22c55e;">Document Upload Confirmed</h2>
         <p>Thank you for submitting your tax documents.</p>
         <h3 style="color:#22c55e;">Files Received:</h3>
-        <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
+        <p>${fileNames}</p>
         <p><strong>Your Message:</strong> ${message}</p>
         <p style="color:#666;font-size:13px;">Your documents are secure and will be deleted after processing.</p>
       `,
     });
 
-    // Notification to admin (no attachments - avoids Vercel 4.5MB limit)
+    // Notification to admin WITH attachments
     await sgMail.send({
       to: ADMIN_EMAIL,
       from: FROM_EMAIL,
@@ -75,26 +62,22 @@ export async function POST(request: NextRequest) {
         <p><strong>Client:</strong> ${email}</p>
         <p><strong>Message:</strong> ${message}</p>
         <h3>Files:</h3>
-        <ul>${fileDetails.map((f) => `<li>${f.name} (${f.size})</li>`).join("")}</ul>
-        <p><strong>Note:</strong> Files are stored securely. Check your secure portal to download.</p>
+        <p>${fileNames}</p>
         <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
       `,
+      attachments: attachments || [],
     });
 
-    console.log("Upload successful for:", email);
+    console.log("Submission successful for:", email);
     return NextResponse.json(
-      {
-        success: true,
-        message: "Documents uploaded successfully.",
-      },
+      { success: true, message: "Documents uploaded successfully." },
       { status: 200 },
     );
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
-    console.error("Upload error details:", errorMessage);
-    console.error("Full error:", error);
+    console.error("Submission error:", errorMessage);
     return NextResponse.json(
-      { error: "Failed to process upload", details: errorMessage },
+      { error: "Failed to process submission", details: errorMessage },
       { status: 500 },
     );
   }
