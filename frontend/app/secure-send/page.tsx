@@ -1,6 +1,12 @@
 "use client";
 
 import { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
+
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+);
 
 export default function SecureSend() {
   const [files, setFiles] = useState<File[]>([]);
@@ -94,39 +100,38 @@ export default function SecureSend() {
     setUploading(true);
 
     try {
-      // Build attachments with browser-compatible base64
-      const attachments = await Promise.all(
-        files.map(async (file) => {
-          const buffer = await file.arrayBuffer();
-          const bytes = new Uint8Array(buffer);
-          let binary = "";
-          for (let i = 0; i < bytes.byteLength; i++) {
-            binary += String.fromCharCode(bytes[i]);
-          }
-          const base64 = btoa(binary);
-          return {
-            content: base64,
-            filename: file.name,
-            type: file.type || "application/octet-stream",
-            disposition: "attachment",
-          };
-        }),
-      );
+      const fileUrls: string[] = [];
+      const timestamp = Date.now();
 
-      const fileDetails = files.map((f) => ({
-        name: f.name,
-        size: `${(f.size / (1024 * 1024)).toFixed(2)} MB`,
-      }));
+      // Upload files to Supabase Storage (private bucket)
+      for (const file of files) {
+        const fileName = `${timestamp}-${Math.random().toString(36).substring(7)}-${file.name}`;
 
-      // Send to your API
+        const { error: uploadError } = await supabase.storage
+          .from("uploaded-docs")
+          .upload(fileName, file);
+
+        if (uploadError) throw new Error(uploadError.message);
+
+        // Get signed URL (expires in 7 days)
+        const { data: signedUrlData, error: signError } = await supabase.storage
+          .from("uploaded-docs")
+          .createSignedUrl(fileName, 60 * 60 * 24 * 7);
+
+        if (signError) throw new Error(signError.message);
+
+        fileUrls.push(signedUrlData.signedUrl);
+      }
+
+      // Send email with secure file URLs
       const response = await fetch("/api/secure-send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           email,
           message,
-          fileNames: fileDetails.map((f) => `${f.name} (${f.size})`).join(", "),
-          attachments,
+          fileNames: files.map((f) => f.name).join(", "),
+          fileUrls,
         }),
       });
 
@@ -223,6 +228,7 @@ export default function SecureSend() {
                       <button
                         onClick={() => removeFile(index)}
                         className="text-red-400 hover:text-red-300"
+                        type="button"
                       >
                         Remove
                       </button>
