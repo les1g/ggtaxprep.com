@@ -208,7 +208,7 @@ export default function SecureSend() {
                 type="file"
                 multiple
                 onChange={handleFileChange}
-                accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx"
+                accept=".pdf,.jpg,.jpeg,.png,.heic,.heif,.doc,.docx,.xls,.xlsx"
                 className="hidden"
                 id="file-input"
               />
