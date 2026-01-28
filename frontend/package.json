@@ -11,6 +11,7 @@
   "dependencies": {
     "@mailerlite/mailerlite-nodejs": "^1.5.0",
     "@sendgrid/mail": "^8.1.6",
+    "@supabase/supabase-js": "^2.93.2",
     "next": "^16.0.8",
     "next-auth": "^4.24.13",
     "react": "19.2.0",
