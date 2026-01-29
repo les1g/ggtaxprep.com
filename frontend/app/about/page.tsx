@@ -74,6 +74,23 @@ export default function About() {
         </div>
       </div>
 
+      {/* Business Card Section */}
+      <div className="max-w-6xl mx-auto mb-16">
+        <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
+          <h2 className="text-3xl font-bold text-white mb-4">Business Card</h2>
+          <p className="text-gray-300 mb-6">
+            Download our business card to keep our contact info handy.
+          </p>
+          <a
+            href="/images/business-card.png"
+            download
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition-colors"
+          >
+            Download
+          </a>
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="max-w-6xl mx-auto bg-gray-800 border border-green-400 rounded-lg p-8 text-center">
         <h2 className="text-2xl font-bold text-white mb-4">

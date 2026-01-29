@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 export const metadata = {
   title: "Home",
   description: "Professional tax preparation services in Arizona.",
@@ -10,45 +8,28 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
-          {/* Text Content - Takes up 2 columns */}
-          <div className="md:col-span-2">
-            <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4 leading-tight">
-              Taxes Made Simple
-            </h1>
-            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
-              Searching for top-notch tax services in Arizona? Look no further!
-              At GG Tax, we specialize in hassle-free tax preparation for
-              individuals and businesses in Arizona.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+14805358927"
-                className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center"
-              >
-                Call Now
-              </a>
-              <a
-                href="/services"
-                className="border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-center"
-              >
-                View Services
-              </a>
-            </div>
-          </div>
-
-          {/* Image - Takes up 3 columns, pushed to the right */}
-          <div className="md:col-span-3 flex justify-end">
-            <div className="bg-gray-800 rounded-lg h-96 w-full flex items-center justify-center border border-gray-700 overflow-hidden">
-              <Image
-                src="/images/imghero526v8.png"
-                alt="Tax preparation consultation"
-                width={600}
-                height={384}
-                className="w-full h-full object-cover rounded-lg"
-                priority
-              />
-            </div>
+        <div className="text-center max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4 leading-tight">
+            Taxes Made Simple
+          </h1>
+          <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+            Searching for top-notch tax services in Arizona? Look no further! At
+            GG Tax, we specialize in hassle-free tax preparation for individuals
+            and businesses in Arizona.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+14805358927"
+              className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center"
+            >
+              Call Now
+            </a>
+            <a
+              href="/services"
+              className="border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-center"
+            >
+              View Services
+            </a>
           </div>
         </div>
       </section>

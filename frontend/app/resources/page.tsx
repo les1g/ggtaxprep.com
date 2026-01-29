@@ -168,7 +168,7 @@ export default function Resources() {
                 provide guidance.
               </p>
               <Link
-                href="tel:+4805358927"
+                href="/contact"
                 className="text-green-400 hover:text-green-300 font-semibold"
               >
                 Contact us →
