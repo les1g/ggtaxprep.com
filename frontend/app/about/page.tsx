@@ -34,10 +34,9 @@ export default function About() {
             </div>
             <div className="md:w-2/3">
               <p className="text-gray-300 mb-4 leading-relaxed">
-                GG Tax Services is led by American‑Latino entrepreneur Gisel
-                Garrido, a dedicated tax professional committed to serving
-                individuals, families, and small businesses with accuracy,
-                integrity, and genuine care.
+                GG Tax Services is led by Gisel Garrido, a dedicated tax
+                professional committed to serving individuals, families, and
+                small businesses with accuracy, integrity, and genuine care.
               </p>
               <p className="text-gray-300 mb-4 leading-relaxed">
                 What began as a family‑driven mission has grown into a trusted

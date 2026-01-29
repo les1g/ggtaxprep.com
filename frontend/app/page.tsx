@@ -2,27 +2,28 @@ import Image from "next/image";
 
 export const metadata = {
   title: "Home",
-  description: "Our tax .",
+  description: "Professional tax preparation services in Arizona.",
 };
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-16 md:py-24">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-4xl font-bold text-green-400 mb-4 leading-tight">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 py-16 md:py-24">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 items-center">
+          {/* Text Content - Takes up 2 columns */}
+          <div className="md:col-span-2">
+            <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4 leading-tight">
               Taxes Made Simple
             </h1>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-lg text-gray-300 mb-8 leading-relaxed">
               Searching for top-notch tax services in Arizona? Look no further!
               At GG Tax, we specialize in hassle-free tax preparation for
               individuals and businesses in Arizona.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+4805358927"
+                href="tel:+14805358927"
                 className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors text-center"
               >
                 Call Now
@@ -35,15 +36,19 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="bg-gray-800 rounded-lg h-96 flex items-center justify-center border border-gray-700">
-            <Image
-              src="/images/imghero526v5.png"
-              alt="Tax preparation consultation"
-              width={600}
-              height={384}
-              className="w-full h-full object-cover rounded-lg"
-              priority
-            />
+
+          {/* Image - Takes up 3 columns, pushed to the right */}
+          <div className="md:col-span-3 flex justify-end">
+            <div className="bg-gray-800 rounded-lg h-96 w-full flex items-center justify-center border border-gray-700 overflow-hidden">
+              <Image
+                src="/images/imghero526v8.png"
+                alt="Tax preparation consultation"
+                width={600}
+                height={384}
+                className="w-full h-full object-cover rounded-lg"
+                priority
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -52,7 +57,7 @@ export default function Home() {
       <section className="bg-gray-800 py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-4 md:px-8">
           <h2 className="text-4xl font-bold text-white mb-12 text-center">
-            Why Clients Choose GG Tax
+            Why Clients Choose GG Tax Prep
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-gray-700 p-8 rounded-lg hover:border-green-400 border-2 border-transparent transition-colors">
