@@ -57,8 +57,6 @@
 
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://gg-tax.vercel.app/)
-
 GG Tax Services is a professional tax preparation business based in Scottsdale, Arizona. This web application provides:
 
 - Comprehensive information about tax preparation services  
