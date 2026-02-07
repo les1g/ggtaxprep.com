@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 /* ---------------------------------------------
    1. QUESTIONS
@@ -90,6 +90,8 @@ function generateDocumentList(answers: Answers) {
    4. MAIN COMPONENT
 ---------------------------------------------- */
 export default function DocumentPrepQuestionnaire() {
+  const hasSubmitted = useRef(false);
+
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
   const [done, setDone] = useState(false);
@@ -110,8 +112,14 @@ export default function DocumentPrepQuestionnaire() {
      WEB3FORMS
   ---------------------------------------------- */
   async function submitToWeb3Forms() {
+    // ⛔ Prevent duplicate submissions
+    if (hasSubmitted.current) return;
+    hasSubmitted.current = true;
+
     const formData = new FormData();
     formData.append("access_key", "e2198c11-32ff-4164-a3c1-2cc7c40d92f5");
+    formData.append("subject", "New Document Prep Questionnaire");
+    formData.append("from_name", clientName);
     formData.append("name", clientName);
     formData.append("answers", JSON.stringify(answers, null, 2));
     formData.append("dependents", JSON.stringify(dependents, null, 2));
@@ -151,10 +159,10 @@ export default function DocumentPrepQuestionnaire() {
      RENDER
   ---------------------------------------------- */
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-100 px-6 py-10">
+    <main className="bg-gray-900 text-gray-100 px-4 sm:px-6 py-6 sm:py-10 min-h-[100svh]">
       {/* NAME */}
       {step === 0 && !done && (
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
           <h1 className="text-3xl font-bold text-green-400 mb-6">
             Before We Begin
           </h1>
@@ -184,7 +192,7 @@ export default function DocumentPrepQuestionnaire() {
 
       {/* DEPENDENT COUNT */}
       {subStep === 1 && !done && (
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
           <h1 className="text-3xl font-bold text-green-400 mb-6">
             How many dependents do you have?
           </h1>
@@ -264,7 +272,7 @@ export default function DocumentPrepQuestionnaire() {
                 goNext();
               }
             }}
-            className="w-full bg-green-600 py-4 rounded-lg"
+            className="w-full bg-green-600 py-3 sm:py-4 rounded-xl mt-4"
           >
             Save & Continue
           </button>
@@ -273,7 +281,7 @@ export default function DocumentPrepQuestionnaire() {
 
       {/* MAIN QUESTIONS */}
       {subStep === 0 && step > 0 && step <= QUESTIONS.length && !done && (
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
           <div className="mb-3 text-sm text-gray-400">
             Step {step} of {QUESTIONS.length}
           </div>
@@ -304,7 +312,7 @@ export default function DocumentPrepQuestionnaire() {
                 onChange={(e) =>
                   setAnswers((p) => ({ ...p, [current.id]: e.target.value }))
                 }
-                className="w-full p-4 rounded bg-gray-800 border border-gray-700"
+                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 border border-gray-700"
               >
                 <option value="">Select one...</option>
                 {current.options?.map((opt) => (
@@ -327,7 +335,7 @@ export default function DocumentPrepQuestionnaire() {
       {/* FINAL */}
       {done && (
         <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-3xl font-bold text-green-400 mb-6">
+          <h1 className="text-2xl sm:text-3xl font-bold text-green-400 mb-4 sm:mb-6">
             You’re Ready to Upload
           </h1>
 
