@@ -23,10 +23,12 @@ export default function PhoneInput() {
 
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+      <label className="block text-sm font-medium text-gray-300 mb-2">
+        Phone Number
+      </label>
       <input
         type="tel"
-        name="number"
+        name="phone"
         value={value}
         onChange={handleChange}
         required
