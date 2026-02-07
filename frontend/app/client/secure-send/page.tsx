@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -243,6 +245,15 @@ export default function SecureSend() {
       <div className="max-w-3xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">
+          <div className="flex justify-left">
+            <Link
+              href="/client/services"
+              className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+            >
+              <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
+            </Link>
+          </div>
+
           <h1 className="text-4xl font-bold text-white mb-4">
             Secure Document Upload
           </h1>

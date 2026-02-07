@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 /* ---------------------------------------------
-   1. QUESTIONS
+   QUESTIONS
 ---------------------------------------------- */
 const QUESTIONS = [
   {
@@ -19,110 +21,155 @@ const QUESTIONS = [
     ],
   },
   {
-    id: "dependents",
+    id: "income",
+    question: "What Kind of income did you have during 2025?",
+    type: "select" as const,
+    options: [
+      "Employment (W-2)",
+      "Freelance / Contract (1099-NEC / 1099-K / 1099-MISC)",
+      "Investment (1099-B / 1099-DIV / 1099-INT)",
+      "Cryptocurrency",
+      "None of the above",
+    ],
+  },
+  {
+    id: "otherIncome",
+    question:
+      "Did you receive any additional income (unemployment, cash jobs, alimony, etc.)?",
+    type: "boolean" as const,
+  },
+  {
+    id: "hasDependents",
     question: "Do you have any dependents?",
     type: "boolean" as const,
   },
   {
+    id: "dependentCount",
+    question: "How many dependents do you have?",
+    type: "number" as const,
+    min: 1,
+    max: 10,
+    dependsOn: "hasDependents",
+  },
+
+  {
     id: "selfEmployment",
-    question: "Did you have self-employment or business income?",
+    question: "Did you have self-employment or business income during 2025?",
+    type: "boolean" as const,
+  },
+  {
+    id: "moved",
+    question: "Did you move to a new address during 2025?",
     type: "boolean" as const,
   },
   {
     id: "homeOwner",
-    question: "Did you own a home in the tax year?",
+    question: "Did you buy or sell a home during 2025?",
     type: "boolean" as const,
   },
   {
     id: "investments",
-    question: "Did you have investments, stocks, or crypto?",
+    question:
+      "Did you have investments, stocks, or cryptocurrency activity during 2025?",
     type: "boolean" as const,
   },
   {
     id: "rental",
-    question: "Did you have rental property income?",
+    question: "Did you have rental property income during 2025?",
     type: "boolean" as const,
   },
   {
     id: "education",
-    question: "Did you or a dependent have education expenses?",
+    question:
+      "Did you or a dependent attend school as a full-time student and have education expenses during 2025?",
     type: "boolean" as const,
   },
   {
     id: "marketplace",
-    question: "Did you have Marketplace health insurance (Form 1095-A)?",
+    question:
+      "Did you have Marketplace health insurance (Form 1095-A) during 2025?",
     type: "boolean" as const,
   },
 ];
 
-type Question = (typeof QUESTIONS)[number];
 type Answers = {
-  [key: string]: string | boolean | { name: string; dob: string }[];
+  [key: string]: string | boolean | number;
 };
 
 /* ---------------------------------------------
-   2. DOCUMENT RULES
+   DOCUMENTS
 ---------------------------------------------- */
-const DOCUMENT_RULES: Record<string, Record<string, string[]>> = {
-  dependents: {
-    true: [
-      "Social Security cards for dependents",
-      "Birth certificates",
-      "Childcare provider statements",
-    ],
-  },
+const BASE_DOCUMENTS = [
+  "Government-issued photo ID",
+  "Social Security card and birth certificate",
+  "All income documents (W-2s, 1099s, K-1s)",
+  "Prior year tax return (if available)",
+];
+
+const DOCUMENT_RULES: Record<string, string[]> = {
+  hasDependents: [
+    "Social Security cards and birth certificates for all dependents",
+  ],
+  selfEmployment: ["1099-NEC / 1099-K / 1099-MISC", "Business expense records"],
+  homeOwner: ["Form 1098", "Property tax statement", "Closing disclosure"],
+  investments: ["1099-B / 1099-DIV / 1099-INT", "Crypto transaction history"],
+  rental: ["Rental income & expense records"],
+  education: ["Form 1098-T", "Tuition receipts"],
+  marketplace: ["Form 1095-A"],
 };
 
-/* ---------------------------------------------
-   3. DOCUMENT GENERATOR
----------------------------------------------- */
 function generateDocumentList(answers: Answers) {
-  const docs: string[] = [];
-  for (const key in answers) {
-    const rule = DOCUMENT_RULES[key];
-    if (!rule) continue;
-    if (answers[key] === true) docs.push(...rule.true);
-  }
-  return docs;
+  const docs = new Set(BASE_DOCUMENTS);
+
+  Object.entries(answers).forEach(([key, value]) => {
+    if (value === true && DOCUMENT_RULES[key]) {
+      DOCUMENT_RULES[key].forEach((doc) => docs.add(doc));
+    }
+  });
+
+  return Array.from(docs);
 }
 
 /* ---------------------------------------------
-   4. MAIN COMPONENT
+   COMPONENT
 ---------------------------------------------- */
 export default function DocumentPrepQuestionnaire() {
   const hasSubmitted = useRef(false);
 
   const [step, setStep] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
-  const [done, setDone] = useState(false);
-
   const [clientName, setClientName] = useState("");
+  const [done, setDone] = useState(false);
+  const [mailingStreet, setMailingStreet] = useState("");
+  const [mailingCity, setMailingCity] = useState("");
+  const [mailingState, setMailingState] = useState("");
+  const [mailingZip, setMailingZip] = useState("");
+  const [sameAsPrimary, setSameAsPrimary] = useState<boolean | null>(null);
+  const [primaryStreet, setPrimaryStreet] = useState("");
+  const [primaryCity, setPrimaryCity] = useState("");
+  const [primaryState, setPrimaryState] = useState("");
+  const [primaryZip, setPrimaryZip] = useState("");
 
-  // Dependents
-  const [subStep, setSubStep] = useState(0); // 0 = none, 1 = count, 2 = details
-  const [dependentCount, setDependentCount] = useState(1);
-  const [dependents, setDependents] = useState<{ name: string; dob: string }[]>(
-    [],
-  );
-  const [activeDependentIndex, setActiveDependentIndex] = useState(0);
+  const current = QUESTIONS[step - 1];
 
-  const current: Question = QUESTIONS[step - 1];
-
-  /* ---------------------------------------------
-     WEB3FORMS
-  ---------------------------------------------- */
-  async function submitToWeb3Forms() {
-    // ⛔ Prevent duplicate submissions
+  async function submit() {
     if (hasSubmitted.current) return;
     hasSubmitted.current = true;
 
     const formData = new FormData();
     formData.append("access_key", "e2198c11-32ff-4164-a3c1-2cc7c40d92f5");
-    formData.append("subject", "New Document Prep Questionnaire");
-    formData.append("from_name", clientName);
     formData.append("name", clientName);
     formData.append("answers", JSON.stringify(answers, null, 2));
-    formData.append("dependents", JSON.stringify(dependents, null, 2));
+    formData.append(
+      "mailingAddress",
+      `${mailingStreet}, ${mailingCity}, ${mailingState} ${mailingZip}`,
+    );
+    formData.append(
+      "primaryAddress",
+      sameAsPrimary
+        ? `${mailingStreet}, ${mailingCity}, ${mailingState} ${mailingZip}`
+        : `${primaryStreet}, ${primaryCity}, ${primaryState} ${primaryZip}`,
+    );
 
     await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -130,43 +177,36 @@ export default function DocumentPrepQuestionnaire() {
     });
   }
 
-  /* ---------------------------------------------
-     STEP CONTROL
-  ---------------------------------------------- */
-  const goNext = async () => {
+  const next = async () => {
     if (step === QUESTIONS.length) {
-      await submitToWeb3Forms();
+      await submit();
       setDone(true);
-      return;
+    } else {
+      setStep((s) => s + 1);
     }
-    setStep(step + 1);
-  };
-
-  const handleBoolean = (value: boolean) => {
-    setAnswers((prev) => ({ ...prev, [current.id]: value }));
-
-    if (current.id === "dependents" && value) {
-      setSubStep(1);
-      return;
-    }
-
-    goNext();
   };
 
   const documents = generateDocumentList(answers);
 
-  /* ---------------------------------------------
-     RENDER
-  ---------------------------------------------- */
   return (
-    <main className="bg-gray-900 text-gray-100 px-4 sm:px-6 py-6 sm:py-10 min-h-[100svh]">
-      {/* NAME */}
+    <main className="bg-gray-900 text-gray-100 min-h-screen px-4 py-10">
       {step === 0 && !done && (
         <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
+          <Link
+            href="/client/services"
+            className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 hover:text-green-400"
+          >
+            <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
+          </Link>
+
           <h1 className="text-3xl font-bold text-green-400 mb-6">
             Before We Begin
           </h1>
 
+          {/* FULL NAME */}
+          <label className="block text-sm text-gray-400 mb-1">
+            Full Legal Name
+          </label>
           <input
             value={clientName}
             onChange={(e) =>
@@ -176,149 +216,209 @@ export default function DocumentPrepQuestionnaire() {
                   .replace(/\b\w/g, (c) => c.toUpperCase()),
               )
             }
-            placeholder="Your full name"
-            className="w-full p-4 rounded bg-gray-800 border border-gray-700"
+            placeholder="First Last"
+            className="w-full p-4 rounded bg-gray-800 border border-gray-700 mb-4"
           />
 
+          {/* MAILING ADDRESS */}
+          <label className="block text-sm text-gray-400 mb-1">
+            Mailing Address
+          </label>
+
+          <input
+            value={mailingStreet}
+            onChange={(e) => setMailingStreet(e.target.value)}
+            placeholder="Street Address"
+            className="w-full p-4 rounded bg-gray-800 border border-gray-700 mb-3"
+          />
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+            <input
+              value={mailingCity}
+              onChange={(e) => setMailingCity(e.target.value)}
+              placeholder="City"
+              className="p-4 rounded bg-gray-800 border border-gray-700"
+            />
+
+            <input
+              value={mailingState}
+              onChange={(e) =>
+                setMailingState(e.target.value.toUpperCase().slice(0, 2))
+              }
+              placeholder="State"
+              maxLength={2}
+              className="p-4 rounded bg-gray-800 border border-gray-700"
+            />
+
+            <input
+              value={mailingZip}
+              onChange={(e) =>
+                setMailingZip(e.target.value.replace(/\D/g, "").slice(0, 5))
+              }
+              placeholder="ZIP"
+              inputMode="numeric"
+              className="p-4 rounded bg-gray-800 border border-gray-700"
+            />
+          </div>
+
+          {/* SAME AS PRIMARY */}
+          <p className="text-sm text-gray-300 mb-2">
+            Is this the same as your primary (home) address?
+          </p>
+
+          <div className="flex gap-4 mb-6">
+            <button
+              type="button"
+              onClick={() => setSameAsPrimary(true)}
+              className={`flex-1 py-3 rounded-lg border ${
+                sameAsPrimary === true
+                  ? "bg-green-600 border-green-600"
+                  : "border-gray-700"
+              }`}
+            >
+              Yes
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setSameAsPrimary(false)}
+              className={`flex-1 py-3 rounded-lg border ${
+                sameAsPrimary === false
+                  ? "bg-green-600 border-green-600"
+                  : "border-gray-700"
+              }`}
+            >
+              No
+            </button>
+          </div>
+
+          {/* PRIMARY ADDRESS (ONLY IF DIFFERENT) */}
+          {sameAsPrimary === false && (
+            <>
+              <label className="block text-sm text-gray-400 mb-1">
+                Primary (Home) Address
+              </label>
+              <input
+                value={primaryStreet}
+                onChange={(e) => setPrimaryStreet(e.target.value)}
+                placeholder="Street Address"
+                className="w-full p-4 rounded bg-gray-800 border border-gray-700 mb-3"
+              />
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                <input
+                  value={primaryCity}
+                  onChange={(e) => setPrimaryCity(e.target.value)}
+                  placeholder="City"
+                  className="p-4 rounded bg-gray-800 border border-gray-700"
+                />
+                <input
+                  value={primaryState}
+                  onChange={(e) =>
+                    setPrimaryState(e.target.value.toUpperCase().slice(0, 2))
+                  }
+                  placeholder="State"
+                  maxLength={2}
+                  className="p-4 rounded bg-gray-800 border border-gray-700"
+                />
+                <input
+                  value={primaryZip}
+                  onChange={(e) =>
+                    setPrimaryZip(e.target.value.replace(/\D/g, "").slice(0, 5))
+                  }
+                  placeholder="ZIP"
+                  inputMode="numeric"
+                  className="p-4 rounded bg-gray-800 border border-gray-700"
+                />
+              </div>
+            </>
+          )}
+
           <button
-            disabled={!clientName}
+            disabled={
+              !clientName.trim() ||
+              !mailingStreet.trim() ||
+              !mailingCity.trim() ||
+              mailingState.length !== 2 ||
+              mailingZip.length !== 5 ||
+              sameAsPrimary === null ||
+              (sameAsPrimary === false &&
+                (!primaryStreet ||
+                  !primaryCity ||
+                  primaryState.length !== 2 ||
+                  primaryZip.length !== 5))
+            }
             onClick={() => setStep(1)}
-            className="mt-6 w-full bg-green-600 py-4 rounded-lg"
+            className="mt-4 w-full bg-green-600 py-4 rounded-lg disabled:opacity-50"
           >
             Start Questionnaire
           </button>
         </div>
       )}
 
-      {/* DEPENDENT COUNT */}
-      {subStep === 1 && !done && (
-        <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
-          <h1 className="text-3xl font-bold text-green-400 mb-6">
-            How many dependents do you have?
-          </h1>
-
-          <input
-            type="number"
-            min={1}
-            max={20}
-            value={dependentCount}
-            onChange={(e) => setDependentCount(Number(e.target.value))}
-            className="w-full p-4 rounded bg-gray-800 border border-gray-700"
-          />
-
-          <button
-            onClick={() => {
-              setDependents(
-                Array.from({ length: dependentCount }, () => ({
-                  name: "",
-                  dob: "",
-                })),
-              );
-              setSubStep(2);
-            }}
-            className="mt-6 w-full bg-green-600 py-4 rounded-lg"
-          >
-            Continue
-          </button>
-        </div>
-      )}
-
-      {/* DEPENDENT DETAILS */}
-      {subStep === 2 && !done && (
-        <div className="max-w-2xl mx-auto w-full pt-6 sm:pt-10">
-          <h1 className="text-xl sm:text-2xl font-bold text-green-400 mb-4">
-            Dependent {activeDependentIndex + 1} of {dependentCount}
-          </h1>
-
-          <div className="space-y-4">
-            {/* Name */}
-            <div>
-              <label className="block text-sm text-gray-400 mb-1">
-                Dependent Full Name
-              </label>
-              <input
-                type="text"
-                placeholder="First Last"
-                value={dependents[activeDependentIndex].name}
-                onChange={(e) => {
-                  const updated = [...dependents];
-                  updated[activeDependentIndex].name = e.target.value
-                    .toLowerCase()
-                    .replace(/\b\w/g, (c) => c.toUpperCase());
-                  setDependents(updated);
-                }}
-                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700"
-              />
-            </div>
-
-            {/* DOB */}
-            <div>
-              <label className="block text-sm text-gray-400 mb-1">
-                Date of Birth
-              </label>
-              <p className="text-xs text-gray-500 mb-1">Tap to select date</p>
-              <input
-                type="date"
-                value={dependents[activeDependentIndex].dob}
-                onChange={(e) => {
-                  const updated = [...dependents];
-                  updated[activeDependentIndex].dob = e.target.value;
-                  setDependents(updated);
-                }}
-                className="p-3 rounded-lg bg-gray-800 border border-gray-700"
-              />
-            </div>
-
-            <button
-              disabled={
-                !dependents[activeDependentIndex].name ||
-                !dependents[activeDependentIndex].dob
-              }
-              onClick={() => {
-                if (activeDependentIndex + 1 < dependentCount) {
-                  setActiveDependentIndex(activeDependentIndex + 1);
-                } else {
-                  setAnswers((prev) => ({
-                    ...prev,
-                    dependentsList: dependents,
-                  }));
-                  setSubStep(0);
-                  setActiveDependentIndex(0);
-                  goNext();
-                }
-              }}
-              className="w-full bg-green-600 py-3 rounded-lg font-semibold mt-4 disabled:opacity-50"
-            >
-              Save & Continue
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* MAIN QUESTIONS */}
-      {subStep === 0 && step > 0 && step <= QUESTIONS.length && !done && (
-        <div className="max-w-2xl mx-auto pt-6 sm:pt-10">
-          <div className="mb-3 text-sm text-gray-400">
+      {current && !done && step > 0 && (
+        <div className="max-w-2xl mx-auto">
+          <p className="mb-6 text-gray-400">
             Step {step} of {QUESTIONS.length}
-          </div>
+          </p>
 
-          <p className="text-xl mb-8">{current.question}</p>
+          <p className="text-xl mb-6">{current.question}</p>
 
           {current.type === "boolean" && (
             <div className="space-y-4">
               <button
-                onClick={() => handleBoolean(true)}
+                onClick={() => {
+                  const updated = { ...answers, [current.id]: true };
+                  setAnswers(updated);
+                  next();
+                }}
                 className="w-full bg-green-600 py-4 rounded-lg"
               >
                 Yes
               </button>
+
               <button
-                onClick={() => handleBoolean(false)}
+                onClick={() => {
+                  const updated = { ...answers, [current.id]: false };
+                  setAnswers(updated);
+
+                  // 🔥 SKIP dependentCount if No
+                  if (current.id === "hasDependents") {
+                    setStep((s) => s + 2);
+                  } else {
+                    next();
+                  }
+                }}
                 className="w-full border py-4 rounded-lg"
               >
                 No
               </button>
             </div>
+          )}
+          {current.type === "number" && (
+            <>
+              <input
+                type="number"
+                min={current.min ?? 1}
+                max={current.max ?? 20}
+                value={(answers[current.id] as number) || ""}
+                onChange={(e) =>
+                  setAnswers({
+                    ...answers,
+                    [current.id]: Number(e.target.value),
+                  })
+                }
+                className="w-full p-4 rounded bg-gray-800 border border-gray-700"
+                placeholder="Enter number"
+              />
+
+              <button
+                disabled={!answers[current.id]}
+                onClick={next}
+                className="mt-6 w-full bg-green-600 py-4 rounded-lg"
+              >
+                Continue
+              </button>
+            </>
           )}
 
           {current.type === "select" && (
@@ -326,19 +426,19 @@ export default function DocumentPrepQuestionnaire() {
               <select
                 value={(answers[current.id] as string) || ""}
                 onChange={(e) =>
-                  setAnswers((p) => ({ ...p, [current.id]: e.target.value }))
+                  setAnswers({ ...answers, [current.id]: e.target.value })
                 }
-                className="w-full p-3 sm:p-4 rounded-lg bg-gray-800 border border-gray-700"
+                className="w-full p-4 rounded bg-gray-800 border border-gray-700"
               >
-                <option value="">Select one...</option>
-                {current.options?.map((opt) => (
-                  <option key={opt}>{opt}</option>
+                <option value="">Select one…</option>
+                {current.options?.map((o) => (
+                  <option key={o}>{o}</option>
                 ))}
               </select>
 
               <button
                 disabled={!answers[current.id]}
-                onClick={goNext}
+                onClick={next}
                 className="mt-6 w-full bg-green-600 py-4 rounded-lg"
               >
                 Continue
@@ -348,26 +448,27 @@ export default function DocumentPrepQuestionnaire() {
         </div>
       )}
 
-      {/* FINAL */}
       {done && (
-        <div className="max-w-2xl mx-auto text-center">
-          <h1 className="text-2xl sm:text-3xl font-bold text-green-400 mb-4 sm:mb-6">
-            You’re Ready to Upload
+        <div className="max-w-2xl mx-auto">
+          <h1 className="text-3xl font-bold text-green-400 mb-6">
+            Documents to Upload
           </h1>
-
-          <p className="text-gray-300 mb-6">
-            Please upload the following documents:
+          <p className="mb-4 text-gray-400">
+            If you don’t have a Social Security card or birth certificate
+            available, that’s okay. You can upload another document, photo, or
+            text file that clearly shows the full name, date of birth, and
+            Social Security number for you or your dependents.
           </p>
 
-          <ul className="text-left space-y-2 mb-8">
-            {documents.map((doc, i) => (
-              <li key={i}>✓ {doc}</li>
+          <ul className="space-y-2 mb-8">
+            {documents.map((doc) => (
+              <li key={doc}>✓ {doc}</li>
             ))}
           </ul>
 
           <a
             href="/client/secure-send"
-            className="inline-block w-full bg-green-600 hover:bg-green-500 py-4 rounded-lg font-semibold"
+            className="block bg-green-600 py-4 rounded-lg text-center font-semibold"
           >
             Continue to Secure Upload
           </a>

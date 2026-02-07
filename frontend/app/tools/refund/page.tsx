@@ -1,5 +1,7 @@
 import IRSRefundCalculator from "./irs-refund-calc/page";
 import AZRefundCalculator from "./az-refund-calc/page";
+import { ArrowLeft } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = {
   title: "Tax Refund Status - GG Tax Services",
@@ -11,6 +13,12 @@ export default function RefundPage() {
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-12">
+        <Link
+          href="/client/services"
+          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+        >
+          <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
+        </Link>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
           Track Your Tax Refund
         </h1>

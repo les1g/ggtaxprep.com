@@ -188,7 +188,8 @@ export default function Services() {
           Upload Documents
         </h2>
         <p className="text-gray-300 mb-6 leading-relaxed">
-          Use our secure upload portal to send your tax documents safely. Please{" "}
+          Ready to file with us? Use our secure upload portal to send your tax
+          documents safely. Please{" "}
           <a className="underline" href="/client/scheduling">
             schedule an appointment
           </a>{" "}
