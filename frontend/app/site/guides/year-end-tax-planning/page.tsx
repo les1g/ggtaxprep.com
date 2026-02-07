@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
 export const metadata = {
   title: "Tax Planning for Year-End - GG Tax Services",
@@ -8,26 +9,22 @@ export const metadata = {
 
 export default function YearEndTaxPlanning() {
   return (
-    <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gray-900 py-8 px-4 md:px-8">
+      <div className="max-w-6xl mx-auto mb-12">
         <Link
           href="/site/guides"
-          className="text-green-400 hover:text-green-300 mb-6 inline-block"
+          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
         >
-          ← Back to Guides
+          <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
         </Link>
-
         <header className="mb-8">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+            Year-End Tax Planning
+          </h1>
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="text-xs font-semibold text-green-400 bg-gray-700 px-3 py-1 rounded-full">
-              Planning
-            </span>
             <span className="text-xs text-gray-400">7 min read</span>
             <span className="text-xs text-gray-400">November 1, 2024</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
-            Tax Planning for Year-End
-          </h1>
         </header>
 
         <article className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-12 space-y-6">

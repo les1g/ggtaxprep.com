@@ -1,17 +1,17 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
+import { ArrowLeft } from "lucide-react";
 
-export const metadata = {
-  title: "Guides - GG Tax Services",
-  description: "Comprehensive tax guides and how-to articles",
-};
+export default function GuidesPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
 
-export default function Guides() {
   const guides = [
     {
       title: "How to Organize Your Taxes",
       link: "/site/guides/organize-taxes",
       category: "Getting Started",
-      readTime: "5 min read",
       description:
         "Step-by-step guide to organizing your documents and information for tax season.",
     },
@@ -19,7 +19,6 @@ export default function Guides() {
       title: "Maximizing Your Tax Deductions",
       link: "/site/guides/maximize-deductions",
       category: "Tax Tips",
-      readTime: "7 min read",
       description:
         "Discover legitimate deductions you might be missing to lower your tax bill.",
     },
@@ -27,7 +26,6 @@ export default function Guides() {
       title: "Self-Employment Tax Explained",
       link: "/site/guides/self-employment",
       category: "Self-Employment",
-      readTime: "8 min read",
       description:
         "Complete guide to understanding self-employment taxes and quarterly payments.",
     },
@@ -35,7 +33,6 @@ export default function Guides() {
       title: "Home Office Deduction Guide",
       link: "/site/guides/home-office-deduction",
       category: "Deductions",
-      readTime: "6 min read",
       description:
         "Learn how to calculate and claim your home office deduction correctly.",
     },
@@ -43,7 +40,6 @@ export default function Guides() {
       title: "Crypto Taxes: What You Need to Know",
       link: "/site/guides/crypto-taxes",
       category: "Advanced",
-      readTime: "10 min read",
       description:
         "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
     },
@@ -51,7 +47,6 @@ export default function Guides() {
       title: "Tax Planning for Year-End",
       link: "/site/guides/year-end-tax-planning",
       category: "Planning",
-      readTime: "7 min read",
       description:
         "End-of-year strategies to minimize your tax liability in the upcoming year.",
     },
@@ -67,10 +62,21 @@ export default function Guides() {
     "Planning",
   ];
 
+  const filteredGuides =
+    activeCategory === "All"
+      ? guides
+      : guides.filter((g) => g.category === activeCategory);
+
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-12">
+        <Link
+          href="/client/services"
+          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+        >
+          <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
+        </Link>
         <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
           Tax Guides
         </h1>
@@ -83,11 +89,12 @@ export default function Guides() {
       {/* Category Filter */}
       <div className="max-w-6xl mx-auto mb-12">
         <div className="flex flex-wrap gap-3">
-          {categories.map((category, index) => (
+          {categories.map((category) => (
             <button
-              key={index}
+              key={category}
+              onClick={() => setActiveCategory(category)}
               className={`px-4 py-2 rounded-full font-semibold transition-all ${
-                index === 0
+                activeCategory === category
                   ? "bg-green-500 text-white"
                   : "bg-gray-800 text-gray-300 border border-gray-700 hover:border-green-400 hover:text-green-400"
               }`}
@@ -100,31 +107,17 @@ export default function Guides() {
 
       {/* Guides List */}
       <div className="max-w-6xl mx-auto space-y-6 mb-12">
-        {guides.map((guide, index) => (
+        {filteredGuides.map((guide) => (
           <Link
-            key={index}
+            key={guide.link}
             href={guide.link}
             className="block bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 hover:shadow-lg hover:shadow-green-400/20 transition-all"
           >
-            <div className="flex flex-col md:flex-row md:items-center md:justify-between">
-              <div className="flex-1 mb-4 md:mb-0">
-                <div className="flex items-center gap-3 mb-2">
-                  <span className="text-xs font-semibold text-green-400 bg-gray-700 px-3 py-1 rounded-full">
-                    {guide.category}
-                  </span>
-                  <span className="text-xs text-gray-400">
-                    {guide.readTime}
-                  </span>
-                </div>
-                <h3 className="text-xl font-bold text-white mb-2">
-                  {guide.title}
-                </h3>
-                <p className="text-gray-300">{guide.description}</p>
-              </div>
-              <div className="flex-shrink-0">
-                <span className="text-green-400 font-bold text-2xl">→</span>
-              </div>
-            </div>
+            <span className="text-xs font-semibold text-green-400 bg-gray-700 px-3 py-1 rounded-full mb-2 inline-block">
+              {guide.category}
+            </span>
+            <h3 className="text-xl font-bold text-white mb-2">{guide.title}</h3>
+            <p className="text-gray-300">{guide.description}</p>
           </Link>
         ))}
       </div>

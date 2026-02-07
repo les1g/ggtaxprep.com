@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services",
+  title: "Services | GG Tax Services",
   description:
     "Tax preparation services, pricing, and free tools to help you file with confidence.",
 };
@@ -48,12 +48,6 @@ export default function Services() {
       title: "Tax Terms Glossary",
       description: "Common tax terms explained in plain English.",
       link: "/site/glossary",
-    },
-    {
-      title: "Newsletter",
-      description:
-        "Subscribe to receive tax tips, updates, and deadline reminders.",
-      link: "/site/newsletter",
     },
     {
       title: "Tax Guides",

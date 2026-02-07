@@ -1,5 +1,5 @@
 export const metadata = {
-  title: "Schedule",
+  title: "Schedule | GG Tax Services",
   description:
     "Welcome to GG Tax Services, your trusted partner for tax preparation and compliance in Arizona.",
 };

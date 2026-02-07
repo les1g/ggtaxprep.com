@@ -1,7 +1,7 @@
 import PhoneInput from "./phone-input";
 
 export const metadata = {
-  title: "Contact",
+  title: "Contact | GG Tax Services",
   description:
     "Get in touch with GG Tax Services for any inquiries about tax preparation and compliance in Arizona.",
 };
