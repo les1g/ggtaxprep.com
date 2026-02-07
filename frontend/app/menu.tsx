@@ -37,7 +37,7 @@ export default function Navigation() {
         </Link>
 
         <Link
-          href="/client/contact"
+          href="/site/contact"
           className="text-gray-300 hover:text-green-400 text-sm transition-colors"
         >
           Contact
