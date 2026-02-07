@@ -224,9 +224,8 @@ export default function DocumentPrepQuestionnaire() {
       )}
 
       {/* DEPENDENT DETAILS */}
-      {/* DEPENDENT DETAILS */}
       {subStep === 2 && !done && (
-        <div className="max-w-2xl mx-auto w-full">
+        <div className="max-w-2xl mx-auto w-full pt-6 sm:pt-10">
           <h1 className="text-xl sm:text-2xl font-bold text-green-400 mb-4">
             Dependent {activeDependentIndex + 1} of {dependentCount}
           </h1>
@@ -265,7 +264,7 @@ export default function DocumentPrepQuestionnaire() {
                   updated[activeDependentIndex].dob = e.target.value;
                   setDependents(updated);
                 }}
-                className="w-full p-3 rounded-lg bg-gray-800 border mt-4 border-gray-700"
+                className=" p-3 rounded-lg bg-gray-800 border mt-4 border-gray-700"
               />
             </div>
 
