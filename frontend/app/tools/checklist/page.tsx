@@ -9,7 +9,7 @@ export default function TaxChecklist() {
     setExpandedSections((prev) =>
       prev.includes(section)
         ? prev.filter((s) => s !== section)
-        : [...prev, section]
+        : [...prev, section],
     );
   };
 
@@ -168,13 +168,16 @@ export default function TaxChecklist() {
             Tax Document Checklist
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed mb-4">
-            Use this comprehensive checklist to gather all the documents you'll need for your tax preparation appointment.
-            Not every item will apply to your situation—check only what's relevant to you.
+            Use this comprehensive checklist to gather all the documents
+            you&apos;ll need for your tax preparation appointment. Not every
+            item will apply to your situation—check only what&apos;s relevant to
+            you.
           </p>
           <div className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-4">
             <p className="text-gray-300 text-sm">
-              <strong>Pro Tip:</strong> Organize your documents by category before your appointment. 
-              This helps us work more efficiently and may save you time and money.
+              <strong>Pro Tip:</strong> Organize your documents by category
+              before your appointment. This helps us work more efficiently and
+              may save you time and money.
             </p>
           </div>
         </div>
@@ -182,7 +185,10 @@ export default function TaxChecklist() {
         {/* Checklist Sections */}
         <div className="space-y-4 mb-12">
           {Object.entries(checklist).map(([section, data]) => (
-            <div key={section} className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden">
+            <div
+              key={section}
+              className="bg-gray-800 border border-gray-700 rounded-lg overflow-hidden"
+            >
               {/* Section Header */}
               <button
                 onClick={() => toggleSection(section)}
@@ -190,9 +196,13 @@ export default function TaxChecklist() {
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl"></span>
-                  <h2 className="text-xl font-bold text-green-400">{section}</h2>
+                  <h2 className="text-xl font-bold text-green-400">
+                    {section}
+                  </h2>
                 </div>
-                <span className={`text-2xl text-gray-400 transition-transform ${expandedSections.includes(section) ? "rotate-180" : ""}`}>
+                <span
+                  className={`text-2xl text-gray-400 transition-transform ${expandedSections.includes(section) ? "rotate-180" : ""}`}
+                >
                   ▼
                 </span>
               </button>
@@ -220,9 +230,12 @@ export default function TaxChecklist() {
 
         {/* Print/Download Section */}
         <div className="bg-gray-800 border border-green-400 rounded-lg p-8 text-center mb-12">
-          <h3 className="text-2xl font-bold text-white mb-4">Save This Checklist</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Save This Checklist
+          </h3>
           <p className="text-gray-300 mb-6">
-            Print or download this checklist to take with you when gathering your tax documents.
+            Print or download this checklist to take with you when gathering
+            your tax documents.
           </p>
           <button
             onClick={() => window.print()}
@@ -234,12 +247,14 @@ export default function TaxChecklist() {
 
         {/* Footer CTA */}
         <div className="text-center">
-          <h3 className="text-2xl font-bold text-white mb-4">Ready to File Your Taxes?</h3>
+          <h3 className="text-2xl font-bold text-white mb-4">
+            Ready to File Your Taxes?
+          </h3>
           <p className="text-gray-300 mb-6">
             Schedule a consultation with our tax professionals to get started.
           </p>
           <a
-            href="/scheduling"
+            href="/client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-block"
           >
             Schedule Your Appointment

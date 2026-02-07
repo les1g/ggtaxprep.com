@@ -9,57 +9,74 @@ export default function Guides() {
   const guides = [
     {
       title: "How to Organize Your Taxes",
-      link: "/guides/organize-taxes",
+      link: "/site/guides/organize-taxes",
       category: "Getting Started",
       readTime: "5 min read",
-      description: "Step-by-step guide to organizing your documents and information for tax season.",
+      description:
+        "Step-by-step guide to organizing your documents and information for tax season.",
     },
     {
       title: "Maximizing Your Tax Deductions",
-      link: "/guides/maximize-deductions",
+      link: "/site/guides/maximize-deductions",
       category: "Tax Tips",
       readTime: "7 min read",
-      description: "Discover legitimate deductions you might be missing to lower your tax bill.",
+      description:
+        "Discover legitimate deductions you might be missing to lower your tax bill.",
     },
     {
       title: "Self-Employment Tax Explained",
-      link: "/guides/self-employment",
+      link: "/site/guides/self-employment",
       category: "Self-Employment",
       readTime: "8 min read",
-      description: "Complete guide to understanding self-employment taxes and quarterly payments.",
+      description:
+        "Complete guide to understanding self-employment taxes and quarterly payments.",
     },
     {
       title: "Home Office Deduction Guide",
-      link: "/guides/home-office-deduction",
+      link: "/site/guides/home-office-deduction",
       category: "Deductions",
       readTime: "6 min read",
-      description: "Learn how to calculate and claim your home office deduction correctly.",
+      description:
+        "Learn how to calculate and claim your home office deduction correctly.",
     },
     {
       title: "Crypto Taxes: What You Need to Know",
-      link: "/guides/crypto-taxes",
+      link: "/site/guides/crypto-taxes",
       category: "Advanced",
       readTime: "10 min read",
-      description: "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
+      description:
+        "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
     },
     {
       title: "Tax Planning for Year-End",
-      link: "/guides/year-end-tax-planning",
+      link: "/site/guides/year-end-tax-planning",
       category: "Planning",
       readTime: "7 min read",
-      description: "End-of-year strategies to minimize your tax liability in the upcoming year.",
+      description:
+        "End-of-year strategies to minimize your tax liability in the upcoming year.",
     },
   ];
 
-  const categories = ["All", "Getting Started", "Tax Tips", "Self-Employment", "Deductions", "Advanced", "Planning"];
+  const categories = [
+    "All",
+    "Getting Started",
+    "Tax Tips",
+    "Self-Employment",
+    "Deductions",
+    "Advanced",
+    "Planning",
+  ];
 
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       {/* Header */}
       <div className="max-w-6xl mx-auto mb-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">Tax Guides</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+          Tax Guides
+        </h1>
         <p className="text-gray-300 text-lg">
-          Learn everything you need to know about taxes with our comprehensive guides and articles.
+          Learn everything you need to know about taxes with our comprehensive
+          guides and articles.
         </p>
       </div>
 
@@ -95,9 +112,13 @@ export default function Guides() {
                   <span className="text-xs font-semibold text-green-400 bg-gray-700 px-3 py-1 rounded-full">
                     {guide.category}
                   </span>
-                  <span className="text-xs text-gray-400">{guide.readTime}</span>
+                  <span className="text-xs text-gray-400">
+                    {guide.readTime}
+                  </span>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-2">{guide.title}</h3>
+                <h3 className="text-xl font-bold text-white mb-2">
+                  {guide.title}
+                </h3>
                 <p className="text-gray-300">{guide.description}</p>
               </div>
               <div className="flex-shrink-0">
@@ -108,32 +129,17 @@ export default function Guides() {
         ))}
       </div>
 
-      {/* Newsletter Signup */}
-      <div className="max-w-2xl mx-auto bg-gray-800 border border-green-400 rounded-lg p-8 text-center mb-12">
-        <h2 className="text-2xl font-bold text-white mb-2">Stay Updated</h2>
-        <p className="text-gray-300 mb-6">
-          Subscribe to our newsletter for new tax guides, tips, and updates delivered to your inbox.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-3">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-400 focus:outline-none"
-          />
-          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors whitespace-nowrap">
-            Subscribe
-          </button>
-        </div>
-      </div>
-
       {/* CTA */}
       <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl font-bold text-white mb-4">Ready for Professional Help?</h2>
+        <h2 className="text-2xl font-bold text-white mb-4">
+          Ready for Professional Help?
+        </h2>
         <p className="text-gray-300 mb-6">
-          Our experts can provide personalized guidance based on your specific situation.
+          Our experts can provide personalized guidance based on your specific
+          situation.
         </p>
         <Link
-          href="/scheduling"
+          href="/client/scheduling"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition-colors"
         >
           Book Your Consultation

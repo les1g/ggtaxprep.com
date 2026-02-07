@@ -566,19 +566,13 @@ export default function SecureSend() {
               <span className="flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                 1
               </span>
-              <span>Your documents are encrypted and securely stored</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                2
-              </span>
               <span>
                 We&apos;ll review your documents within 1-2 business days
               </span>
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                3
+                2
               </span>
               <span>
                 You&apos;ll receive an email confirmation with next steps
@@ -586,7 +580,7 @@ export default function SecureSend() {
             </li>
             <li className="flex items-start gap-3">
               <span className="flex-shrink-0 w-6 h-6 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                4
+                3
               </span>
               <span>Documents are automatically deleted after 30 days</span>
             </li>
@@ -597,20 +591,26 @@ export default function SecureSend() {
         <div className="mt-8 text-center text-gray-400 text-sm space-y-2">
           <p>
             Need help?{" "}
-            <a href="/contact" className="text-green-400 hover:text-green-300">
+            <a
+              href="/site/contact"
+              className="text-green-400 hover:text-green-300"
+            >
               Contact Support
             </a>
           </p>
           <p>
             By uploading, you agree to our{" "}
             <a
-              href="/privacy-policy"
+              href="/site/privacy-policy"
               className="text-green-400 hover:text-green-300"
             >
               Privacy Policy
             </a>{" "}
             and{" "}
-            <a href="/terms" className="text-green-400 hover:text-green-300">
+            <a
+              href="/site/terms"
+              className="text-green-400 hover:text-green-300"
+            >
               Terms of Service
             </a>
           </p>

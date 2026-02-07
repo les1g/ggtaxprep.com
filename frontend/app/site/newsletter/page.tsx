@@ -148,19 +148,38 @@ export default function NewsletterPage() {
         </ul>
       </section>
 
+      {/* Newsletter Signup */}
+      <div className="max-w-2xl mx-auto bg-gray-800 border border-green-400 rounded-lg p-8 text-center mb-12">
+        <h2 className="text-2xl font-bold text-white mb-2">Stay Updated</h2>
+        <p className="text-gray-300 mb-6">
+          Subscribe to our newsletter for new tax guides, tips, and updates
+          delivered to your inbox.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            className="flex-1 px-4 py-3 bg-gray-700 text-white rounded-lg border border-gray-600 focus:border-green-400 focus:outline-none"
+          />
+          <button className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+      </div>
+
       {/* CTA */}
       <section className="text-center py-12 bg-gray-800">
         <p className="text-gray-300 mb-4">
           Have questions or need personalized guidance?
         </p>
         <a
-          href="/scheduling"
+          href="/client/scheduling"
           className="inline-block bg-green-600 text-white px-6 py-3 rounded hover:bg-green-500 mr-4"
         >
           Schedule Now
         </a>
         <a
-          href="/contact"
+          href="/site/contact"
           className="inline-block bg-gray-700 text-white px-6 py-3 rounded hover:bg-gray-600"
         >
           Contact Us

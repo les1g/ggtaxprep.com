@@ -2,14 +2,18 @@ import Link from "next/link";
 
 export const metadata = {
   title: "Crypto Taxes: What You Need to Know - GG Tax Services",
-  description: "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
+  description:
+    "Understanding the tax implications of buying, selling, and trading cryptocurrency.",
 };
 
 export default function CryptoTaxes() {
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
-        <Link href="/guides" className="text-green-400 hover:text-green-300 mb-6 inline-block">
+        <Link
+          href="/site/guides"
+          className="text-green-400 hover:text-green-300 mb-6 inline-block"
+        >
           ← Back to Guides
         </Link>
 
@@ -21,19 +25,25 @@ export default function CryptoTaxes() {
             <span className="text-xs text-gray-400">10 min read</span>
             <span className="text-xs text-gray-400">February 10, 2025</span>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">Crypto Taxes: What You Need to Know</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+            Crypto Taxes: What You Need to Know
+          </h1>
         </header>
 
         <article className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-12 space-y-6">
           <section>
             <p className="text-gray-300 leading-relaxed">
-              The IRS treats cryptocurrency as property, not currency. This means every transaction may trigger a taxable event. 
-              Many crypto investors don't realize they owe taxes until it's too late. Here's what you need to know.
+              The IRS treats cryptocurrency as property, not currency. This
+              means every transaction may trigger a taxable event. Many crypto
+              investors don&apos;t realize they owe taxes until it&apos;s too
+              late. Here&apos;s what you need to know.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">Taxable Events</h2>
+            <h2 className="text-2xl font-bold text-green-400 mb-3">
+              Taxable Events
+            </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               You owe taxes when you:
             </p>
@@ -47,37 +57,51 @@ export default function CryptoTaxes() {
             </ul>
             <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4 mt-4">
               <p className="text-gray-300 text-sm">
-                <strong>⚠️ Important:</strong> Simply transferring crypto between your own wallets is NOT a taxable event.
+                <strong>⚠️ Important:</strong> Simply transferring crypto
+                between your own wallets is NOT a taxable event.
               </p>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">Types of Income</h2>
+            <h2 className="text-2xl font-bold text-green-400 mb-3">
+              Types of Income
+            </h2>
             <div className="space-y-4 mb-4">
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">Short-Term Capital Gains</h4>
+                <h4 className="font-semibold text-green-400 mb-2">
+                  Short-Term Capital Gains
+                </h4>
                 <p className="text-gray-300 text-sm">
-                  Crypto held less than 1 year. Taxed as ordinary income (highest rate).
+                  Crypto held less than 1 year. Taxed as ordinary income
+                  (highest rate).
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">Long-Term Capital Gains</h4>
+                <h4 className="font-semibold text-green-400 mb-2">
+                  Long-Term Capital Gains
+                </h4>
                 <p className="text-gray-300 text-sm">
-                  Crypto held 1+ year. Taxed at lower capital gains rates (0%, 15%, or 20%).
+                  Crypto held 1+ year. Taxed at lower capital gains rates (0%,
+                  15%, or 20%).
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">Mining/Staking Rewards</h4>
+                <h4 className="font-semibold text-green-400 mb-2">
+                  Mining/Staking Rewards
+                </h4>
                 <p className="text-gray-300 text-sm">
-                  Treated as ordinary income at fair market value on receipt date.
+                  Treated as ordinary income at fair market value on receipt
+                  date.
                 </p>
               </div>
             </div>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">Reporting Requirements</h2>
+            <h2 className="text-2xl font-bold text-green-400 mb-3">
+              Reporting Requirements
+            </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
               Track all transactions with:
             </p>
@@ -89,24 +113,35 @@ export default function CryptoTaxes() {
               <li>Fair market value in USD at time of transaction</li>
             </ul>
             <p className="text-gray-300 leading-relaxed">
-              Report on Form 8949 (Sales of Capital Assets) and Schedule D (Capital Gains and Losses). 
-              The IRS uses this information to verify your tax return.
+              Report on Form 8949 (Sales of Capital Assets) and Schedule D
+              (Capital Gains and Losses). The IRS uses this information to
+              verify your tax return.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">Record Keeping Best Practices</h2>
+            <h2 className="text-2xl font-bold text-green-400 mb-3">
+              Record Keeping Best Practices
+            </h2>
             <ul className="list-disc list-inside text-gray-300 space-y-2">
-              <li>Export transaction history from all exchanges (Coinbase, Kraken, etc.)</li>
+              <li>
+                Export transaction history from all exchanges (Coinbase, Kraken,
+                etc.)
+              </li>
               <li>Keep records for at least 7 years</li>
               <li>Use crypto tax software to simplify calculations</li>
               <li>Track the cost basis for each transaction</li>
-              <li>Document which cost basis method you use (FIFO, LIFO, or Specific ID)</li>
+              <li>
+                Document which cost basis method you use (FIFO, LIFO, or
+                Specific ID)
+              </li>
             </ul>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">Common Mistakes to Avoid</h2>
+            <h2 className="text-2xl font-bold text-green-400 mb-3">
+              Common Mistakes to Avoid
+            </h2>
             <div className="bg-red-900/20 border border-red-600/30 rounded-lg p-4">
               <ul className="list-disc list-inside text-gray-300 space-y-2">
                 <li>Forgetting to report trades between cryptocurrencies</li>
@@ -120,12 +155,15 @@ export default function CryptoTaxes() {
         </article>
 
         <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Need Help with Crypto Taxes?</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">
+            Need Help with Crypto Taxes?
+          </h2>
           <p className="text-gray-300 mb-6">
-            Our experts specialize in cryptocurrency taxation and can help ensure your returns are accurate and compliant.
+            Our experts specialize in cryptocurrency taxation and can help
+            ensure your returns are accurate and compliant.
           </p>
           <Link
-            href="/scheduling"
+            href="/client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-block"
           >
             Schedule a Consultation

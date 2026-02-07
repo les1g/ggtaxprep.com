@@ -238,7 +238,7 @@ export default function DocumentPrepQuestionnaire() {
               </label>
               <input
                 type="text"
-                placeholder="John Doe"
+                placeholder="First Last"
                 value={dependents[activeDependentIndex].name}
                 onChange={(e) => {
                   const updated = [...dependents];

@@ -12,62 +12,53 @@ export default function Services() {
       title: "Track Your Refund",
       description:
         "Check the status of your federal and Arizona state tax refunds.",
-      icon: "🗎",
       link: "/tools/refund",
     },
     {
       title: "Deductions & Credits Checklist",
       description:
         "See which federal and Arizona deductions/credits you may qualify for.",
-      icon: "🗎",
       link: "/tools/deductions",
     },
     {
       title: "Tax Document Checklist",
       description:
         "Comprehensive list of documents to gather for your tax prep.",
-      icon: "🗎",
       link: "/tools/checklist",
     },
     {
       title: "W‑4 Tax Calculator",
       description:
         "Use IRS and Arizona calculators with step‑by‑step guidance.",
-      icon: "🗎",
       link: "/tools/tax-calculator",
     },
     {
       title: "Estimated Payments Guide",
       description: "When and how to make quarterly estimated tax payments.",
-      icon: "🗎",
       link: "/tools/estimated-payments",
     },
     {
       title: "IRS Forms & Publications",
       description:
         "Direct access to IRS forms, instructions, and publications.",
-      icon: "🗎",
       link: "https://www.irs.gov/forms-instructions",
       external: true,
     },
     {
       title: "Tax Terms Glossary",
       description: "Common tax terms explained in plain English.",
-      icon: "🗎",
       link: "/site/glossary",
     },
     {
       title: "Newsletter",
       description:
         "Subscribe to receive tax tips, updates, and deadline reminders.",
-      icon: "🗎",
       link: "/site/newsletter",
     },
     {
       title: "Tax Guides",
       description:
         "Step‑by‑step guides on various tax topics to help you file with confidence.",
-      icon: "🗎",
       link: "/site/guides",
     },
   ];
@@ -197,7 +188,7 @@ export default function Services() {
         </div>
       </section>
       {/* Upload Section */}
-      <section className="mb-16 bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-10 max-w-6xl mx-auto">
+      <section className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-10 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-green-400 mb-4">
           Upload Documents
         </h2>
@@ -213,7 +204,7 @@ export default function Services() {
         </Link>
       </section>
       {/* Resources Section */}
-      <section className="py-16 px-6 max-w-6xl mx-auto">
+      <section className="py-9 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-green-400 mb-10 text-center">
           Free Tax Resources & Tools
         </h2>
@@ -228,7 +219,6 @@ export default function Services() {
                 rel="noopener noreferrer"
                 className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 hover:shadow-lg hover:shadow-green-400/20 transition-all"
               >
-                <div className="text-4xl mb-4">{resource.icon}</div>
                 <h3 className="text-xl font-bold text-green-400 mb-2">
                   {resource.title}
                 </h3>
@@ -240,7 +230,6 @@ export default function Services() {
                 href={resource.link}
                 className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 hover:shadow-lg hover:shadow-green-400/20 transition-all block"
               >
-                <div className="text-4xl mb-4">{resource.icon}</div>
                 <h3 className="text-xl font-bold text-green-400 mb-2">
                   {resource.title}
                 </h3>
