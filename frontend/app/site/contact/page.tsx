@@ -15,55 +15,45 @@ export default function Contact() {
           Contact Us
         </h2>
       </section>
-      {/* Contact Info */}{" "}
+
+      {/* Contact Info */}
       <section className="py-10 px-4 max-w-3xl mx-auto space-y-6">
-        {" "}
-        {/* Row 1: Email + Phone */}{" "}
+        {/* Row 1: Email + Phone */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {" "}
-          {/* Email */}{" "}
+          {/* Email */}
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-            {" "}
-            <h3 className="text-lg font-semibold text-green-400 mb-1">
-              Email
-            </h3>{" "}
+            <h3 className="text-lg font-semibold text-green-400 mb-1">Email</h3>
             <a
               href="mailto:info@ggtaxprep.com"
               className="text-gray-300 hover:text-green-300 transition-colors break-all"
             >
-              {" "}
-              info@ggtaxprep.com{" "}
-            </a>{" "}
-          </div>{" "}
-          {/* Phone */}{" "}
+              info@ggtaxprep.com
+            </a>
+          </div>
+
+          {/* Phone */}
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-            {" "}
-            <h3 className="text-lg font-semibold text-green-400 mb-1">
-              Phone
-            </h3>{" "}
+            <h3 className="text-lg font-semibold text-green-400 mb-1">Phone</h3>
             <a
               href="tel:+14805358927"
               className="text-gray-300 hover:text-green-300 transition-colors"
             >
-              {" "}
-              (480) 535‑8927{" "}
-            </a>{" "}
-          </div>{" "}
-        </div>{" "}
-        {/* Row 2: Hours (full width) */}{" "}
+              (480) 535‑8927
+            </a>
+          </div>
+        </div>
+
+        {/* Hours */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-          {" "}
-          <h3 className="text-lg font-semibold text-green-400 mb-1">
-            Hours
-          </h3>{" "}
+          <h3 className="text-lg font-semibold text-green-400 mb-1">Hours</h3>
           <p className="text-gray-300 leading-tight">
-            {" "}
             Mon–Sat
             <br />
-            8am – 6pm{" "}
-          </p>{" "}
-        </div>{" "}
+            8am – 6pm
+          </p>
+        </div>
       </section>
+
       {/* Contact Form */}
       <section className="px-4 max-w-3xl mx-auto pb-20">
         <form
@@ -77,16 +67,7 @@ export default function Contact() {
             name="_redirect"
             value="https://ggtaxprep.com/site/contact/success"
           />
-          <section className="text-center py-14 px-4 bg-gray-800 border-b border-gray-700">
-            <h2 className="text-3xl sm:text-4xl font-semibold text-green-400 mb-3">
-              Contact Us
-            </h2>
-            <p className="text-base sm:text-lg max-w-xl mx-auto text-gray-300 leading-relaxed">
-              Have questions or need help with your taxes? Reach out in the way
-              that’s most convenient for you. We typically respond within 24
-              business hours.
-            </p>
-          </section>
+
           {/* Name */}
           <div>
             <label className="block text-sm font-medium text-gray-300 mb-2">
