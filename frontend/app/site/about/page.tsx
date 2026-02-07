@@ -100,7 +100,7 @@ export default function About() {
           Let us handle your taxes so you can focus on what matters most.
         </p>
         <a
-          href="/scheduling"
+          href="/client/scheduling"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition-colors"
         >
           Schedule Now

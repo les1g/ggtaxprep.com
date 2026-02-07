@@ -10,8 +10,8 @@ export default function Navigation() {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/about", label: "About" },
-    { href: "/services", label: "Services" },
+    { href: "/site/about", label: "About" },
+    { href: "/client/services", label: "Services" },
     { href: "/resources", label: "Resources" },
   ];
 
@@ -30,14 +30,14 @@ export default function Navigation() {
         ))}
 
         <Link
-          href="/scheduling"
+          href="/client/scheduling"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-2 text-sm rounded transition-colors"
         >
           Schedule
         </Link>
 
         <Link
-          href="/contact"
+          href="/client/contact"
           className="text-gray-300 hover:text-green-400 text-sm transition-colors"
         >
           Contact
@@ -82,14 +82,14 @@ export default function Navigation() {
             </Link>
           ))}
           <Link
-            href="/scheduling"
+            href="/site/scheduling"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-1 px-3 rounded transition-colors inline-block"
             onClick={() => setIsOpen(false)}
           >
             Schedule
           </Link>
           <Link
-            href="/contact"
+            href="/site/contact"
             className="text-gray-300 hover:text-green-400 transition-colors"
             onClick={() => setIsOpen(false)}
           >

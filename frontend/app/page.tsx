@@ -25,7 +25,7 @@ export default function Home() {
               Call Now
             </a>
             <a
-              href="/services"
+              href="/client/services"
               className="border-2 border-green-500 text-green-600 hover:bg-green-500 hover:text-gray-900 font-bold py-3 px-6 rounded-lg transition-colors text-center"
             >
               View Services
@@ -87,7 +87,7 @@ export default function Home() {
               you&apos;re entitled to.
             </p>
             <a
-              href="/services"
+              href="/client/services"
               className="text-green-400 hover:text-green-300 font-semibold"
             >
               Learn more →
@@ -103,7 +103,7 @@ export default function Home() {
               opportunities throughout the year.
             </p>
             <a
-              href="/services"
+              href="/client/services"
               className="text-green-400 hover:text-green-300 font-semibold"
             >
               Learn more →
@@ -112,7 +112,7 @@ export default function Home() {
         </div>
         <div className="text-center">
           <a
-            href="/services"
+            href="/client/services"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors inline-block"
           >
             View Services
@@ -130,7 +130,7 @@ export default function Home() {
             Schedule a free consultation with our tax professionals today.
           </p>
           <a
-            href="/scheduling"
+            href="/client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg transition-colors inline-block text-lg"
           >
             Schedule Now
