@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const metadata = {
   title: "Message Sent",
   description: "Your message has been successfully submitted.",
@@ -38,19 +40,19 @@ export default function ContactSuccess() {
 
         {/* Buttons */}
         <div className="flex flex-col gap-3">
-          <a
-            href="/home"
-            className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-lg transition-colors"
+          <Link
+            href="/"
+            className="w-full bg-green-600 hover:bg-green-500 text-white font-semibold py-3 rounded-lg transition-colors block text-center"
           >
             Return Home
-          </a>
+          </Link>
 
-          <a
+          <Link
             href="/site/contact"
-            className="w-full border border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 font-semibold py-3 rounded-lg transition-colors"
+            className="w-full border border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 font-semibold py-3 rounded-lg transition-colors block text-center"
           >
             Back to Contact
-          </a>
+          </Link>
         </div>
       </div>
     </main>
