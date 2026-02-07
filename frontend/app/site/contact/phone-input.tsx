@@ -6,7 +6,7 @@ export default function PhoneInput() {
   const [value, setValue] = useState("");
 
   const formatPhoneNumber = (input: string) => {
-    const digits = input.replace(/\D/g, "").slice(0, 10); // ⬅️ limit to 10 digits
+    const digits = input.replace(/\D/g, "").slice(0, 10); // limit to 10 digits
     const match = digits.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
     if (!match) return digits;
 

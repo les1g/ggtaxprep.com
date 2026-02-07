@@ -57,14 +57,21 @@ export default function Contact() {
       {/* Contact Form */}
       <section className="px-4 max-w-3xl mx-auto pb-20">
         <form
-          action="https://formspree.io/f/xnnevooq"
+          action="https://api.web3forms.com/submit"
           method="POST"
           className="space-y-6 bg-gray-800 border border-gray-700 rounded-lg p-6 sm:p-8 shadow-lg"
         >
-          {/* REQUIRED FOR REDIRECT */}
+          {/* REQUIRED: Web3Forms Access Key */}
           <input
             type="hidden"
-            name="_redirect"
+            name="access_key"
+            value="9bb8593b-a08d-4b58-9f2c-f4a0fe8457ce"
+          />
+
+          {/* REDIRECT AFTER SUCCESS */}
+          <input
+            type="hidden"
+            name="redirect"
             value="https://ggtaxprep.com/site/contact/success"
           />
 
