@@ -13,6 +13,7 @@ export default function SecureSend() {
   const [uploading, setUploading] = useState(false);
   const [uploadComplete, setUploadComplete] = useState(false);
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
 
@@ -146,6 +147,18 @@ export default function SecureSend() {
     setFiles(files.filter((_, i) => i !== index));
   };
 
+  const formatPhoneNumber = (input: string) => {
+    const digits = input.replace(/\D/g, "").slice(0, 10);
+    const match = digits.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
+    if (!match) return digits;
+
+    let formatted = "";
+    if (match[1]) formatted = "(" + match[1];
+    if (match[2]) formatted += ") " + match[2];
+    if (match[3]) formatted += "-" + match[3];
+    return formatted;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError("");
@@ -209,6 +222,7 @@ export default function SecureSend() {
       setUploadComplete(true);
       setFiles([]);
       setEmail("");
+      setPhone("");
       setMessage("");
 
       setTimeout(() => {
@@ -352,6 +366,20 @@ export default function SecureSend() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
+                required
+                className="w-full bg-gray-900 text-white px-4 py-3 rounded border border-gray-600 focus:border-green-500 focus:outline-none"
+              />
+            </div>
+            <div>
+              <label className="block text-white font-semibold mb-2">
+                Your Phone Number *
+              </label>
+
+              <input
+                type="tel"
+                value={phone}
+                onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
+                placeholder="(123) 456-7890"
                 required
                 className="w-full bg-gray-900 text-white px-4 py-3 rounded border border-gray-600 focus:border-green-500 focus:outline-none"
               />

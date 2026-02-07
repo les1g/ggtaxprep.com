@@ -130,7 +130,6 @@ export default function RootLayout({
             <p className="text-sm">
               &copy; GG Tax Services LLC. All rights reserved.
             </p>
-            <p className="text-sm">Est. 2021</p>
           </footer>
         </div>
       </body>
