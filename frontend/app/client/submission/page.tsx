@@ -256,6 +256,7 @@ export default function DocumentPrepQuestionnaire() {
               <label className="block text-sm text-gray-400 mb-1">
                 Date of Birth
               </label>
+              <p className="text-xs text-gray-500 mb-1">Tap to select date</p>
               <input
                 type="date"
                 value={dependents[activeDependentIndex].dob}
@@ -264,7 +265,7 @@ export default function DocumentPrepQuestionnaire() {
                   updated[activeDependentIndex].dob = e.target.value;
                   setDependents(updated);
                 }}
-                className="  rounded-lg bg-gray-800 border  border-gray-700"
+                className="p-3 rounded-lg bg-gray-800 border border-gray-700"
               />
             </div>
 
