@@ -32,3 +32,8 @@ a:hover {
   text-decoration-thickness: 2px;
   text-decoration-color: var(--foreground);
 }
+
+.underline {
+  text-decoration-color: var(--foreground);
+  text-decoration-line: underline;
+}

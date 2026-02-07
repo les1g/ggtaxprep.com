@@ -28,7 +28,7 @@ export default function Home() {
           </Link>
 
           <Link
-            href="/client/questionnaire"
+            href="/client/submission"
             className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
                  hover:bg-green-400 hover:text-gray-900 transition-colors"
           >
