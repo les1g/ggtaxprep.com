@@ -138,7 +138,7 @@ export default function Services() {
               <li>All forms and schedules included</li>
             </ul>
             <a
-              href="/scheduling"
+              href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
               Get Started
@@ -163,7 +163,7 @@ export default function Services() {
               <li>Quarterly estimates included</li>
             </ul>
             <a
-              href="/scheduling"
+              href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
               Get Started
@@ -188,7 +188,7 @@ export default function Services() {
               <li>All filings fully managed</li>
             </ul>
             <a
-              href="/scheduling"
+              href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
               Get Started
