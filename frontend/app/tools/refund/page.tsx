@@ -1,4 +1,6 @@
-// filepath: c:\Users\That one Chigg\OneDrive\Documents\GitHub\GG-Tax\frontend\app\refund\page.tsx
+import { IRSRefundCalculator } from "./irs-refund-calc/page";
+import { AZRefundCalculator } from "./az-refund-calc/page";
+
 export const metadata = {
   title: "Tax Refund Status - GG Tax Services",
   description: "Track your federal and Arizona state tax refund status",
@@ -14,7 +16,12 @@ export default function RefundPage() {
         </h1>
         <p className="text-gray-300 text-lg leading-relaxed">
           Monitor the status of your federal and Arizona state tax refunds using
-          the official government tracking tools below.
+          the official government tracking tools below. Have your SSN, filing
+          status, and refund amount ready.{" "}
+          <span className="mt-4 text-red-400 font-bold block">
+            Note: Refund information is typically available 24-48 hours after
+            e-filing acceptance.
+          </span>
         </p>
       </div>
 
@@ -32,8 +39,7 @@ export default function RefundPage() {
               </h3>
               <p className="text-gray-300">
                 Access the IRS &quot;Where&apos;s My Refund?&quot; portal to
-                check your federal return status. Have your SSN, filing status,
-                and refund amount ready.
+                check your federal return status.
               </p>
             </div>
             <a
@@ -43,7 +49,6 @@ export default function RefundPage() {
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center gap-2 transition-colors w-full justify-center"
             >
               <span>Check IRS Status</span>
-              <span className="text-xl">↗</span>
             </a>
           </div>
 
@@ -54,8 +59,7 @@ export default function RefundPage() {
                 Arizona State Refund
               </h3>
               <p className="text-gray-300">
-                Track your Arizona refund through the ADOR portal. You&apos;ll
-                need your SSN and expected refund amount from your state return.
+                Track your Arizona refund through the ADOR portal.
               </p>
             </div>
             <a
@@ -65,7 +69,6 @@ export default function RefundPage() {
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center gap-2 transition-colors w-full justify-center"
             >
               <span>Check ADOR Status</span>
-              <span className="text-xl">↗</span>
             </a>
           </div>
         </div>
@@ -79,73 +82,12 @@ export default function RefundPage() {
 
         {/* IRS Timeline */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-6">
-          <h3 className="text-2xl font-bold text-green-400 mb-6">
-            IRS Federal Refunds
-          </h3>
-          <ul className="space-y-4 text-gray-300">
-            <li className="flex gap-3">
-              <span className="text-green-400 font-bold flex-shrink-0">✓</span>
-              <div>
-                <strong className="text-white">
-                  E-filed with Direct Deposit:
-                </strong>{" "}
-                Typically 8-21 days after acceptance
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-green-400 font-bold flex-shrink-0">✓</span>
-              <div>
-                <strong className="text-white">
-                  E-filed with Paper Check:
-                </strong>{" "}
-                3-4 weeks after acceptance
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-green-400 font-bold flex-shrink-0">✓</span>
-              <div>
-                <strong className="text-white">Paper Return:</strong> 6-8 weeks
-                from mailing date
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-yellow-400 font-bold flex-shrink-0">!</span>
-              <div>
-                <strong className="text-white">EITC/ACTC Claims:</strong> By
-                law, refunds cannot be issued before mid-February
-              </div>
-            </li>
-          </ul>
+          <IRSRefundCalculator />
         </div>
 
         {/* ADOR Timeline */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
-          <h3 className="text-2xl font-bold text-green-400 mb-6">
-            Arizona Department of Revenue
-          </h3>
-          <ul className="space-y-4 text-gray-300">
-            <li className="flex gap-3">
-              <span className="text-green-400 font-bold flex-shrink-0">✓</span>
-              <div>
-                <strong className="text-white">E-filed Returns:</strong>{" "}
-                Generally 3-4 weeks for direct deposit
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-green-400 font-bold flex-shrink-0">✓</span>
-              <div>
-                <strong className="text-white">Paper Returns:</strong> 8-12
-                weeks for processing
-              </div>
-            </li>
-            <li className="flex gap-3">
-              <span className="text-yellow-400 font-bold flex-shrink-0">!</span>
-              <div>
-                <strong className="text-white">Note:</strong> Arizona processes
-                returns in the order received during peak season
-              </div>
-            </li>
-          </ul>
+          <AZRefundCalculator />
         </div>
       </div>
 
@@ -188,13 +130,13 @@ export default function RefundPage() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            href="/contact"
+            href="/site/contact"
             className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
           >
             Contact Us
           </a>
           <a
-            href="/scheduling"
+            href="/client/scheduling"
             className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
           >
             Schedule Now

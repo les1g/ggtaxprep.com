@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export const metadata = {
   title: "About",
@@ -7,7 +8,35 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="bg-gray-900 py-12 px-4 md:px-8">
+    <div className="min-h-screen bg-gray-900">
+      {/* Mini Navigation Bar */}
+      <nav className="bg-gray-900 border-b border-gray-800 py-4">
+        <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-3">
+          <Link
+            href="/tools/refund"
+            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
+                 hover:bg-green-400 hover:text-gray-900 transition-colors"
+          >
+            Track Refund
+          </Link>
+
+          <Link
+            href="/client/secure-send"
+            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
+                 hover:bg-green-400 hover:text-gray-900 transition-colors"
+          >
+            Upload Documents
+          </Link>
+
+          <Link
+            href="/client/questionnaire"
+            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
+                 hover:bg-green-400 hover:text-gray-900 transition-colors"
+          >
+            Client Questionnaire
+          </Link>
+        </div>
+      </nav>
       {/* Hero Section */}
       <div className="max-w-6xl mx-auto mb-1">
         <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
@@ -79,7 +108,7 @@ export default function About() {
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-8">
           <h2 className="text-3xl font-bold text-white mb-4">Business Card</h2>
           <p className="text-gray-300 mb-6">
-            Download our business card to keep our contact info handy.
+            Download to keep our contact info handy or share it with others.
           </p>
           <a
             href="/images/business-card.png"

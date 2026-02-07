@@ -8,12 +8,16 @@ export const metadata = {
 
 export default function Contact() {
   return (
-    <main className="min-h-screen bg-gray-900 text-gray-100 font-sans">
+    <main className="min-h-screen bg-gray-900">
       {/* Page Header */}
       <section className="text-center py-14 px-4 bg-gray-800 border-b border-gray-700">
         <h2 className="text-3xl sm:text-4xl font-semibold text-green-400 mb-3">
           Contact Us
         </h2>
+        <p className="text-gray-300 text-lg max-w-2xl mx-auto">
+          We are here to help with any questions or concerns you have about our
+          tax services.
+        </p>
       </section>
 
       {/* Contact Info */}
