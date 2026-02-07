@@ -15,17 +15,18 @@ export default function Services() {
       link: "/tools/refund",
     },
     {
-      title: "Deductions & Credits Checklist",
-      description:
-        "See which federal and Arizona deductions/credits you may qualify for.",
-      link: "/tools/deductions",
-    },
-    {
       title: "Tax Document Checklist",
       description:
         "Comprehensive list of documents to gather for your tax prep.",
       link: "/tools/checklist",
     },
+    {
+      title: "Deductions & Credits Checklist",
+      description:
+        "See which federal and Arizona deductions/credits you may qualify for.",
+      link: "/tools/deductions",
+    },
+
     {
       title: "W‑4 Tax Calculator",
       description:
@@ -187,8 +188,15 @@ export default function Services() {
           Upload Documents
         </h2>
         <p className="text-gray-300 mb-6 leading-relaxed">
-          Use our secure upload portal to send your tax documents safely. Please
-          schedule an appointment before uploading.
+          Use our secure upload portal to send your tax documents safely. Please{" "}
+          <a className="underline" href="/client/scheduling">
+            schedule an appointment
+          </a>{" "}
+          or submit a{" "}
+          <a className="underline" href="/client/submission">
+            client questionnaire
+          </a>{" "}
+          before uploading.
         </p>
         <Link
           href="/client/secure-send"
@@ -197,10 +205,11 @@ export default function Services() {
           Upload Files
         </Link>
       </section>
+
       {/* Resources Section */}
       <section className="py-9 px-6 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-green-400 mb-10 text-center">
-          Free Tax Resources & Tools
+          Tax Resources & Tools
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

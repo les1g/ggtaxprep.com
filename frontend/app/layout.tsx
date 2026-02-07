@@ -19,7 +19,7 @@ const siteUrl = "https://www.ggtaxprep.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "GG Tax Prep",
+  title: "GG Tax Services",
   description: "Professional tax preparation services in Arizona.",
   keywords: [
     "Tax Preparation",
@@ -37,10 +37,10 @@ export const metadata: Metadata = {
   creator: "GG Tax Services LLC",
   publisher: "GG Tax Services LLC",
   openGraph: {
-    title: "GG Tax Prep",
+    title: "GG Tax Services",
     description: "Professional tax preparation services in Arizona.",
     url: siteUrl,
-    siteName: "GG Tax",
+    siteName: "GG Tax Services",
     type: "website",
   },
 };
