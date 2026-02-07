@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function AZRefundCalculator() {
+export default function AZRefundCalculator() {
   const [acceptedDate, setAcceptedDate] = useState("");
   const [method, setMethod] = useState("direct");
   const [result, setResult] = useState("");

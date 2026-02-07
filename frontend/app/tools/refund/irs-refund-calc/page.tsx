@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-export function IRSRefundCalculator() {
+export default function IRSRefundCalculator() {
   const [acceptedDate, setAcceptedDate] = useState("");
   const [method, setMethod] = useState("direct");
   const [result, setResult] = useState("");
