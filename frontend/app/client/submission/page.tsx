@@ -224,58 +224,74 @@ export default function DocumentPrepQuestionnaire() {
       )}
 
       {/* DEPENDENT DETAILS */}
+      {/* DEPENDENT DETAILS */}
       {subStep === 2 && !done && (
-        <div className="max-w-2xl mx-auto space-y-4">
-          <h1 className="text-3xl font-bold text-green-400">
+        <div className="max-w-2xl mx-auto w-full">
+          <h1 className="text-xl sm:text-2xl font-bold text-green-400 mb-4">
             Dependent {activeDependentIndex + 1} of {dependentCount}
           </h1>
 
-          <input
-            placeholder="Dependent full name"
-            value={dependents[activeDependentIndex].name}
-            onChange={(e) => {
-              const updated = [...dependents];
-              updated[activeDependentIndex].name = e.target.value
-                .toLowerCase()
-                .replace(/\b\w/g, (c) => c.toUpperCase());
-              setDependents(updated);
-            }}
-            className="w-full p-4 rounded bg-gray-800 border border-gray-700"
-          />
+          <div className="space-y-4">
+            {/* Name */}
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">
+                Dependent Full Name
+              </label>
+              <input
+                type="text"
+                placeholder="John Doe"
+                value={dependents[activeDependentIndex].name}
+                onChange={(e) => {
+                  const updated = [...dependents];
+                  updated[activeDependentIndex].name = e.target.value
+                    .toLowerCase()
+                    .replace(/\b\w/g, (c) => c.toUpperCase());
+                  setDependents(updated);
+                }}
+                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700"
+              />
+            </div>
 
-          <input
-            type="date"
-            value={dependents[activeDependentIndex].dob}
-            onChange={(e) => {
-              const updated = [...dependents];
-              updated[activeDependentIndex].dob = e.target.value;
-              setDependents(updated);
-            }}
-            className="w-full p-4 rounded bg-gray-800 border border-gray-700"
-          />
+            {/* DOB */}
+            <div>
+              <label className="block text-sm text-gray-400 mb-1">
+                Date of Birth
+              </label>
+              <input
+                type="date"
+                value={dependents[activeDependentIndex].dob}
+                onChange={(e) => {
+                  const updated = [...dependents];
+                  updated[activeDependentIndex].dob = e.target.value;
+                  setDependents(updated);
+                }}
+                className="w-full p-3 rounded-lg bg-gray-800 border border-gray-700"
+              />
+            </div>
 
-          <button
-            disabled={
-              !dependents[activeDependentIndex].name ||
-              !dependents[activeDependentIndex].dob
-            }
-            onClick={() => {
-              if (activeDependentIndex + 1 < dependentCount) {
-                setActiveDependentIndex(activeDependentIndex + 1);
-              } else {
-                setAnswers((prev) => ({
-                  ...prev,
-                  dependentsList: dependents,
-                }));
-                setSubStep(0);
-                setActiveDependentIndex(0);
-                goNext();
+            <button
+              disabled={
+                !dependents[activeDependentIndex].name ||
+                !dependents[activeDependentIndex].dob
               }
-            }}
-            className="w-full bg-green-600 py-3 sm:py-4 rounded-xl mt-4"
-          >
-            Save & Continue
-          </button>
+              onClick={() => {
+                if (activeDependentIndex + 1 < dependentCount) {
+                  setActiveDependentIndex(activeDependentIndex + 1);
+                } else {
+                  setAnswers((prev) => ({
+                    ...prev,
+                    dependentsList: dependents,
+                  }));
+                  setSubStep(0);
+                  setActiveDependentIndex(0);
+                  goNext();
+                }
+              }}
+              className="w-full bg-green-600 py-3 rounded-lg font-semibold mt-4 disabled:opacity-50"
+            >
+              Save & Continue
+            </button>
+          </div>
         </div>
       )}
 
