@@ -1,5 +1,5 @@
-import { IRSRefundCalculator } from "./irs-refund-calc/page";
-import { AZRefundCalculator } from "./az-refund-calc/page";
+import IRSRefundCalculator from "./irs-refund-calc/page";
+import AZRefundCalculator from "./az-refund-calc/page";
 
 export const metadata = {
   title: "Tax Refund Status - GG Tax Services",
