@@ -264,7 +264,7 @@ export default function DocumentPrepQuestionnaire() {
                   updated[activeDependentIndex].dob = e.target.value;
                   setDependents(updated);
                 }}
-                className=" p-3 rounded-lg bg-gray-800 border mt-4 border-gray-700"
+                className="  rounded-lg bg-gray-800 border  border-gray-700"
               />
             </div>
 
