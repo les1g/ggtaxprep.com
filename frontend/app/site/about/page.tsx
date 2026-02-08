@@ -117,7 +117,7 @@ export default function About() {
             href="/client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
           >
-            Schedule Your Consultation
+            Schedule
           </Link>
         </div>
       </section>
