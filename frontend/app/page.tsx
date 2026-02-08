@@ -14,9 +14,9 @@ export default function Home() {
           Taxes Made Simple
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-          Looking for a reliable tax preparer in Arizona? GG Tax Services
-          provides convenient, accurate, and personalized tax preparation for
-          individuals and small businesses.
+          Looking for a reliable tax preparer? GG Tax Services provides
+          convenient, accurate, and personalized tax preparation for individuals
+          and small businesses.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
