@@ -97,7 +97,7 @@ export default function About() {
           </p>
 
           <a
-            href="/images/business-card.png"
+            href="/images/business-card-ggtax.png"
             download
             className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition"
           >
