@@ -128,7 +128,7 @@ export default function RootLayout({
             </div>
 
             <p className="text-sm">
-              &copy; GG Tax Services LLC. All rights reserved.
+              &copy; GG Tax Services All rights reserved.
             </p>
           </footer>
         </div>
