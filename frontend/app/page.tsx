@@ -49,7 +49,7 @@ export default function Home() {
           {/* Get Started Button */}
           <div className="mb-10">
             <Link
-              href="/client/submission"
+              href="/client/scheduling"
               className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-10 rounded-lg transition"
             >
               Get Started
