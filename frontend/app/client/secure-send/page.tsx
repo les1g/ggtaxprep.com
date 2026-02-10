@@ -262,13 +262,9 @@ export default function SecureSend() {
             stored safely.
           </p>
           <p className="text-red-400 text-sm mt-2 font-bold">
-            Note: please fill out a{" "}
-            <a href="/client/submission" className="underline">
-              client questionnaire
-            </a>{" "}
-            before uploading documents. This helps us prepare for your tax
-            return and ensures we have all the necessary documents to file your
-            return.
+            Note: Before uploading documents make sure you have recieved a
+            checklist of what we need. This helps us prepare for your tax return
+            and ensures we have all the necessary documents to file your return.
           </p>
         </div>
 

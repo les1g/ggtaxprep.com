@@ -19,7 +19,7 @@ export default function Home() {
           and small businesses.
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+        <div className="space-x-4">
           <a
             href="tel:+14805358927"
             className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
@@ -36,7 +36,7 @@ export default function Home() {
       </section>
 
       {/* How It Works */}
-      <section className="bg-gray-900 py-10">
+      <section className="bg-gray-900 py-5">
         <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">How It Works</h2>
           <p className="text-gray-300 max-w-4xl mx-auto mb-6">
@@ -61,17 +61,17 @@ export default function Home() {
               {
                 step: "1",
                 title: "Submit Your Info",
-                text: "You can call to schedule or book online, or go straight to our client questionnaire. This lets you know exactly what documents you need to submit.",
+                text: "You can call, email, text, or book online to get started. We’ll let you know exactly which documents you need to provide.",
               },
               {
                 step: "2",
                 title: "We Prepare Your Taxes",
-                text: "Your return is prepared within 1–2 business days after receiving your information. We’ll contact you before starting your taxes to confirm details and answer any questions.",
+                text: "Your return is usually prepared within 1–2 business days after receiving your information. We’ll contact you before starting to confirm details.",
               },
               {
                 step: "3",
                 title: "Review & Approve",
-                text: "You don’t pay until you review everything. We provide full transparency and send you a copy of your return before you approve filing.",
+                text: "You don’t pay until you review everything. We provide full transparency and send you a copy before you approve filing.",
               },
               {
                 step: "4",

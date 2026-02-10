@@ -64,38 +64,36 @@ export default function Services() {
       <nav className="bg-gray-900 border-b border-gray-800 py-4">
         <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-3">
           <Link
+            href="/client/secure-send"
+            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
+                 hover:bg-green-400 hover:text-gray-900 transition-colors"
+          >
+            Secure Send Portal
+          </Link>
+          <Link
             href="/tools/refund"
             className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
                  hover:bg-green-400 hover:text-gray-900 transition-colors"
           >
             Track Refund
           </Link>
-
           <Link
-            href="/client/secure-send"
+            href="/site/contact"
             className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
                  hover:bg-green-400 hover:text-gray-900 transition-colors"
           >
-            Upload Documents
-          </Link>
-
-          <Link
-            href="/client/submission"
-            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold 
-                 hover:bg-green-400 hover:text-gray-900 transition-colors"
-          >
-            Client Questionnaire
+            Contact Us
           </Link>
         </div>
       </nav>
 
       {/* Page header */}
-      <section className="text-center py-16 bg-gray-800">
+      <section className="text-center py-10 bg-gray-800">
         <h2 className="text-4xl font-semibold text-green-400 mb-4">Services</h2>
         <p className="text-lg max-w-2xl mx-auto text-gray-300">
-          Comprehensive tax preparation and compliance support for individuals
-          and small businesses in Arizona. Simple flat-rate pricing—no hidden
-          fees.
+          Comprehensive tax preparation, TPT filings, small‑business returns,
+          and amended return support for individuals and Arizona businesses.
+          Transparent pricing with no hidden fees.
         </p>
       </section>
       {/* Services */}
@@ -113,18 +111,22 @@ export default function Services() {
             </h3>
             <p className="text-3xl font-bold text-white mb-4">$100</p>
             <p className="text-gray-300 text-sm mb-4">
-              Form 1040, W‑2, 1099, itemized deductions, tax credits, and e‑file
-              submission. No matter how complex.
+              Form 1040 preparation with all forms and schedules included.
+              Covers W‑2, 1099, credits, deductions, and e‑file submission, no
+              matter how simple or complex.
             </p>
             <ul className="list-disc list-inside text-gray-300 text-sm space-y-2 mb-6">
               <li>Federal & Arizona returns</li>
-              <li>Amended returns</li>
+              <li>All forms, schedules, and worksheets included</li>
+              <li>W‑2, 1099, gig‑work, and investment income</li>
+              <li>Itemized deductions & tax credits</li>
+              <li>Amended returns (additional fee applies)</li>
               <li>ITIN support</li>
-              <li>W‑2, 1099, all deductions included</li>
-              <li>All forms and schedules included</li>
+              <li>Full review + e‑file submission</li>
+              <li>Copy of your return for your records</li>
             </ul>
             <a
-              href="/client/submission"
+              href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
               Get Started
@@ -138,15 +140,20 @@ export default function Services() {
             </h3>
             <p className="text-3xl font-bold text-white mb-4">$150</p>
             <p className="text-gray-300 text-sm mb-4">
-              Sole proprietor filings with income/expense categorization and
-              quarterly estimates.
+              Complete Schedule C preparation for sole proprietors and
+              single‑member LLCs. Includes income/expense categorization, tax
+              planning, and year‑end cleanup.
             </p>
             <ul className="list-disc list-inside text-gray-300 text-sm space-y-2 mb-6">
+              <li>Full Schedule C preparation</li>
               <li>Books review and cleanup</li>
-              <li>Depreciation and assets</li>
+              <li>Income & expense categorization</li>
+              <li>Depreciation and asset reporting</li>
+              <li>Mileage, home office, and business deductions</li>
               <li>Estimated tax planning</li>
-              <li>Income/expense categorization</li>
-              <li>Quarterly estimates included</li>
+              <li>Quarterly estimate calculations</li>
+              <li>Integration with your personal tax return</li>
+              <li>Copy of your return for your records</li>
             </ul>
             <a
               href="/client/scheduling"
@@ -159,63 +166,49 @@ export default function Services() {
           {/* Arizona TPT */}
           <div className="p-6 border border-gray-700 rounded bg-gray-800 hover:border-green-400 transition-colors">
             <h3 className="text-green-400 font-semibold text-2xl mb-3">
-              {" "}
-              Arizona TPT Filings{" "}
-            </h3>{" "}
-            <p className="text-3xl font-bold text-white mb-4">
-              {" "}
-              Starts at $35 per filing{" "}
-            </p>{" "}
+              Arizona TPT Filings
+            </h3>
+            <p className="text-3xl font-bold text-white mb-4">Starts at $35</p>
             <p className="text-gray-300 text-sm mb-4">
-              {" "}
-              Full support for Transaction Privilege Tax setup,
-              monthly/quarterly filings, amendments for previously filed zero
-              returns, and communication with AZDOR on your behalf.{" "}
-            </p>{" "}
+              Full support for Transaction Privilege Tax setup, filings,
+              amendments, and AZDOR communication. Perfect for dealerships,
+              small businesses, and new filers.
+            </p>
             <ul className="list-disc list-inside text-gray-300 text-sm space-y-2 mb-6">
-              {" "}
-              <li>City and state reporting</li>{" "}
-              <li>Monthly, quarterly, or annual filing options</li>{" "}
-              <li>Amended TPT returns </li>{" "}
-              <li>Late filing remediation & penalty abatement requests</li>{" "}
-              <li>We communicate with AZDOR for you</li>{" "}
+              <li>City and state TPT reporting</li>
+              <li>Monthly, quarterly, or annual filing</li>
+              <li>Amended TPT returns (additional fee applies)</li>
+              <li>Late filing remediation & penalty abatement requests</li>
               <li>
                 Full compliance review of sales, purchases, and deductions
-              </li>{" "}
-            </ul>{" "}
+              </li>
+              <li>We communicate with AZDOR on your behalf</li>
+              <li>Confirmation of filing and payment status with AZDOR</li>
+            </ul>
             <a
               href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
-              {" "}
-              Get Started{" "}
+              Get Started
             </a>
           </div>
         </div>
       </section>
 
-      {/* Upload Section */}
+      {/* Getting Started Section */}
       <section className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-10 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-green-400 mb-4">
-          Upload Documents
+          Getting Started
         </h2>
         <p className="text-gray-300 mb-6 leading-relaxed">
-          Ready to file with us? Use our secure upload portal to send your tax
-          documents safely. Please{" "}
-          <a className="underline" href="/client/scheduling">
-            schedule an appointment
-          </a>{" "}
-          or submit a{" "}
-          <a className="underline" href="/client/submission">
-            client questionnaire
-          </a>{" "}
-          before uploading.
+          Ready to file with us? Please call, email, or schedule a consultation
+          so we can review your situation and confirm your service needs.
         </p>
         <Link
-          href="/client/secure-send"
+          href="/client/scheduling"
           className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block transition-colors"
         >
-          Upload Files
+          Schedule Your Consultation
         </Link>
       </section>
 
