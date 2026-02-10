@@ -136,7 +136,7 @@ export default function Services() {
             <h3 className="text-green-400 font-semibold text-2xl mb-3">
               Small Business
             </h3>
-            <p className="text-3xl font-bold text-white mb-4">$100</p>
+            <p className="text-3xl font-bold text-white mb-4">$150</p>
             <p className="text-gray-300 text-sm mb-4">
               Sole proprietor filings with income/expense categorization and
               quarterly estimates.
@@ -159,29 +159,41 @@ export default function Services() {
           {/* Arizona TPT */}
           <div className="p-6 border border-gray-700 rounded bg-gray-800 hover:border-green-400 transition-colors">
             <h3 className="text-green-400 font-semibold text-2xl mb-3">
-              Arizona TPT Filings
-            </h3>
-            <p className="text-3xl font-bold text-white mb-4">$25 per filing</p>
+              {" "}
+              Arizona TPT Filings{" "}
+            </h3>{" "}
+            <p className="text-3xl font-bold text-white mb-4">
+              {" "}
+              Starts at $35 per filing{" "}
+            </p>{" "}
             <p className="text-gray-300 text-sm mb-4">
-              Transaction Privilege Tax setup, monthly/quarterly filings, and
-              compliance checks.
-            </p>
+              {" "}
+              Full support for Transaction Privilege Tax setup,
+              monthly/quarterly filings, amendments for previously filed zero
+              returns, and communication with AZDOR on your behalf.{" "}
+            </p>{" "}
             <ul className="list-disc list-inside text-gray-300 text-sm space-y-2 mb-6">
-              <li>City and state reporting</li>
-              <li>Nexus evaluation</li>
-              <li>Late filing remediation</li>
-              <li>Monthly or quarterly options</li>
-              <li>All filings fully managed</li>
-            </ul>
+              {" "}
+              <li>City and state reporting</li>{" "}
+              <li>Monthly, quarterly, or annual filing options</li>{" "}
+              <li>Amended TPT returns </li>{" "}
+              <li>Late filing remediation & penalty abatement requests</li>{" "}
+              <li>We communicate with AZDOR for you</li>{" "}
+              <li>
+                Full compliance review of sales, purchases, and deductions
+              </li>{" "}
+            </ul>{" "}
             <a
               href="/client/scheduling"
               className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
             >
-              Get Started
+              {" "}
+              Get Started{" "}
             </a>
           </div>
         </div>
       </section>
+
       {/* Upload Section */}
       <section className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-10 max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-green-400 mb-4">
