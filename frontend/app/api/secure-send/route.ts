@@ -15,7 +15,7 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-// Secure server-side Supabase client
+// Secure server-side Supabase client with service role key (never exposed to client)
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 const emailAPI = new TransactionalEmailsApi();
