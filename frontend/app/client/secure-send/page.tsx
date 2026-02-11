@@ -1,14 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@supabase/supabase-js";
 import { ArrowLeft } from "lucide-react";
 import Link from "next/link";
-
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-);
 
 export default function SecureSend() {
   const [files, setFiles] = useState<File[]>([]);
@@ -170,6 +164,11 @@ export default function SecureSend() {
       return;
     }
 
+    if (!phone) {
+      setError("Please enter your phone number");
+      return;
+    }
+
     if (files.length === 0) {
       setError("Please select at least one file");
       return;
@@ -180,45 +179,33 @@ export default function SecureSend() {
       return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
     setUploading(true);
 
     try {
-      const fileUrls: string[] = [];
-      const timestamp = Date.now();
+      const formData = new FormData();
+      formData.append("email", email);
+      formData.append("phone", phone);
+      formData.append("message", message);
 
-      for (const file of files) {
-        const fileName = `${timestamp}-${Math.random().toString(36).substring(7)}-${file.name}`;
-
-        const { error: uploadError } = await supabase.storage
-          .from("uploaded-docs")
-          .upload(fileName, file);
-
-        if (uploadError) throw new Error(uploadError.message);
-
-        const { data: signedUrlData, error: signError } = await supabase.storage
-          .from("uploaded-docs")
-          .createSignedUrl(fileName, 60 * 60 * 24 * 7);
-
-        if (signError) throw new Error(signError.message);
-
-        fileUrls.push(signedUrlData.signedUrl);
-      }
+      files.forEach((file) => {
+        formData.append("files", file);
+      });
 
       const response = await fetch("/api/secure-send", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email,
-          message,
-          fileNames: files.map((f) => f.name).join(", "),
-          fileUrls,
-        }),
+        body: formData,
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.details || data.error || "Upload failed");
+        throw new Error(data.error || "Upload failed");
       }
 
       setUploadComplete(true);
@@ -234,7 +221,6 @@ export default function SecureSend() {
       const errorMessage =
         err instanceof Error ? err.message : "Failed to upload files";
       setError(errorMessage);
-      console.error("Upload error:", errorMessage);
     } finally {
       setUploading(false);
     }
@@ -262,9 +248,9 @@ export default function SecureSend() {
             stored safely.
           </p>
           <p className="text-red-400 text-sm mt-2 font-bold">
-            Note: Before uploading documents make sure you have recieved a
-            checklist of what we need. This helps us prepare for your tax return
-            and ensures we have all the necessary documents to file your return.
+            Note: Before uploading documents make sure you received a checklist
+            of what we need. This helps us prepare for your tax return and
+            ensures we have all the necessary documents to file your return.
           </p>
         </div>
 
@@ -337,6 +323,7 @@ export default function SecureSend() {
 
               <input
                 type="tel"
+                maxLength={14}
                 value={phone}
                 onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
                 placeholder="(123) 456-7890"
