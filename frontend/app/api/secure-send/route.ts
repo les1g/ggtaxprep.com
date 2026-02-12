@@ -58,9 +58,13 @@ export async function POST(request: NextRequest) {
     const ALLOWED_TYPES = [
       "application/pdf",
       "image/jpeg",
+      "image/jpg",
+      "image/pjpeg",
       "image/png",
       "image/heic",
       "image/heif",
+      "image/heic-sequence",
+      "image/heif-sequence",
       "application/msword",
       "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       "application/vnd.ms-excel",
@@ -90,7 +94,23 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate each file
+    // ----------------------
+    // File Validation
+    // ----------------------
+
+    const ALLOWED_EXTENSIONS = [
+      ".pdf",
+      ".jpg",
+      ".jpeg",
+      ".png",
+      ".heic",
+      ".heif",
+      ".doc",
+      ".docx",
+      ".xls",
+      ".xlsx",
+    ];
+
     for (const file of files) {
       if (file.size > MAX_FILE_SIZE) {
         return NextResponse.json(
@@ -99,7 +119,15 @@ export async function POST(request: NextRequest) {
         );
       }
 
-      if (!ALLOWED_TYPES.includes(file.type)) {
+      const extension = file.name
+        .toLowerCase()
+        .substring(file.name.lastIndexOf("."));
+
+      const isValidType =
+        ALLOWED_TYPES.includes(file.type) ||
+        ALLOWED_EXTENSIONS.includes(extension);
+
+      if (!isValidType) {
         return NextResponse.json(
           { error: `${file.name} has an invalid file type.` },
           { status: 400 },
@@ -128,7 +156,7 @@ export async function POST(request: NextRequest) {
       const { error: uploadError } = await supabase.storage
         .from("uploaded-docs")
         .upload(uniqueName, buffer, {
-          contentType: file.type,
+          contentType: file.type || "application/octet-stream",
         });
 
       if (uploadError) {
