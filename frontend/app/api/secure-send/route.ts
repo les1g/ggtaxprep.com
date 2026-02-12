@@ -1,5 +1,3 @@
-export const runtime = "nodejs";
-
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -17,6 +15,7 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
+// Secure server-side Supabase client with service role key (never exposed to client)
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 const emailAPI = new TransactionalEmailsApi();
@@ -34,25 +33,45 @@ export async function POST(request: NextRequest) {
       !SUPABASE_URL ||
       !SUPABASE_SERVICE_ROLE_KEY
     ) {
+      console.error("Missing env vars");
       return NextResponse.json(
         { error: "Server is not configured properly." },
         { status: 500 },
       );
     }
 
+    // ✅ Accept FormData instead of JSON
     const formData = await request.formData();
+
+    // ----------------------
+    // Extract & Validate Input
+    // ----------------------
 
     const email = (formData.get("email") as string)?.trim();
     const phone = (formData.get("phone") as string)?.trim();
     const message = (formData.get("message") as string)?.trim();
     const files = formData.getAll("files") as File[];
 
-    const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB per file
+    const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB
+    const MAX_FILES = 10;
 
-    // ----------------------
-    // Basic Validation
-    // ----------------------
+    const ALLOWED_TYPES = [
+      "application/pdf",
+      "image/jpeg",
+      "image/jpg",
+      "image/pjpeg",
+      "image/png",
+      "image/heic",
+      "image/heif",
+      "image/heic-sequence",
+      "image/heif-sequence",
+      "application/msword",
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+      "application/vnd.ms-excel",
+      "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    ];
 
+    // Basic validation
     if (!email || !phone || !message) {
       return NextResponse.json(
         { error: "Missing required fields" },
@@ -68,15 +87,15 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!files || files.length === 0) {
+    if (files.length === 0 || files.length > MAX_FILES) {
       return NextResponse.json(
-        { error: "Please upload at least one file." },
+        { error: `You can upload up to ${MAX_FILES} files.` },
         { status: 400 },
       );
     }
 
     // ----------------------
-    // iPhone-Safe File Validation
+    // File Validation
     // ----------------------
 
     const ALLOWED_EXTENSIONS = [
@@ -93,18 +112,22 @@ export async function POST(request: NextRequest) {
     ];
 
     for (const file of files) {
-      if (!file || file.size > MAX_FILE_SIZE) {
+      if (file.size > MAX_FILE_SIZE) {
         return NextResponse.json(
-          { error: `${file?.name || "File"} exceeds 25MB limit.` },
+          { error: `${file.name} exceeds 25MB limit.` },
           { status: 400 },
         );
       }
 
-      const lastDot = file.name.lastIndexOf(".");
-      const extension =
-        lastDot !== -1 ? file.name.substring(lastDot).toLowerCase() : "";
+      const extension = file.name
+        .toLowerCase()
+        .substring(file.name.lastIndexOf("."));
 
-      if (!ALLOWED_EXTENSIONS.includes(extension)) {
+      const isValidType =
+        ALLOWED_TYPES.includes(file.type) ||
+        ALLOWED_EXTENSIONS.includes(extension);
+
+      if (!isValidType) {
         return NextResponse.json(
           { error: `${file.name} has an invalid file type.` },
           { status: 400 },
@@ -112,36 +135,41 @@ export async function POST(request: NextRequest) {
       }
     }
 
+    console.log("Processing submission:", {
+      email,
+      fileCount: files.length,
+    });
+
     const fileUrls: string[] = [];
     const fileNames: string[] = [];
+
     const timestamp = Date.now();
 
-    // ----------------------
-    // Upload Files (Unlimited)
-    // ----------------------
-
+    // ✅ Upload files using service role
     for (const file of files) {
       const uniqueName = `${timestamp}-${Math.random()
         .toString(36)
         .substring(2)}-${file.name}`;
 
+      const buffer = Buffer.from(await file.arrayBuffer());
+
       const { error: uploadError } = await supabase.storage
         .from("uploaded-docs")
-        .upload(uniqueName, file, {
+        .upload(uniqueName, buffer, {
           contentType: file.type || "application/octet-stream",
-          upsert: true,
         });
 
       if (uploadError) {
         throw new Error(uploadError.message);
       }
 
+      // Generate 7-day signed URL
       const { data: signedUrlData, error: signError } = await supabase.storage
         .from("uploaded-docs")
         .createSignedUrl(uniqueName, 60 * 60 * 24 * 7);
 
-      if (signError || !signedUrlData) {
-        throw new Error(signError?.message || "Failed to create signed URL");
+      if (signError) {
+        throw new Error(signError.message);
       }
 
       fileUrls.push(signedUrlData.signedUrl);
@@ -149,14 +177,15 @@ export async function POST(request: NextRequest) {
     }
 
     // ------------------------
-    // Client Confirmation Email
+    // Confirmation email to client
     // ------------------------
+    console.log("Client email received:", email);
 
     const clientEmail = new SendSmtpEmail();
     clientEmail.to = [{ email }];
     clientEmail.sender = {
-      email: BREVO_SENDER_EMAIL!,
-      name: BREVO_SENDER_NAME!,
+      email: BREVO_SENDER_EMAIL,
+      name: BREVO_SENDER_NAME,
     };
     clientEmail.subject = "✓ GG Tax Services - Documents Received";
     clientEmail.htmlContent = `
@@ -166,22 +195,19 @@ export async function POST(request: NextRequest) {
       <p>${fileNames.join(", ")}</p>
       <p><strong>Your Message:</strong> ${message}</p>
       <p><strong>Phone:</strong> ${phone}</p>
-      <p style="color:#666;font-size:13px;">
-        Our team will review your documents within 1-2 business days.
-      </p>
+      <p style="color:#666;font-size:13px;">Our team will review your documents within 1-2 business days.</p>
     `;
 
     await emailAPI.sendTransacEmail(clientEmail);
 
     // ------------------------
-    // Admin Notification Email
+    // Notification email to admin
     // ------------------------
-
     const adminEmail = new SendSmtpEmail();
-    adminEmail.to = [{ email: ADMIN_EMAIL! }];
+    adminEmail.to = [{ email: ADMIN_EMAIL }];
     adminEmail.sender = {
-      email: BREVO_SENDER_EMAIL!,
-      name: BREVO_SENDER_NAME!,
+      email: BREVO_SENDER_EMAIL,
+      name: BREVO_SENDER_NAME,
     };
     adminEmail.subject = `📄 New Document Upload from ${email}`;
     adminEmail.htmlContent = `
@@ -197,12 +223,12 @@ export async function POST(request: NextRequest) {
           .map((url) => `<li><a href="${url}">Download File</a></li>`)
           .join("")}
       </ul>
-      <p style="color:#999;font-size:12px;">
-        Timestamp: ${new Date().toLocaleString()}
-      </p>
+      <p style="color:#999;font-size:12px;">Timestamp: ${new Date().toLocaleString()}</p>
     `;
 
     await emailAPI.sendTransacEmail(adminEmail);
+
+    console.log("Submission successful for:", email);
 
     return NextResponse.json(
       { success: true, message: "Documents uploaded successfully." },
@@ -210,6 +236,8 @@ export async function POST(request: NextRequest) {
     );
   } catch (error) {
     const errorMessage = error instanceof Error ? error.message : String(error);
+
+    console.error("Submission error:", errorMessage);
 
     return NextResponse.json(
       { error: "Failed to process submission", details: errorMessage },
