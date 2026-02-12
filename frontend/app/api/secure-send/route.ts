@@ -1,3 +1,5 @@
+export const runtime = "nodejs";
+
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
@@ -15,7 +17,6 @@ const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
 
-// Secure server-side Supabase client
 const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
 
 const emailAPI = new TransactionalEmailsApi();
@@ -46,8 +47,7 @@ export async function POST(request: NextRequest) {
     const message = (formData.get("message") as string)?.trim();
     const files = formData.getAll("files") as File[];
 
-    const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB
-    const MAX_FILES = 10;
+    const MAX_FILE_SIZE = 25 * 1024 * 1024; // 25MB per file
 
     // ----------------------
     // Basic Validation
@@ -68,9 +68,9 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (!files || files.length === 0 || files.length > MAX_FILES) {
+    if (!files || files.length === 0) {
       return NextResponse.json(
-        { error: `You can upload up to ${MAX_FILES} files.` },
+        { error: "Please upload at least one file." },
         { status: 400 },
       );
     }
@@ -117,7 +117,7 @@ export async function POST(request: NextRequest) {
     const timestamp = Date.now();
 
     // ----------------------
-    // Upload Files (iPhone Compatible)
+    // Upload Files (Unlimited)
     // ----------------------
 
     for (const file of files) {
