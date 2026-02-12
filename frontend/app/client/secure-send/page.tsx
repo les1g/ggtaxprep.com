@@ -250,7 +250,8 @@ export default function SecureSend() {
               info@ggtaxprep.com
             </a>
             . Please note that email is not considered a fully secure method for
-            transmitting sensitive information.
+            transmitting sensitive information, so we recommend using this
+            secure upload form whenever possible.
           </p>
         </div>
 
