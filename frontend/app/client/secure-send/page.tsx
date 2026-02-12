@@ -243,14 +243,14 @@ export default function SecureSend() {
           <h1 className="text-4xl font-bold text-white mb-4">
             Secure Document Upload
           </h1>
-          <p className="text-gray-300">
-            Upload your tax documents securely. All files are encrypted and
-            stored safely.
-          </p>
-          <p className="text-red-400 text-sm mt-2 font-bold">
-            Note: Before uploading documents make sure you received a checklist
-            of what we need. This helps us prepare for your tax return and
-            ensures we have all the necessary documents to file your return.
+          <p className="text-gray-400 text-lg">
+            Upload your tax documents securely and easily. If you experience
+            upload issues, you may email documents to{" "}
+            <a className="underline" href="mailto:info@ggtaxprep.com">
+              info@ggtaxprep.com
+            </a>
+            . Please note that email is not considered a fully secure method for
+            transmitting sensitive information.
           </p>
         </div>
 
@@ -477,20 +477,6 @@ export default function SecureSend() {
                 </>
               )}
             </button>
-            <p>
-              Your documents are not uploaded until you see the{" "}
-              <span className="text-green-400">
-                &quot;Documents uploaded successfully!&quot;
-              </span>{" "}
-              message. Please reach out if you fail to upload your documents.
-              You will receive an email confirmation once we have received and
-              reviewed your documents. If you do not receive a confirmation
-              email check your spam folder or{" "}
-              <a href="/site/contact" className="underline">
-                contact us
-              </a>
-              .
-            </p>
           </form>
         </div>
 
