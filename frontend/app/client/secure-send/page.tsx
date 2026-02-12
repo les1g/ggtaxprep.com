@@ -244,14 +244,11 @@ export default function SecureSend() {
             Secure Document Upload
           </h1>
           <p className="text-gray-400 text-lg">
-            Upload your tax documents securely and easily. If you experience
-            upload issues, you may email documents to{" "}
+            If you experience upload issues, you may email documents to{" "}
             <a className="underline" href="mailto:info@ggtaxprep.com">
               info@ggtaxprep.com
             </a>
-            . Please note that email is not considered a fully secure method for
-            transmitting sensitive information, so we recommend using this
-            secure upload form whenever possible.
+            .
           </p>
         </div>
 
