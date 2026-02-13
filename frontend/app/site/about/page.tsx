@@ -67,7 +67,7 @@ export default function About() {
             <div className="space-y-2 text-gray-300">
               <p>
                 <span className="text-green-400 font-semibold">PTIN:</span>{" "}
-                #P00736013
+                #P0*****13
               </p>
               <p>
                 <span className="text-green-400 font-semibold">
