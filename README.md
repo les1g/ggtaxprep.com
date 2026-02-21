@@ -19,11 +19,11 @@
   <p align="center">
     A modern, professional tax preparation business web application built with Next.js, featuring client management, appointment scheduling, and comprehensive service information.
     <br />
-    <a href="https://github.com/les1g/GG-Tax"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/les1g/ggtaxprep.com"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://gg-tax.vercel.app/">View Demo</a> •
-    <a href="https://github.com/les1g/GG-Tax/issues/new">Report Bug</a> •
+    <a href="https://ggtaxprep.com/">View Demo</a> •
+    <a href="https://github.com/les1g/ggtaxprep.com/issues/new">Report Bug</a> •
     <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
@@ -57,7 +57,7 @@
 
 ## About The Project
 
-GG Tax Services is a professional tax preparation business based in Scottsdale, Arizona. This web application provides:
+GG Tax Services is a professional tax preparation business based in Phoenix, Arizona. This web application provides:
 
 - Comprehensive information about tax preparation services  
 - Online appointment scheduling  
@@ -81,7 +81,7 @@ GG Tax Services is a professional tax preparation business based in Scottsdale, 
 
 ## Getting Started
 
-The site is live on: https://gg-tax.vercel.app/. Alternatively, you can get a local copy up and running by following these steps.
+The site is live on: https://ggtaxprep.com/. Alternatively, you can get a local copy up and running by following these steps.
 
 ### Prerequisites
 
@@ -92,8 +92,8 @@ The site is live on: https://gg-tax.vercel.app/. Alternatively, you can get a lo
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/les1g/GG-Tax.git
-   cd GG-Tax
+   git clone https://github.com/les1g/ggtaxprep.com.git
+   cd frontend
    ```
 2. Install dependencies
    ```sh
@@ -136,7 +136,7 @@ DATABASE_URL=your_database_url
 - [ ] CI: GitHub Actions for lint, typecheck, test  
 - [ ] Analytics: Vercel Analytics or GA4  
 
-See the [open issues](https://github.com/les1g/GG-Tax/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/les1g/ggtaxprep.com/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -144,7 +144,7 @@ See the [open issues](https://github.com/les1g/GG-Tax/issues) for a full list of
 
 ## Contributing
 
-This is a private business application. For inquiries about collaboration or services, please visit [https://gg-tax.vercel.app/contact](https://gg-tax.vercel.app/contact).
+This is a private business application. For inquiries about collaboration or services, please visit [https://gg-tax.vercel.app/contact](https://ggtaxprep.com/site/contact).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -152,10 +152,10 @@ This is a private business application. For inquiries about collaboration or ser
 
 ## Contact
 
-**GG Tax Preparation Services LLC**  
-- Website: [https://gg-tax.vercel.app/](https://gg-tax.vercel.app/)  
-- Location: Scottsdale, Arizona  
-- Services: Professional Tax Preparation  
+**GG Tax Services LLC**  
+- Website: [https://ggtaxprep.com/](https://ggtaxprep.com/)  
+- Location: Phoenix, Arizona  
+- Services: Tax Preparation Services
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -183,19 +183,18 @@ This is a private business application. For inquiries about collaboration or ser
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/les1g/GG-Tax.svg?style=for-the-badge
-[contributors-url]: https://github.com/les1g/GG-Tax/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/les1g/GG-Tax.svg?style=for-the-badge
-[forks-url]: https://github.com/les1g/GG-Tax/network/members
-[stars-shield]: https://img.shields.io/github/stars/les1g/GG-Tax.svg?style=for-the-badge
-[stars-url]: https://github.com/les1g/GG-Tax/stargazers
-[issues-shield]: https://img.shields.io/github/issues/les1g/GG-Tax.svg?style=for-the-badge
-[issues-url]: https://github.com/les1g/GG-Tax/issues
-[license-shield]: https://img.shields.io/github/license/les1g/GG-Tax.svg?style=for-the-badge
-[license-url]: https://github.com/les1g/GG-Tax/blob/main/LICENSE
+[contributors-shield]: https://img.shields.io/github/contributors/les1g/ggtaxprep.com.svg?style=for-the-badge
+[contributors-url]: https://github.com/les1g/ggtaxprep.com/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/les1g/ggtaxprep.com.svg?style=for-the-badge
+[forks-url]: https://github.com/les1g/ggtaxprep.com/network/members
+[stars-shield]: https://img.shields.io/github/stars/les1g/ggtaxprep.com.svg?style=for-the-badge
+[stars-url]: https://github.com/les1g/ggtaxprep.com/stargazers
+[issues-shield]: https://img.shields.io/github/issues/les1g/ggtaxprep.com.svg?style=for-the-badge
+[issues-url]: https://github.com/les1g/ggtaxprep.com/issues
+[license-shield]: https://img.shields.io/github/license/les1g/ggtaxprep.com.svg?style=for-the-badge
+[license-url]: https://github.com/les1g/ggtaxprep.com/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://linkedin.com/in/gisel-garrido
-[product-screenshot]: https://github.com/user-attachments/assets/75c111e7-e80c-486d-8515-06a234232d46
 [Next.js]: https://img.shields.io/badge/Next.js-black?style=for-the-badge&logo=next.js&logoColor=white
 [Next-url]: https://nextjs.org/
 [TypeScript]: https://img.shields.io/badge/TypeScript-blue?style=for-the-badge&logo=typescript&logoColor=white
