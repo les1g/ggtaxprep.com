@@ -10,7 +10,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/les1g">
+  <a href="https://ggtaxprep.com">
     <img src="https://github.com/user-attachments/assets/bcd95f96-2441-459c-905c-7843c7812bf6" alt="Logo" width="100" height="100">
   </a>
 
