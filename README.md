@@ -17,7 +17,8 @@
   <h3 align="center">GG Tax Services</h3>
 
   <p align="center">
-    A modern, professional tax preparation business web application built with Next.js, featuring client management, appointment scheduling, and comprehensive service information.
+    A modern, professional tax preparation business web application built with Next.js, features a secure portal, appointment scheduling, comprehensive service information, and more.
+    <br>
     <br />
     <a href="https://github.com/les1g/ggtaxprep.com"><strong>Explore the docs »</strong></a>
     <br />
@@ -57,14 +58,13 @@
 
 ## About The Project
 
-GG Tax Services is a professional tax preparation business based in Phoenix, Arizona. This web application provides:
+This web application provides:
 
 - Comprehensive information about tax preparation services  
 - Online appointment scheduling  
 - Client portal for document management  
 - Educational resources and tax guides  
-- Transparent pricing information  
-- Secure client authentication  
+- Pricing information    
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
