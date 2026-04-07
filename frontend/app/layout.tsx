@@ -78,58 +78,127 @@ export default function RootLayout({
           <main className="flex-grow">{children}</main>
 
           {/* Footer */}
-          <footer className="bg-gray-900 text-gray-400 text-center py-6">
-            <div className="flex justify-center space-x-6 mb-4">
-              <a
-                href="https://www.instagram.com/ggtaxprep_"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-400 transition-colors"
-                aria-label="Instagram"
-              >
-                <Image
-                  src="/icons/instagram.svg"
-                  alt="Instagram"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6 inline"
-                />
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61582094297032"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-400 transition-colors"
-                aria-label="Facebook"
-              >
-                <Image
-                  src="/icons/facebook.svg"
-                  alt="Facebook"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6 inline"
-                />
-              </a>
-              <a
-                href="https://share.google/6EWZ0fv9gCbniIfqF"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-green-400 transition-colors"
-                aria-label="Google Review"
-              >
-                <Image
-                  src="/icons/google-review.svg"
-                  alt="Google Review"
-                  width={24}
-                  height={24}
-                  className="h-6 w-6 inline"
-                />
-              </a>
+          <footer className="bg-gray-900 border-t border-gray-800 text-gray-400">
+            <div className="max-w-6xl mx-auto px-6 py-10 grid gap-8 md:grid-cols-3">
+              {/* Brand / About */}
+              <div>
+                <h3 className="text-white font-semibold text-lg mb-3">
+                  GG Tax Services
+                </h3>
+                <p className="text-sm leading-relaxed">
+                  Professional tax preparation for individuals and small
+                  businesses. Simple, clear, and stress-free service.
+                </p>
+                <p className="text-sm mt-3">📍 By appointment only</p>
+              </div>
+
+              {/* Navigation */}
+              <div>
+                <h4 className="text-white font-semibold mb-3">Quick Links</h4>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    <Link href="/" className="hover:text-green-400 transition">
+                      Home
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/about"
+                      className="hover:text-green-400 transition"
+                    >
+                      About
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/services"
+                      className="hover:text-green-400 transition"
+                    >
+                      Services
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/schedule"
+                      className="hover:text-green-400 transition"
+                    >
+                      Schedule
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/contact"
+                      className="hover:text-green-400 transition"
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              {/* Contact + Social */}
+              <div>
+                <h4 className="text-white font-semibold mb-3">Contact</h4>
+
+                <p className="text-sm mb-2">📧 your@email.com</p>
+                <p className="text-sm mb-4">📞 (XXX) XXX-XXXX</p>
+
+                <div className="flex space-x-4">
+                  <a
+                    href="https://www.instagram.com/ggtaxprep_"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-400 transition"
+                    aria-label="Instagram"
+                  >
+                    <Image
+                      src="/icons/instagram.svg"
+                      alt="Instagram"
+                      width={20}
+                      height={20}
+                    />
+                  </a>
+
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61582094297032"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-400 transition"
+                    aria-label="Facebook"
+                  >
+                    <Image
+                      src="/icons/facebook.svg"
+                      alt="Facebook"
+                      width={20}
+                      height={20}
+                    />
+                  </a>
+
+                  <a
+                    href="https://share.google/6EWZ0fv9gCbniIfqF"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-green-400 transition"
+                    aria-label="Google Reviews"
+                  >
+                    <Image
+                      src="/icons/google-review.svg"
+                      alt="Google Review"
+                      width={20}
+                      height={20}
+                    />
+                  </a>
+                </div>
+              </div>
             </div>
 
-            <p className="text-sm">
-              &copy; GG Tax Services All rights reserved.
-            </p>
+            {/* Bottom Bar */}
+            <div className="border-t border-gray-800 text-center text-xs py-4 px-6">
+              <p>
+                © {new Date().getFullYear()} GG Tax Services. All rights
+                reserved.
+              </p>
+            </div>
           </footer>
         </div>
       </body>

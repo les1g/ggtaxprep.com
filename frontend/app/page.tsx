@@ -10,12 +10,13 @@ export default function Home() {
     <div className="min-h-screen bg-gray-900 text-white">
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-green-400 mb-5 leading-tight">
+        <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-5 leading-tight">
           GG Tax Services
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-          We provide convenient, accurate, and personalized tax services for individuals
-          and small businesses.
+          We provide convenient, accurate, and personalized tax services for
+          individuals and businesses. No hidden fees. No surprises, just expert
+          tax help you can trust.
         </p>
 
         <div className="space-x-4">
@@ -31,67 +32,6 @@ export default function Home() {
           >
             View Services
           </Link>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="bg-gray-900 py-5">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">How It Works</h2>
-          <p className="text-gray-300 max-w-4xl mx-auto mb-6">
-            You can have your taxes prepared right from your phone or you can come in person. Most Consultations are free of charge, and
-            we’re always happy to answer any questions you have about the process or your specific situation.
-          </p>
-
-          {/* Get Started Button */}
-          <div className="mb-10">
-            <Link
-              href="/client/scheduling"
-              className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-10 rounded-lg transition"
-            >
-              Learn More
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
-            {[
-              {
-                step: "1",
-                title: "Submit Your Info",
-                text: "You can call, email, text, or book online to get started. We’ll let you know exactly which documents you need to provide.",
-              },
-              {
-                step: "2",
-                title: "We Prepare Your Taxes",
-                text: "Your return is usually prepared within 1–2 business days after receiving your information. We’ll contact you before starting to confirm details.",
-              },
-              {
-                step: "3",
-                title: "Review & Approve",
-                text: "You don’t pay until you review everything. We provide full transparency and send you a copy before you approve filing.",
-              },
-              {
-                step: "4",
-                title: "We File & Support",
-                text: "We e-file your return, provide acceptance updates, and remain available until your return is fully processed.",
-              },
-            ].map((item) => (
-              <div
-                key={item.step}
-                className="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center hover:border-green-400 transition"
-              >
-                <div className="w-10 h-10 mx-auto mb-4 rounded-full bg-green-500 text-gray-900 font-bold flex items-center justify-center">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold text-green-400 mb-2">
-                  {item.title}
-                </h3>
-                <p className="text-gray-300 text-sm leading-relaxed">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
