@@ -14,13 +14,13 @@ export default function Schedule() {
         <h1 className="text-4xl font-semibold text-green-500 mb-4">
           Schedule An Appointment
         </h1>
-        <p className="text-lg max-w-2xl mx-auto text-gray-300">
+        <p className="text-lg max-w-2xl mx-auto text-gray-300 mb-10">
           GG Tax Services offers in-person and online tax services. To get
           started, please schedule an appointment using the button below. Most
           clients complete their interview in under 20 minutes.
         </p>
         {/* Scheduler outside the box for better UX */}
-        <div className="rounded p-6 text-center mt-5 ">
+        <div className="rounded p-6 text-center mt-5 bg-gray-700 border border-gray-600 inline-block">
           <GoogleScheduler />
         </div>
       </section>
@@ -98,6 +98,9 @@ export default function Schedule() {
               private space for the call
             </li>
           </ul>
+        </div>
+        <div className="text-center mt-10">
+          <p><a href="/site/privacy-policy" className="text-green-400 hover:text-green-300 transition underline">Privacy Policy</a> | <a href="/site/terms" className="text-green-400 hover:text-green-300 transition underline">Terms of Service</a></p>
         </div>
       </section>
     </main>

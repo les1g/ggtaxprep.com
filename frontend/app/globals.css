@@ -37,3 +37,12 @@ a:hover {
   text-decoration-color: var(--foreground);
   text-decoration-line: underline;
 }
+
+.flex-container {
+  display: flex; /* Aligns children side-by-side */
+  gap: 20px;     /* Adds space between the columns */
+}
+
+.item {
+  flex: 1;       /* Ensures both containers take up equal width */
+}

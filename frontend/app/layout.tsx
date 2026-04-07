@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "./menu";
+// @ts-ignore - allow side-effect CSS import without type declarations
 import "./globals.css";
 
 const geistSans = Geist({
@@ -89,7 +90,7 @@ export default function RootLayout({
                   Professional tax preparation for individuals and small
                   businesses. Simple, clear, and stress-free service.
                 </p>
-                <p className="text-sm mt-3">📍 By appointment only</p>
+                <p className="text-sm mt-3 italic">By appointment only</p>
               </div>
 
               {/* Navigation */}
@@ -137,13 +138,16 @@ export default function RootLayout({
               </div>
 
               {/* Contact + Social */}
-              <div>
+              <div className="flex-container">
+                <div className="item">
                 <h4 className="text-white font-semibold mb-3">Contact</h4>
 
-                <p className="text-sm mb-2">📧 your@email.com</p>
-                <p className="text-sm mb-4">📞 (XXX) XXX-XXXX</p>
-
-                <div className="flex space-x-4">
+                <p className="text-sm mb-2">Email: <a href="mailto:info@ggtaxprep.com" className="hover:text-green-400 transition">info@ggtaxprep.com</a></p>
+                <p className="text-sm mb-2">Phone: <a href="tel:1+4805358927" className="hover:text-green-400 transition">(480) 535-8927</a></p>
+                <p className="text-sm mb-4">Address: 4102 W Pershing Ave, Phoenix, AZ 85029</p>
+                </div>
+                <div>
+                  <h4 className="text-white font-semibold mb-3">Follow Us</h4>
                   <a
                     href="https://www.instagram.com/ggtaxprep_"
                     target="_blank"
@@ -195,7 +199,7 @@ export default function RootLayout({
             {/* Bottom Bar */}
             <div className="border-t border-gray-800 text-center text-xs py-4 px-6">
               <p>
-                © {new Date().getFullYear()} GG Tax Services. All rights
+                © {new Date().getFullYear()} GG Tax Services, LLC. All rights
                 reserved.
               </p>
             </div>

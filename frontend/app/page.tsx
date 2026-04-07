@@ -13,7 +13,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-5 leading-tight">
           GG Tax Services
         </h1>
-        <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
+        <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
           We provide convenient, accurate, and personalized tax services for
           individuals and businesses. No hidden fees. No surprises, just expert
           tax help you can trust.
@@ -21,7 +21,7 @@ export default function Home() {
 
         <div className="space-x-4">
           <a
-            href="tel:+14805358927"
+            href="client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
           >
             Request a Call
