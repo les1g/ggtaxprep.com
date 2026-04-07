@@ -3,7 +3,7 @@ import PhoneInput from "./phone-input";
 export const metadata = {
   title: "Contact | GG Tax Services",
   description:
-    "Get in touch with GG Tax Services for any inquiries about tax preparation and compliance in Arizona.",
+    "Get in touch with GG Tax Services",
 };
 
 export default function Contact() {
@@ -15,8 +15,7 @@ export default function Contact() {
           Contact Us
         </h2>
         <p className="text-gray-300 text-lg max-w-2xl mx-auto">
-          We are here to help with any questions or concerns you have about our
-          tax services.
+          We are here to help with any questions or concerns you have.
         </p>
       </section>
 
