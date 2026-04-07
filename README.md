@@ -9,11 +9,8 @@
   <h3 align="center">ggtaxprep.com</h3>
 
   <p align="center">
-    A professional tax services website featuring a secure client portal, appointment scheduling, and comprehensive service information.
-    <br><br />
     <a href="https://ggtaxprep.com/">View Live</a> •
     <a href="https://github.com/les1g/ggtaxprep.com/issues/new">Report Issue</a> •
-    <a href="https://github.com/othneildrew/Best-README-Template/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
