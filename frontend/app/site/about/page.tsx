@@ -12,7 +12,7 @@ export default function About() {
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 py-10 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
-          About GG Tax Services
+          About
         </h1>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg">
           Professional, family-driven tax preparation built on trust,

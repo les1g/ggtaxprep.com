@@ -11,11 +11,10 @@ export default function Home() {
       {/* Hero */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-10 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-green-400 mb-5 leading-tight">
-          Taxes Made Simple
+          GG Tax Services
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-6 max-w-3xl mx-auto">
-          Looking for a reliable tax preparer? GG Tax Services provides
-          convenient, accurate, and personalized tax preparation for individuals
+          We provide convenient, accurate, and personalized tax services for individuals
           and small businesses.
         </p>
 
@@ -24,7 +23,7 @@ export default function Home() {
             href="tel:+14805358927"
             className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
           >
-            Call Now
+            Request a Call
           </a>
           <Link
             href="/client/services"
@@ -40,10 +39,8 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
           <h2 className="text-4xl font-bold mb-6">How It Works</h2>
           <p className="text-gray-300 max-w-4xl mx-auto mb-6">
-            You can have your taxes prepared right from your phone. No hassle,
-            no stress, no driving around. Consultations are free of charge, and
-            we’re always happy to answer any questions you have about the
-            process or your specific situation.
+            You can have your taxes prepared right from your phone or you can come in person. Most Consultations are free of charge, and
+            we’re always happy to answer any questions you have about the process or your specific situation.
           </p>
 
           {/* Get Started Button */}
@@ -52,7 +49,7 @@ export default function Home() {
               href="/client/scheduling"
               className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-10 rounded-lg transition"
             >
-              Get Started
+              Learn More
             </Link>
           </div>
 
