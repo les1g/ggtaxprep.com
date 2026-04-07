@@ -8,7 +8,7 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
-        <p className="text-gray-400 mb-8">Last Updated: January 28, 2026</p>
+        <p className="text-gray-400 mb-8">Last Updated: April 7, 2026</p>
 
         <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 space-y-6 text-gray-300">
           <section>
@@ -56,11 +56,12 @@ export default function TermsOfService() {
               Fees and Payment
             </h2>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Individual tax returns: $100 flat rate</li>
-              <li>Arizona TPT filing: $25 per filing</li>
+              <li>Our fees are based on the complexity of your return</li>
+              <li>We provide an upfront estimate before starting work</li>
+              <li>Fees are subject to change based on the time of your engagement</li>
               <li>Payment is due before final tax return submission</li>
               <li>
-                Payment can be made via credit card, debit card, or ACH transfer
+                Payment can be made via credit card, debit card, Zelle, or cash (in-person)
               </li>
               <li>All fees are non-refundable once services are rendered</li>
               <li>
