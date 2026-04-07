@@ -10,7 +10,7 @@
 
   <p align="center">
     <a href="https://ggtaxprep.com/">View Live</a> •
-    <a href="https://github.com/les1g/ggtaxprep.com/issues/new">Report Issue</a> •
+    <a href="https://github.com/les1g/ggtaxprep.com/issues/new">Report Issue</a>
   </p>
 </div>
 
