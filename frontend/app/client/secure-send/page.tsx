@@ -241,7 +241,7 @@ export default function SecureSend() {
           </div>
 
           <h1 className="text-4xl font-bold text-white mb-4">
-            Secure Document Upload
+            Upload Documents
           </h1>
           <p className="text-gray-400 text-lg">
             If you experience upload issues, you may email documents to{" "}

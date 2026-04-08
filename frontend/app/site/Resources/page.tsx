@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 export const metadata = {
-  title: "Services | GG Tax Services",
+  title: "Free Resources | GG Tax Services",
   description:
-    "Tax preparation services, pricing, and free tools to help you file with confidence.",
+    "Explore our collection of free tax resources and tools to help you understand your tax obligations, maximize deductions, and file with confidence. From refund tracking to tax calculators, we have everything you need to navigate tax season successfully.",
 };
 
-export default function Services() {
+export default function Resources() {
   const resources = [
     {
       title: "Track Your Refund",
@@ -85,7 +85,9 @@ export default function Services() {
 
       {/* Header */}
       <section className="text-center py-10 bg-gray-800">
-        <h2 className="text-4xl font-semibold text-green-400 mb-4">Services</h2>
+        <h2 className="text-4xl font-semibold text-green-400 mb-4">
+          Free Resources
+        </h2>
         <p className="text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-4">
           A full list of our services and pricing. We specialize in individual
           tax returns, returns for small businesses, and Arizona TPT (sales)
