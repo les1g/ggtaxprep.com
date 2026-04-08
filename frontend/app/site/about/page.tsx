@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 export const metadata = {
   title: "About | GG Tax Services",
@@ -15,8 +14,7 @@ export default function About() {
           About
         </h1>
         <p className="text-gray-300 max-w-2xl mx-auto text-lg">
-          Professional, family-driven tax preparation built on trust,
-          transparency, and care.
+          Meet the professionals behind GG Tax Services.
         </p>
       </section>
 
@@ -24,32 +22,80 @@ export default function About() {
       <section className="max-w-6xl mx-auto px-4 mb-10">
         <div className="bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-lg">
           <div className="grid md:grid-cols-3 gap-8 items-start">
-            <div>
+            <div className="w-[200px] h-[200px]">
               <Image
                 src="/images/Progessional-image-min.png"
                 alt="GG Tax Team"
-                width={400}
-                height={400}
-                className="rounded-xl object-cover"
+                width={100}
+                height={100}
+                className="rounded-full object-cover w-full h-full shadow-lg border-4 border-green-500"
                 priority
               />
             </div>
 
             <div className="md:col-span-2 space-y-4 text-gray-300 leading-relaxed">
+              <p className="text-xl text-green-500">Hello,</p>
+
               <p>
-                GG Tax Services is led by Gisel Garrido, a dedicated tax
-                professional committed to serving individuals, families, and
-                small businesses with accuracy, integrity, and genuine care.
+                I’ve been preparing taxes for 2–3 years and have 5 years of
+                experience working with the Arizona Department of Revenue.
+                Before starting my own practice, I had the opportunity to see
+                the tax industry from the inside.
               </p>
+
               <p>
-                What began as a family-driven mission has grown into a trusted
-                tax practice proudly supporting clients throughout Arizona.
+                What I noticed is that many taxpayers don’t fully understand how
+                taxes work, their obligations, or the resources available to
+                them. I also realized that taxpayers are not to blame — the
+                system itself can be difficult to understand and navigate.
               </p>
+
               <p>
-                As an IRS-registered PTIN holder and AFSP-certified tax
-                professional with over 5 years of financial services experience,
-                Gisel provides confident guidance tailored to each client’s
-                unique situation.
+                Most of us would like to believe our hard-earned money is going
+                toward meaningful causes, but in reality, many people aren’t
+                sure where it goes. This uncertainty often leads to frustration
+                and reluctance when it comes to taxes.
+              </p>
+
+              <p>
+                The conclusion I’ve come to is this: even though many Americans
+                (myself included) dislike paying taxes, the burden of trying to
+                avoid them is far greater than simply handling them correctly.
+                Taxes support important systems like public schools,
+                infrastructure, and transportation.
+              </p>
+
+              <p>
+                My mission is to help taxpayers stay compliant without the
+                stress, while keeping services affordable. I focus on doing
+                things the right way — not by cutting corners, but by fully
+                understanding each client’s situation and ensuring they claim
+                every credit and deduction they’re entitled to.
+              </p>
+
+              <p>At GG Tax Services, we do it right the first time.</p>
+
+              <p>
+                I truly appreciate your trust and look forward to working with
+                you!
+              </p>
+
+              <p className="text-sm text-gray-400">
+                <span className="text-green-400 font-semibold">Fun fact:</span>{" "}
+                I’m also a software engineer and built this website myself. If
+                you’re interested in learning more or working together, visit{" "}
+                <a
+                  href="https://www.ggstudio.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-green-400 hover:underline"
+                >
+                  www.ggstudio.dev
+                </a>
+              </p>
+
+              <p className="text-xl italic text-green-500">
+                <br />– Gisel G.
               </p>
             </div>
           </div>
@@ -63,14 +109,14 @@ export default function About() {
             Certifications & Credentials
           </h2>
 
-          <div className="flex flex-col md:flex-row gap-8 items-center">
+          <div className="flex flex-col md:flex-row gap-8">
             <div className="space-y-2 text-gray-300">
               <p>
-                <span className="text-green-400 font-semibold">PTIN:</span>{" "}
+                <span className="text-green-500 font-semibold">PTIN:</span>{" "}
                 #P0*****13
               </p>
               <p>
-                <span className="text-green-400 font-semibold">
+                <span className="text-green-500 font-semibold">
                   AFSP Certified:
                 </span>{" "}
                 Since 2020
@@ -88,7 +134,7 @@ export default function About() {
       </section>
 
       {/* Business Card */}
-      <section className="max-w-6xl mx-auto px-4 mb-10">
+      <section className="max-w-6xl mx-auto px-4 pb-10">
         <div className="bg-gray-800 border border-gray-700 rounded-2xl p-8">
           <h2 className="text-3xl font-bold mb-4">Business Card</h2>
           <p className="text-gray-300 mb-6">
@@ -99,7 +145,7 @@ export default function About() {
           <a
             href="/images/business-card-ggtax.png"
             download
-            className="inline-block bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-6 rounded-lg transition"
+            className="inline-block bg-green-500 hover:bg-green-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition"
           >
             Download Business Card
           </a>

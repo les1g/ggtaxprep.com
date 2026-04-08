@@ -8,18 +8,16 @@ export const metadata = {
 
 export default function Home() {
   return (
-    
     <div className="min-h-screen bg-gray-900 text-white">
-      
-
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-5 leading-tight">
           GG Tax Services
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-          We offer personalized, accurate, and secure tax services for individuals and small businesses.
-          Flexible scheduling, clear communication, and experience you can trust.
+          We offer personalized, accurate, and secure tax services for
+          individuals and small businesses. Flexible scheduling, clear
+          communication, and experience you can trust.
         </p>
 
         <div className="space-x-4 inline-flex">
@@ -40,10 +38,12 @@ export default function Home() {
           </h2>
 
           <p className="text-gray-300 text-center max-w-4xl mx-auto mb-12">
-            Learn more about our background, certifications, and experience on our{" "}
+            Learn more about our background, certifications, and experience on
+            our{" "}
             <Link href="/site/about" className="underline text-green-400">
               About Page
-            </Link>.
+            </Link>
+            .
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -83,10 +83,12 @@ export default function Home() {
           Transparent Pricing
         </h2>
         <p className="text-gray-300 text-center mb-12">
-          These are some of the most common services we provide. For a full list of services, pricing, and what is included, please visit our{" "}
+          These are some of the most common services we provide. For a full list
+          of services, pricing, and what is included, please visit our{" "}
           <Link href="/client/services" className="underline text-green-400">
             Services Page
-          </Link>.
+          </Link>
+          .
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -115,61 +117,65 @@ export default function Home() {
                 {item.title}
               </h3>
               <p className="text-2xl font-bold mb-2">{item.price}</p>
-              <p className="text-gray-300 text-sm leading-relaxed">{item.desc}</p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                {item.desc}
+              </p>
             </div>
           ))}
         </div>
 
         <p className="text-center text-gray-400 mt-6 italic">
-          Free estimates available for simple returns. Complex returns may require a deposit. An estimate is the amount you can expect to owe or receive as a refund, based on the information you provide.
+          Free estimates available for simple returns. Complex returns may
+          require a deposit. An estimate is the amount you can expect to owe or
+          receive as a refund, based on the information you provide.
         </p>
       </section>
 
       {/* TESTIMONIALS */}
-<section className="bg-gray-800 py-14">
-  <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-    <h2 className="text-3xl md:text-4xl font-bold mb-10">
-      Client Testimonials
-    </h2>
+      <section className="bg-gray-800 py-14">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-10">
+            Client Testimonials
+          </h2>
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {[
-        {
-          name: "Marlene R.",
-          message:
-            "Got my refund super fast and was able to get everything done over the phone. Reasonable prices too",
-        },
-        {
-          name: "Seth B.",
-          message:
-            "After my previous tax guy retired Gisele made the entire process easy! Thanks again.",
-        },
-        {
-          name: "Cindy S.",
-          message:
-            "Highly recommend! Gisel knows her stuff and is very helpful.",
-        },
-      ].map((testimonial, i) => (
-        <div
-          key={i}
-          className="bg-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-green-400 transition"
-        >
-          <p className="text-gray-300 text-sm mb-4 leading-relaxed italic">
-            “{testimonial.message}”
-          </p>
-          <p className="text-green-400 font-semibold text-sm">
-            — {testimonial.name}
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                name: "Marlene R.",
+                message:
+                  "Got my refund super fast and was able to get everything done over the phone. Reasonable prices too",
+              },
+              {
+                name: "Seth B.",
+                message:
+                  "After my previous tax guy retired Gisele made the entire process easy! Thanks again.",
+              },
+              {
+                name: "Cindy S.",
+                message:
+                  "Highly recommend! Gisel knows her stuff and is very helpful.",
+              },
+            ].map((testimonial, i) => (
+              <div
+                key={i}
+                className="bg-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-green-400 transition"
+              >
+                <p className="text-gray-300 text-sm mb-4 leading-relaxed italic">
+                  “{testimonial.message}”
+                </p>
+                <p className="text-green-400 font-semibold text-sm">
+                  — {testimonial.name}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-{/* How It Works */}
+      {/* How It Works */}
       <section className="bg-gray-900 py-14">
         <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-4xl font-bold mb-6">How Our Process Works</h2>
+          <h2 className="text-4xl font-bold mb-10">How Our Process Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
             {[
               {
@@ -214,7 +220,9 @@ export default function Home() {
 
       {/* FAQ */}
       <section className="max-w-5xl mx-auto px-4 md:px-8 py-14">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">Frequently Asked Questions</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
+          Frequently Asked Questions
+        </h2>
 
         <div className="space-y-6">
           {[
@@ -239,8 +247,13 @@ export default function Home() {
               a: "Turnaround time depends on the season and complexity, but we communicate with you throughout the process.",
             },
           ].map((item) => (
-            <div key={item.q} className="bg-gray-800 p-6 rounded-xl border border-gray-700">
-              <h3 className="text-lg font-bold text-green-400 mb-2">{item.q}</h3>
+            <div
+              key={item.q}
+              className="bg-gray-800 p-6 rounded-xl border border-gray-700"
+            >
+              <h3 className="text-lg font-bold text-green-400 mb-2">
+                {item.q}
+              </h3>
               <p className="text-gray-300 text-sm">{item.a}</p>
             </div>
           ))}
