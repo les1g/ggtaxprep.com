@@ -63,9 +63,9 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-gray-700 p-6 rounded-2xl hover:border-green-400 border border-transparent transition"
+                className="bg-gray-700 p-6 rounded-2xl hover:border-green-500 border border-transparent transition"
               >
-                <h3 className="text-lg font-bold text-green-400 mb-3">
+                <h3 className="text-lg font-bold text-green-500 mb-3">
                   {item.title}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
@@ -111,9 +111,9 @@ export default function Home() {
           ].map((item) => (
             <div
               key={item.title}
-              className="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-green-400 transition"
+              className="bg-gray-800 p-6 rounded-2xl border border-gray-700 hover:border-green-500 transition"
             >
-              <h3 className="text-xl font-bold text-green-400 mb-2">
+              <h3 className="text-xl font-bold text-green-500 mb-2">
                 {item.title}
               </h3>
               <p className="text-2xl font-bold mb-2">{item.price}</p>
@@ -158,12 +158,12 @@ export default function Home() {
             ].map((testimonial, i) => (
               <div
                 key={i}
-                className="bg-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-green-400 transition"
+                className="bg-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-green-500 transition"
               >
                 <p className="text-gray-300 text-sm mb-4 leading-relaxed italic">
                   “{testimonial.message}”
                 </p>
-                <p className="text-green-400 font-semibold text-sm">
+                <p className="text-green-500 font-semibold text-sm">
                   — {testimonial.name}
                 </p>
               </div>
@@ -201,12 +201,12 @@ export default function Home() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center hover:border-green-400 transition"
+                className="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center hover:border-green-500 transition"
               >
                 <div className="w-10 h-10 mx-auto mb-4 rounded-full bg-green-500 text-gray-900 font-bold flex items-center justify-center">
                   {item.step}
                 </div>
-                <h3 className="text-lg font-bold text-green-400 mb-2">
+                <h3 className="text-lg font-bold text-green-500 mb-2">
                   {item.title}
                 </h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
@@ -251,7 +251,7 @@ export default function Home() {
               key={item.q}
               className="bg-gray-800 p-6 rounded-xl border border-gray-700"
             >
-              <h3 className="text-lg font-bold text-green-400 mb-2">
+              <h3 className="text-lg font-bold text-green-500 mb-2">
                 {item.q}
               </h3>
               <p className="text-gray-300 text-sm">{item.a}</p>
@@ -273,6 +273,23 @@ export default function Home() {
           >
             Schedule Appointment
           </Link>
+        </div>
+        <div className="text-center mt-10">
+          <p>
+            <a
+              href="/site/privacy-policy"
+              className="text-green-400 hover:text-green-300 transition underline"
+            >
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a
+              href="/site/terms"
+              className="text-green-400 hover:text-green-300 transition underline"
+            >
+              Terms of Service
+            </a>
+          </p>
         </div>
       </section>
     </div>

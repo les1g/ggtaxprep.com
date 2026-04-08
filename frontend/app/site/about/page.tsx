@@ -7,7 +7,7 @@ export const metadata = {
 
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white py-10">
       {/* Hero */}
       <section className="max-w-6xl mx-auto px-4 py-10 text-center">
         <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-4">
@@ -128,27 +128,52 @@ export default function About() {
               height={180}
             />
           </div>
-        </div>
-      </section>
-
-      {/* Business Card */}
-      <section className="max-w-6xl mx-auto px-4 pb-10">
-        <div className="bg-gray-800 border border-gray-700 rounded-2xl p-8">
-          <h2 className="text-3xl font-bold mb-4">Business Card</h2>
-          <p className="text-gray-300 mb-6">
-            Keep our contact information handy or share it with someone who
-            needs trusted tax help.
+          <p className="text-sm text-gray-400 mt-4">
+            A PTIN (Preparer Tax Identification Number) is a unique identifier
+            issued by the IRS to tax return preparers. It is required for anyone
+            who is paid to prepare or assist in preparing federal tax returns.
+            The PTIN helps the IRS track and regulate tax preparers, ensuring
+            they meet certain standards and comply with tax laws. It also
+            provides a way for the IRS to identify and contact tax preparers if
+            needed.
           </p>
-
-          <a
-            href="/images/business-card-ggtax.png"
-            download
-            className="inline-block bg-green-500 hover:bg-green-500 text-gray-900 font-bold py-3 px-6 rounded-lg transition"
-          >
-            Download Business Card
-          </a>
+          <p className="text-sm text-gray-400 mt-2">
+            The Annual Filing Season Program (AFSP) is a voluntary program
+            offered by the IRS to encourage tax return preparers to continue
+            their education and stay up-to-date with tax laws. It provides a way
+            for tax preparers to demonstrate their commitment to professionalism
+            and ongoing education in the field of tax preparation.
+          </p>
+          <p className="text-sm text-gray-400 mt-2">
+            <a
+              href="https://irs.treasury.gov/rpo/rpo.jsf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-400 hover:underline"
+            >
+              Learn more
+            </a>
+          </p>
         </div>
       </section>
+
+      <div className="text-center mt-10">
+        <p>
+          <a
+            href="/site/privacy-policy"
+            className="text-green-400 hover:text-green-300 transition underline"
+          >
+            Privacy Policy
+          </a>{" "}
+          |{" "}
+          <a
+            href="/site/terms"
+            className="text-green-400 hover:text-green-300 transition underline"
+          >
+            Terms of Service
+          </a>
+        </p>
+      </div>
     </div>
   );
 }

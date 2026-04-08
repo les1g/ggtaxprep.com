@@ -38,7 +38,9 @@ export default function TermsOfService() {
               <li>Tax planning and general tax guidance</li>
               <li>Arizona Transaction Privilege Tax (TPT) filings</li>
               <li>Amended returns and prior-year filings</li>
-              <li>Assistance with IRS and state tax notices for returns we prepare</li>
+              <li>
+                Assistance with IRS and state tax notices for returns we prepare
+              </li>
             </ul>
             <p className="mt-3">
               The exact scope of services for each engagement will be based on
@@ -53,13 +55,28 @@ export default function TermsOfService() {
             </h2>
             <p className="mb-3">As a client, you agree to:</p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>Provide complete, accurate, and timely information and documents</li>
-              <li>Disclose all income, deductions, credits, and relevant tax items</li>
-              <li>Respond promptly to questions or requests for additional information</li>
+              <li>
+                Provide complete, accurate, and timely information and documents
+              </li>
+              <li>
+                Disclose all income, deductions, credits, and relevant tax items
+              </li>
+              <li>
+                Respond promptly to questions or requests for additional
+                information
+              </li>
               <li>Review your tax return carefully before it is filed</li>
-              <li>Confirm that all information on the return is true, correct, and complete</li>
-              <li>Maintain your own copies of tax returns and supporting documents</li>
-              <li>Notify us of any changes to your contact or financial information</li>
+              <li>
+                Confirm that all information on the return is true, correct, and
+                complete
+              </li>
+              <li>
+                Maintain your own copies of tax returns and supporting documents
+              </li>
+              <li>
+                Notify us of any changes to your contact or financial
+                information
+              </li>
             </ul>
           </section>
 
@@ -181,9 +198,7 @@ export default function TermsOfService() {
               matters for returns we prepared.
             </p>
             <ul className="list-disc list-inside space-y-2 ml-4">
-              <li>
-                Support is limited to returns prepared by GG Tax Services
-              </li>
+              <li>Support is limited to returns prepared by GG Tax Services</li>
               <li>
                 Additional fees may apply for audit support, representation, or
                 extensive correspondence; such fees will be discussed with you

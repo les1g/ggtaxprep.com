@@ -109,7 +109,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link
-                      href="/about"
+                      href="/site/about"
                       className="hover:text-green-400 transition"
                     >
                       About
@@ -117,7 +117,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link
-                      href="/services"
+                      href="/client/services"
                       className="hover:text-green-400 transition"
                     >
                       Services
@@ -125,7 +125,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link
-                      href="/schedule"
+                      href="/client/scheduling"
                       className="hover:text-green-400 transition"
                     >
                       Schedule
@@ -133,7 +133,7 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link
-                      href="/contact"
+                      href="/site/contact"
                       className="hover:text-green-400 transition"
                     >
                       Contact
