@@ -15,7 +15,7 @@ export default function Home() {
           GG Tax Services
         </h1>
         <p className="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
-          We offer personalized, accurate, and secure tax services for
+          We offer accurate, reliable, and convenient tax services for
           individuals and small businesses. Flexible scheduling, clear
           communication, and experience you can trust.
         </p>
@@ -263,15 +263,15 @@ export default function Home() {
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-10">
         <div className="bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-400 rounded-2xl p-10 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-gray-300 mb-6">
-            Let us handle your taxes so you can focus on what matters most.
+            Book a time to meet with us and get started with GG tax Services.
           </p>
           <Link
             href="/client/scheduling"
             className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
           >
-            Schedule
+            Schedule Appointment
           </Link>
         </div>
       </section>

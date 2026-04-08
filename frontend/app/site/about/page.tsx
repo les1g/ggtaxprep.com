@@ -22,7 +22,7 @@ export default function About() {
       <section className="max-w-6xl mx-auto px-4 mb-10">
         <div className="bg-gray-800 border border-gray-700 rounded-2xl p-8 shadow-lg">
           <div className="grid md:grid-cols-3 gap-8 items-start">
-            <div className="w-[200px] h-[200px]">
+            <div className="w-[200px] h-[200px] mx-auto">
               <Image
                 src="/images/Progessional-image-min.png"
                 alt="GG Tax Team"
@@ -34,19 +34,17 @@ export default function About() {
             </div>
 
             <div className="md:col-span-2 space-y-4 text-gray-300 leading-relaxed">
-              <p className="text-xl text-green-500">Hello,</p>
-
               <p>
-                I’ve been preparing taxes for 2–3 years and have 5 years of
-                experience working with the Arizona Department of Revenue.
                 Before starting my own practice, I had the opportunity to see
-                the tax industry from the inside.
+                the tax industry from the inside. I’ve been preparing taxes for
+                2–3 years and have 5 years of experience working with the
+                Arizona Department of Revenue.
               </p>
 
               <p>
                 What I noticed is that many taxpayers don’t fully understand how
                 taxes work, their obligations, or the resources available to
-                them. I also realized that taxpayers are not to blame — the
+                them. I also realized that taxpayers are not to blame. The
                 system itself can be difficult to understand and navigate.
               </p>
 
@@ -66,20 +64,24 @@ export default function About() {
               </p>
 
               <p>
-                My mission is to help taxpayers stay compliant without the
-                stress, while keeping services affordable. I focus on doing
-                things the right way — not by cutting corners, but by fully
-                understanding each client’s situation and ensuring they claim
-                every credit and deduction they’re entitled to.
+                It is my mission to help taxpayers stay in compliance without
+                the frustration, while keeping services affordable. With my
+                experience, I strive to guide my clients and save them money.
+                Not by cutting corners, but by truly understanding each
+                situation and ensuring you claim every credit and deduction you
+                qualify for.
               </p>
 
-              <p>At GG Tax Services, we do it right the first time.</p>
+              <p>GG Tax Services is for the people.</p>
 
               <p>
                 I truly appreciate your trust and look forward to working with
                 you!
               </p>
 
+              <p className="text-xl italic text-green-500">
+                <br />– Gisel G.
+              </p>
               <p className="text-sm text-gray-400">
                 <span className="text-green-400 font-semibold">Fun fact:</span>{" "}
                 I’m also a software engineer and built this website myself. If
@@ -92,10 +94,6 @@ export default function About() {
                 >
                   www.ggstudio.dev
                 </a>
-              </p>
-
-              <p className="text-xl italic text-green-500">
-                <br />– Gisel G.
               </p>
             </div>
           </div>

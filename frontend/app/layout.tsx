@@ -90,7 +90,7 @@ export default function RootLayout({
                   GG Tax Services
                 </h3>
                 <p className="text-sm leading-relaxed max-w-sm">
-                  Professional tax preparation for individuals and small
+                  Professional tax services for individuals and small
                   businesses. Simple, clear, and stress-free service.
                 </p>
                 <p className="text-sm mt-3 italic">By appointment only</p>
