@@ -8,7 +8,9 @@ export const metadata = {
 
 export default function Home() {
   return (
+    
     <div className="min-h-screen bg-gray-900 text-white">
+      
 
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 text-center">
@@ -97,7 +99,7 @@ export default function Home() {
             {
               title: "Complex Returns",
               price: "$350",
-              desc: "Ideal for clients with self‑employment income, rental income, gig work, or other advanced tax situations. Deposit for an estimate may be required.",
+              desc: "Ideal for clients with self‑employment income, rental income, gig work, or other advanced tax situations.",
             },
             {
               title: "Arizona TPT Services",
@@ -119,81 +121,94 @@ export default function Home() {
         </div>
 
         <p className="text-center text-gray-400 mt-6 italic">
-          Free estimates available for simple returns. Complex returns may require a deposit. An estimate is the amount you can expect to owe or receive as a refund, based on the information you provide. The final amount may differ based on additional information or changes to your return.
+          Free estimates available for simple returns. Complex returns may require a deposit. An estimate is the amount you can expect to owe or receive as a refund, based on the information you provide.
         </p>
       </section>
 
-      {/* PROCESS */}
-      <section className="bg-gray-800 py-14">
-        <div className="max-w-5xl mx-auto px-4 md:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-            How Our Process Works
-          </h2>
+      {/* TESTIMONIALS */}
+<section className="bg-gray-800 py-14">
+  <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
+    <h2 className="text-3xl md:text-4xl font-bold mb-10">
+      Client Testimonials
+    </h2>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {[
+        {
+          name: "Marlene R.",
+          message:
+            "Got my refund super fast and was able to get everything done over the phone. Reasonable prices too",
+        },
+        {
+          name: "Seth B.",
+          message:
+            "After my previous tax guy retired Gisele made the entire process easy! Thanks again.",
+        },
+        {
+          name: "Cindy S.",
+          message:
+            "Highly recommend! Gisel knows her stuff and is very helpful.",
+        },
+      ].map((testimonial, i) => (
+        <div
+          key={i}
+          className="bg-gray-700 p-6 rounded-2xl border border-gray-600 hover:border-green-400 transition"
+        >
+          <p className="text-gray-300 text-sm mb-4 leading-relaxed italic">
+            “{testimonial.message}”
+          </p>
+          <p className="text-green-400 font-semibold text-sm">
+            — {testimonial.name}
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* How It Works */}
+      <section className="bg-gray-900 py-14">
+        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
+          <h2 className="text-4xl font-bold mb-6">How Our Process Works</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-left">
             {[
-              { step: "1. Interview", text: "We start with a phone or in‑person tax interview." },
-              { step: "2. Documents", text: "You send your documents by email, text, or drop‑off." },
-              { step: "3. Preparation", text: "We prepare your return accurately and efficiently." },
-              { step: "4. Review", text: "You review the completed return and approve it." },
-              { step: "5. Payment", text: "You pay your invoice once you approve the return." },
-              { step: "6. Filing & Follow‑Up", text: "We file your return and guide you through refunds or payments." },
+              {
+                step: "1",
+                title: "Interview",
+                text: "We start with a phone or in‑person tax interview. You can schedule online or by calling (480) 535-8927.",
+              },
+              {
+                step: "2",
+                title: "Documents & Preparation",
+                text: "You send your documents by email, text, or drop‑off. We prepare your return accurately and efficiently.",
+              },
+              {
+                step: "3",
+                title: "Review & Approve",
+                text: "You review the completed return and approve it. You pay your invoice once you approve the return.",
+              },
+              {
+                step: "4",
+                title: "Filing & Follow‑Up",
+                text: "We file your return and guide you through refunds or payments.",
+              },
             ].map((item) => (
-              <div key={item.step} className="bg-gray-700 p-6 rounded-xl">
-                <h3 className="text-lg font-bold text-green-400 mb-2">{item.step}</h3>
-                <p className="text-gray-300 text-sm">{item.text}</p>
+              <div
+                key={item.step}
+                className="bg-gray-800 border border-gray-700 rounded-2xl p-6 text-center hover:border-green-400 transition"
+              >
+                <div className="w-10 h-10 mx-auto mb-4 rounded-full bg-green-500 text-gray-900 font-bold flex items-center justify-center">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-bold text-green-400 mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  {item.text}
+                </p>
               </div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* WHO WE SERVE */}
-      <section className="max-w-6xl mx-auto px-4 md:px-8 py-14">
-        <h2 className="text-3xl md:text-4xl font-bold mb-10 text-center">
-          Who We Serve
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            "Arizona residents",
-            "Non‑residents & part‑year residents",
-            "Self‑employed & gig workers",
-            "Rental property owners",
-            "Small business owners",
-            "Students & first‑time filers",
-          ].map((group) => (
-            <div
-              key={group}
-              className="bg-gray-800 p-6 rounded-xl border border-gray-700 hover:border-green-400 transition text-center"
-            >
-              <p className="text-gray-300">{group}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-
-      {/* MEET THE PREPARER */}
-      <section className="max-w-5xl mx-auto px-4 md:px-8 py-14">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
-          Meet Your Tax Preparer
-        </h2>
-        <p className="text-gray-300 max-w-3xl mx-auto text-center leading-relaxed">
-          With experience working directly at the Arizona Department of Revenue, AFSP certification,
-          and an active IRS PTIN, you get knowledgeable, reliable, and friendly service from someone
-          who understands the tax system from the inside. Learn more about our background and experience on our{" "}
-          <Link href="/site/about" className="underline text-green-400">
-            About Page
-          </Link>
-        </p>
-      </section>
-
-      {/* TESTIMONIALS PLACEHOLDER */}
-      <section className="bg-gray-800 py-14">
-        <div className="max-w-6xl mx-auto px-4 md:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-10">Client Testimonials</h2>
-          <p className="text-gray-400 mb-6">Testimonials coming soon.</p>
         </div>
       </section>
 
@@ -205,11 +220,11 @@ export default function Home() {
           {[
             {
               q: "How do I schedule an appointment?",
-              a: "You can schedule online using our Google appointment system below.",
+              a: "You can schedule online or call us at (480) 535-8927",
             },
             {
               q: "Do you offer virtual appointments?",
-              a: "Yes — phone, virtual, and in‑person appointments are all available.",
+              a: "Yes, we also do appointments over the phone.",
             },
             {
               q: "How do I send documents?",
@@ -217,7 +232,7 @@ export default function Home() {
             },
             {
               q: "Do you offer free estimates?",
-              a: "Yes — simple returns qualify for free estimates. Complex returns may require a deposit.",
+              a: "Yes simple returns qualify for free estimates. Simple returns are usually those with just W-2 income. Complex returns may require a deposit. Complex returns are usually those with self-employment income, rental income, etc.",
             },
             {
               q: "How long does it take?",
@@ -232,20 +247,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA WITH GOOGLE SCHEDULER */}
-      <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border-t border-green-400/40 py-14">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Ready to Get Started?
-          </h2>
-          <p className="text-gray-300 text-lg mb-8">
-            Book your tax interview now — phone, virtual, or in‑person.
+      {/* CTA */}
+      <section className="max-w-6xl mx-auto px-4 pb-10">
+        <div className="bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-400 rounded-2xl p-10 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Work With Us?</h2>
+          <p className="text-gray-300 mb-6">
+            Let us handle your taxes so you can focus on what matters most.
           </p>
-
-          {/* Google Scheduler Button */}
-          <div className="flex justify-center">
-            <GoogleScheduler />
-          </div>
+          <Link
+            href="/client/scheduling"
+            className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
+          >
+            Schedule
+          </Link>
         </div>
       </section>
     </div>
