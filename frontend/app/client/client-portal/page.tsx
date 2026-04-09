@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata = {
   title: "Free Resources | GG Tax Services",
@@ -55,6 +56,14 @@ export default function Resources() {
     <main className="min-h-screen bg-gray-900 text-gray-100 font-sans">
       {/* Header */}
       <section className="text-center py-10 bg-gray-800">
+        <Script id="tally-config" strategy="beforeInteractive">
+          {`window.TallyConfig = {
+  "formId": "2EJP5p",
+  "popup": {}
+};`}
+        </Script>
+
+        <Script async src="https://tally.so/widgets/embed.js"></Script>
         <h2 className="text-4xl font-semibold text-green-500 mb-4">
           Client Portal
         </h2>
@@ -79,7 +88,7 @@ export default function Resources() {
             Upload Documents
           </Link>
           <Link
-            href="/client/make-payment"
+            href="https://tally.so/r/2EJP5p"
             className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors"
           >
             Make A Payment
