@@ -16,7 +16,7 @@ export default function Services() {
           A full list of our services and pricing. We specialize in individual
           tax returns, returns for small businesses, and Arizona TPT (sales)
           tax. We also offer a variety of free resources and tools to help you
-          understand your tax obligations.
+          understand your tax obligations.1
         </p>
       </section>
       {/* Main Services */}
