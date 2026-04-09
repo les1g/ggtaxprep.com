@@ -16,7 +16,7 @@ export default function Services() {
           A full list of our services and pricing. We specialize in individual
           tax returns, returns for small businesses, and Arizona TPT (sales)
           tax. We also offer a variety of free resources and tools to help you
-          understand your tax obligations.1
+          understand your tax obligations.
         </p>
       </section>
       {/* Main Services */}
@@ -112,35 +112,106 @@ export default function Services() {
           </Link>
         </div>
       </section>
-      {/* Additional Services */}{" "}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
-        {" "}
-        <h2 className="text-3xl font-bold text-green-500 mb-8 text-center">
-          {" "}
-          Additional Tax Services{" "}
-        </h2>{" "}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {" "}
-          {[1, 2, 3].map((item) => (
-            <div
-              key={item}
-              className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-500 transition"
-            >
-              {" "}
-              <h3 className="text-xl font-semibold text-green-500 mb-2">
-                {" "}
-                Service Name{" "}
-              </h3>{" "}
-              <p className="text-2xl font-bold text-white mb-3">$0</p>{" "}
-              <p className="text-gray-300 text-sm">
-                {" "}
-                Description of the service. Explain what is included and who it
-                is for.{" "}
-              </p>{" "}
-            </div>
-          ))}{" "}
-        </div>{" "}
-      </section>
+      {/* Additional Services */}
+<section className="py-12 px-6 max-w-6xl mx-auto">
+  <h2 className="text-3xl font-bold text-green-500 mb-8 text-center">
+    Additional Tax Services
+  </h2>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {[
+      {
+        name: "Transaction and Use Tax (TPT) Account Setup",
+        price: "$150",
+        desc: "Includes full account setup and ongoing maintenance as long as regular returns are filed. Maintenance includes license renewals and resale certificates (Form 5000) as needed.",
+      },
+      {
+        name: "Resale Certificate",
+        price: "$50",
+        desc: "Preparation and filing of resale certificate (Form 5000) for your business.",
+      },
+      {
+        name: "Transaction and Use Tax (TPT) Returns – Quarterly",
+        price: "$75 / return",
+        desc: "Filing of Transaction Privilege & Use Tax returns quarterly. Includes reporting to city, county, and state, plus a summary of sales, tax liability, and financial breakdown.",
+      },
+      {
+        name: "Transaction and Use Tax (TPT) Returns – Monthly",
+        price: "$50 / return",
+        desc: "Monthly filing of Transaction Privilege & Use Tax returns. Includes full reporting and a summary of sales, tax liability, and financial details.",
+      },
+      {
+        name: "Penalty Abatement",
+        price: "$40 / period",
+        desc: "Review of late filing or payment penalties to determine eligibility for relief. Approval is not guaranteed and is decided by the IRS or Department of Revenue on a case-by-case basis.",
+      },
+      {
+        name: "Withholding / Payroll Account Setup",
+        price: "$300",
+        desc: "Setup and maintenance of Withholding and Payroll accounts for your business. This includes registration with the state and IRS, plus ongoing support to ensure compliance with tax laws and regulations.",
+      },
+      {
+        name: "Withholding / Payroll Returns",
+        price: "$100 / return",
+        desc: "Filing of Withholding and Payroll returns for your business. Includes reporting to the state and IRS, plus a summary of wages, taxes withheld, and financial details.",
+      },
+      {
+        name: "ITIN Application",
+        price: "$150",
+        desc: "Preparation and filing of ITIN (Individual Taxpayer Identification Number) applications for individuals who are not eligible for a Social Security Number but need to file taxes in the U.S.",
+      },
+      { name: "ITIN Renewal",
+        price: "$100",
+        desc: "Preparation and filing of ITIN renewal applications for individuals whose ITIN has expired or is set to expire. This service ensures that your ITIN remains valid for tax filing purposes."
+      },
+      {name: "1099 Preparation",
+       price: "$30 / form",
+       desc: "Preparation and filing of 1099 forms for your business. This includes reporting of non-employee compensation, interest, dividends, and other types of income to the IRS and recipients."
+      },
+      {name: "Amended Returns",
+       price: "$50-$350 / return",
+       desc: "Preparation and filing of amended tax returns to correct errors or update information on previously filed returns. This service includes a review of the original return and guidance on the changes being made. Price varies depending on return type and complexity."
+      },
+    {name: "Tax Resolution Services",
+     price: "Varies",
+     desc: "Assistance with tax resolution services for individuals and businesses facing tax issues such as audits, collections, or disputes with the IRS. This service includes representation, negotiation, and guidance to resolve tax problems effectively. Pricing varies based on the complexity of the case and services required."
+    },
+    {name: "Tax Planning and Consultation",
+     price: "Varies",
+     desc: "Personalized tax planning and consultation services to help you optimize your tax situation and plan for the future. This includes strategies for minimizing tax liability, maximizing deductions and credits, and guidance on tax-efficient financial decisions. Pricing varies based on the scope of consultation and services provided."
+    },
+    {name: "Business Entity Formation",
+      price: "Varies",
+      desc: "Assistance with business entity formation, including LLCs, S-Corps, and C-Corps. This service includes guidance on choosing the right entity type for your business, preparation and filing of formation documents, and ongoing support to ensure compliance with state and federal regulations. Pricing varies based on the complexity of the formation and services required."
+    },
+    {name:"Estate and Trust Tax Preparation",
+     price: "Varies",
+     desc: "Preparation of estate and trust tax returns, including Form 1041. This service is designed for individuals responsible for managing estates or trusts and includes guidance on tax implications, deductions, and compliance with IRS regulations. Pricing varies based on the complexity of the estate or trust and services provided."
+    },
+    {      name: "Nonprofit Tax Services",
+      price: "Varies",
+      desc: "Specialized tax services for nonprofit organizations, including tax-exempt status applications, annual filings, and compliance support. This service helps nonprofits navigate the unique tax requirements and maintain their tax-exempt status. Pricing varies based on the scope of services and complexity of the nonprofit's tax situation."
+    },
+    {name: "Custom Tax Services",
+     price: "Varies",
+     desc: "Tailored tax services to meet your specific needs. Whether you have unique tax situations, require specialized advice, or need assistance with complex tax issues, we can provide customized solutions to help you navigate the tax landscape effectively. Pricing varies based on the scope of services and complexity of the case."
+    }
+    ].map((service, index) => (
+      <div
+        key={index}
+        className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-500 transition"
+      >
+        <h3 className="text-xl font-semibold text-green-500 mb-2">
+          {service.name}
+        </h3>
+        <p className="text-2xl font-bold text-white mb-3">
+          {service.price}
+        </p>
+        <p className="text-gray-300 text-sm">{service.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-10">
         <div className="bg-gradient-to-r from-green-500/10 to-green-500/5 border border-green-500 rounded-2xl p-10 text-center">
