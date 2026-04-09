@@ -6,7 +6,7 @@ export default function DeductionsChecklist() {
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500">
             Deductions & Credits You May Qualify For
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
@@ -25,7 +25,7 @@ export default function DeductionsChecklist() {
 
         {/* IRS Deductions & Credits */}
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-8">
-          <h2 className="text-3xl font-bold text-green-400">
+          <h2 className="text-3xl font-bold text-green-500">
             IRS (Federal) Deductions & Credits
           </h2>
 
@@ -86,7 +86,7 @@ export default function DeductionsChecklist() {
 
         {/* Arizona Deductions & Credits */}
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-8">
-          <h2 className="text-3xl font-bold text-green-400">
+          <h2 className="text-3xl font-bold text-green-500">
             Arizona Deductions & Credits
           </h2>
 
@@ -100,19 +100,19 @@ export default function DeductionsChecklist() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-gray-200">
               <div className="bg-gray-700/60 rounded-lg p-4">
-                <p className="font-semibold text-green-400">2024</p>
+                <p className="font-semibold text-green-500">2024</p>
                 <p>Single/MFS: $14,600</p>
                 <p>MFJ: $29,200</p>
                 <p>HOH: $21,900</p>
               </div>
               <div className="bg-gray-700/60 rounded-lg p-4">
-                <p className="font-semibold text-green-400">2025</p>
+                <p className="font-semibold text-green-500">2025</p>
                 <p>Single/MFS: $15,750</p>
                 <p>MFJ: $31,500</p>
                 <p>HOH: $23,625</p>
               </div>
               <div className="bg-gray-700/60 rounded-lg p-4">
-                <p className="font-semibold text-green-400">Notes</p>
+                <p className="font-semibold text-green-500">Notes</p>
                 <p>Additional amount if 65+</p>
               </div>
             </div>
@@ -167,7 +167,7 @@ export default function DeductionsChecklist() {
         </section>
 
         {/* How to Use */}
-        <section className="bg-gray-800 border border-green-400 rounded-lg p-8">
+        <section className="bg-gray-800 border border-green-500 rounded-lg p-8">
           <h2 className="text-2xl font-bold text-white mb-4">
             How to Use This List
           </h2>
@@ -185,7 +185,7 @@ export default function DeductionsChecklist() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Need Help Maximizing Your Deductions?
           </h2>

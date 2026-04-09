@@ -12,18 +12,18 @@ export default function TermsOfService() {
 
         <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 space-y-6 text-gray-300">
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Agreement to Terms
             </h2>
             <p>
-              By accessing or using GG Tax Services ("Service"), you agree to be
-              bound by these Terms of Service. If you do not agree to these
-              terms, please do not use our services.
+              By accessing or using GG Tax Services (&quot;Service&quot;), you
+              agree to be bound by these Terms of Service. If you do not agree
+              to these terms, please do not use our services.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Services Provided
             </h2>
             <p className="mb-3">GG Tax Services provides:</p>
@@ -37,7 +37,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Client Responsibilities
             </h2>
             <p className="mb-3">As a client, you agree to:</p>
@@ -52,16 +52,19 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Fees and Payment
             </h2>
             <ul className="list-disc list-inside space-y-2 ml-4">
               <li>Our fees are based on the complexity of your return</li>
               <li>We provide an upfront estimate before starting work</li>
-              <li>Fees are subject to change based on the time of your engagement</li>
+              <li>
+                Fees are subject to change based on the time of your engagement
+              </li>
               <li>Payment is due before final tax return submission</li>
               <li>
-                Payment can be made via credit card, debit card, Zelle, or cash (in-person)
+                Payment can be made via credit card, debit card, Zelle, or cash
+                (in-person)
               </li>
               <li>All fees are non-refundable once services are rendered</li>
               <li>
@@ -72,7 +75,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Refund Policy
             </h2>
             <p>
@@ -84,7 +87,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Service Timeline
             </h2>
             <ul className="list-disc list-inside space-y-2 ml-4">
@@ -101,7 +104,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Accuracy and Liability
             </h2>
             <p className="mb-3">
@@ -123,7 +126,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Confidentiality
             </h2>
             <p>
@@ -134,7 +137,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Document Retention
             </h2>
             <p>
@@ -146,7 +149,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Termination
             </h2>
             <p>
@@ -164,18 +167,18 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Limitation of Liability
             </h2>
             <p>
-              GG Tax Services' liability is limited to the amount of fees paid
-              for our services. We are not liable for indirect, incidental, or
-              consequential damages arising from our services.
+              GG Tax Services&apos; liability is limited to the amount of fees
+              paid for our services. We are not liable for indirect, incidental,
+              or consequential damages arising from our services.
             </p>
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Intellectual Property
             </h2>
             <p>
@@ -187,7 +190,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Dispute Resolution
             </h2>
             <p>
@@ -198,7 +201,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Changes to Terms
             </h2>
             <p>
@@ -210,7 +213,7 @@ export default function TermsOfService() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Contact Information
             </h2>
             <p>

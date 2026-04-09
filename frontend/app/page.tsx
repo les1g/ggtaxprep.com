@@ -1,5 +1,4 @@
 import Link from "next/link";
-import GoogleScheduler from "./client/scheduling/GoogleScheduler";
 
 export const metadata = {
   title: "Home | GG Tax Services",
@@ -23,7 +22,7 @@ export default function Home() {
         <div className="space-x-4 inline-flex">
           <Link
             href="/client/services"
-            className="border-2 border-green-500 text-green-400 hover:bg-green-500 hover:text-gray-900 font-bold py-3 px-8 rounded-lg transition"
+            className="border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-bold py-3 px-8 rounded-lg transition"
           >
             View Services
           </Link>
@@ -40,7 +39,7 @@ export default function Home() {
           <p className="text-gray-300 text-center max-w-4xl mx-auto mb-12">
             Learn more about our background, certifications, and experience on
             our{" "}
-            <Link href="/site/about" className="underline text-green-400">
+            <Link href="/site/about" className="underline text-green-500">
               About Page
             </Link>
             .
@@ -85,7 +84,7 @@ export default function Home() {
         <p className="text-gray-300 text-center mb-12">
           These are some of the most common services we provide. For a full list
           of services, pricing, and what is included, please visit our{" "}
-          <Link href="/client/services" className="underline text-green-400">
+          <Link href="/client/services" className="underline text-green-500">
             Services Page
           </Link>
           .
@@ -262,7 +261,7 @@ export default function Home() {
 
       {/* CTA */}
       <section className="max-w-6xl mx-auto px-4 pb-10">
-        <div className="bg-gradient-to-r from-green-500/10 to-green-400/5 border border-green-400 rounded-2xl p-10 text-center">
+        <div className="bg-gradient-to-r from-green-500/10 to-green-500/5 border border-green-500 rounded-2xl p-10 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
           <p className="text-gray-300 mb-6">
             Book a time to meet with us and get started with GG tax Services.
@@ -278,14 +277,14 @@ export default function Home() {
           <p>
             <a
               href="/site/privacy-policy"
-              className="text-green-400 hover:text-green-300 transition underline"
+              className="text-green-500 hover:text-green-300 transition underline"
             >
               Privacy Policy
             </a>{" "}
             |{" "}
             <a
               href="/site/terms"
-              className="text-green-400 hover:text-green-300 transition underline"
+              className="text-green-500 hover:text-green-300 transition underline"
             >
               Terms of Service
             </a>

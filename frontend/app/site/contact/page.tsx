@@ -2,8 +2,7 @@ import PhoneInput from "./phone-input";
 
 export const metadata = {
   title: "Contact | GG Tax Services",
-  description:
-    "Get in touch with GG Tax Services",
+  description: "Get in touch with GG Tax Services",
 };
 
 export default function Contact() {
@@ -11,7 +10,7 @@ export default function Contact() {
     <main className="min-h-screen bg-gray-900">
       {/* Page Header */}
       <section className="text-center py-14 px-4 bg-gray-800 border-b border-gray-700">
-        <h2 className="text-3xl sm:text-4xl font-semibold text-green-400 mb-3">
+        <h2 className="text-3xl sm:text-4xl font-semibold text-green-500 mb-3">
           Contact Us
         </h2>
         <p className="text-gray-300 text-lg max-w-2xl mx-auto">
@@ -25,7 +24,7 @@ export default function Contact() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           {/* Email */}
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-            <h3 className="text-lg font-semibold text-green-400 mb-1">Email</h3>
+            <h3 className="text-lg font-semibold text-green-500 mb-1">Email</h3>
             <a
               href="mailto:info@ggtaxprep.com"
               className="text-gray-300 hover:text-green-300 transition-colors break-all"
@@ -36,7 +35,7 @@ export default function Contact() {
 
           {/* Phone */}
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-            <h3 className="text-lg font-semibold text-green-400 mb-1">Phone</h3>
+            <h3 className="text-lg font-semibold text-green-500 mb-1">Phone</h3>
             <a
               href="tel:+14805358927"
               className="text-gray-300 hover:text-green-300 transition-colors"
@@ -48,7 +47,7 @@ export default function Contact() {
 
         {/* Hours */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
-          <h3 className="text-lg font-semibold text-green-400 mb-1">Hours</h3>
+          <h3 className="text-lg font-semibold text-green-500 mb-1">Hours</h3>
           <p className="text-gray-300 leading-tight">
             Mon–Sat
             <br />
@@ -89,7 +88,7 @@ export default function Contact() {
               placeholder="First Last"
               required
               className="w-full p-3 rounded bg-gray-900 border border-gray-700 text-gray-100 
-                         focus:border-green-400 focus:outline-none text-base"
+                         focus:border-green-500 focus:outline-none text-base"
               style={{ textTransform: "capitalize" }}
             />
           </div>
@@ -110,7 +109,7 @@ export default function Contact() {
               placeholder="example@email.com"
               required
               className="w-full p-3 rounded-lg bg-gray-900 border border-gray-700 text-gray-100 
-                         focus:border-green-400 focus:ring-1 focus:ring-green-400 focus:outline-none 
+                         focus:border-green-500 focus:ring-1 focus:ring-green-500 focus:outline-none 
                          text-base placeholder-gray-500"
             />
           </div>
@@ -126,7 +125,7 @@ export default function Contact() {
               rows={5}
               required
               className="w-full p-3 rounded bg-gray-900 border border-gray-700 text-gray-100 
-                         focus:border-green-400 focus:outline-none text-base"
+                         focus:border-green-500 focus:outline-none text-base"
             ></textarea>
           </div>
 

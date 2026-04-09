@@ -133,7 +133,7 @@ export default function TaxGlossary() {
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-5xl mx-auto space-y-10">
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500">
             Tax Glossary
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
@@ -146,9 +146,9 @@ export default function TaxGlossary() {
           {terms.map(({ term, definition }) => (
             <div
               key={term}
-              className="bg-gray-800 border border-gray-700 rounded-lg p-5 hover:border-green-400 transition-colors"
+              className="bg-gray-800 border border-gray-700 rounded-lg p-5 hover:border-green-500 transition-colors"
             >
-              <h2 className="text-lg font-bold text-green-400 mb-2">{term}</h2>
+              <h2 className="text-lg font-bold text-green-500 mb-2">{term}</h2>
               <p className="text-gray-300 text-sm leading-relaxed">
                 {definition}
               </p>
@@ -156,7 +156,7 @@ export default function TaxGlossary() {
           ))}
         </div>
 
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-6 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-6 text-center">
           <h3 className="text-xl font-bold text-white mb-2">
             Need a term explained for your situation?
           </h3>

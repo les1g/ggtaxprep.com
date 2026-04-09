@@ -7,85 +7,11 @@ export const metadata = {
 };
 
 export default function Services() {
-  const resources = [
-    {
-      title: "Track Your Refund",
-      description:
-        "Check the status of your federal and Arizona state tax refunds.",
-      link: "/tools/refund",
-    },
-    {
-      title: "Tax Document Checklist",
-      description:
-        "Comprehensive list of documents to gather for your tax prep.",
-      link: "/tools/checklist",
-    },
-    {
-      title: "Deductions & Credits Checklist",
-      description:
-        "See which federal and Arizona deductions/credits you may qualify for.",
-      link: "/tools/deductions",
-    },
-    {
-      title: "W-4 Tax Calculator",
-      description:
-        "Use IRS and Arizona calculators with step-by-step guidance.",
-      link: "/tools/tax-calculator",
-    },
-    {
-      title: "Estimated Payments Guide",
-      description: "When and how to make quarterly estimated tax payments.",
-      link: "/tools/estimated-payments",
-    },
-    {
-      title: "IRS Forms & Publications",
-      description:
-        "Direct access to IRS forms, instructions, and publications.",
-      link: "https://www.irs.gov/forms-instructions",
-      external: true,
-    },
-    {
-      title: "Tax Terms Glossary",
-      description: "Common tax terms explained in plain English.",
-      link: "/site/glossary",
-    },
-    {
-      title: "Tax Guides",
-      description:
-        "Step-by-step guides on various tax topics to help you file with confidence.",
-      link: "/site/guides",
-    },
-  ];
-
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100 font-sans">
-      {/* Mini Navigation */}
-      <nav className="bg-gray-900 border-b border-gray-800 py-4">
-        <div className="max-w-6xl mx-auto px-4 flex flex-wrap justify-center gap-3">
-          <Link
-            href="/client/secure-send"
-            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold hover:bg-green-400 hover:text-gray-900 transition-colors"
-          >
-            Upload Documents
-          </Link>
-          <Link
-            href="/tools/refund"
-            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold hover:bg-green-400 hover:text-gray-900 transition-colors"
-          >
-            Track Refund
-          </Link>
-          <Link
-            href="/site/resources"
-            className="px-4 py-2 border border-green-400 text-green-400 rounded-lg text-sm font-semibold hover:bg-green-400 hover:text-gray-900 transition-colors"
-          >
-            Free Resources
-          </Link>
-        </div>
-      </nav>
-
       {/* Header */}
       <section className="text-center py-10 bg-gray-800">
-        <h2 className="text-4xl font-semibold text-green-400 mb-4">Services</h2>
+        <h2 className="text-4xl font-semibold text-green-500 mb-4">Services</h2>
         <p className="text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-4">
           A full list of our services and pricing. We specialize in individual
           tax returns, returns for small businesses, and Arizona TPT (sales)
@@ -93,12 +19,11 @@ export default function Services() {
           understand your tax obligations.
         </p>
       </section>
-
       {/* Main Services */}
       <section className="py-12 px-6 max-w-6xl mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-8 items-stretch">
           {/* Simple Returns */}
-          <div className="flex flex-col justify-between p-5 md:p-6 border-2 border-green-400 rounded bg-gray-800 relative">
+          <div className="flex flex-col justify-between p-5 md:p-6 border-2 border-green-500 rounded bg-gray-800 relative">
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
               <span className="bg-green-500 text-white px-4 py-1 rounded-full text-sm font-semibold">
                 Most Popular
@@ -106,7 +31,7 @@ export default function Services() {
             </div>
 
             <div>
-              <h3 className="text-green-400 font-semibold text-2xl mb-3">
+              <h3 className="text-green-500 font-semibold text-2xl mb-3">
                 Simple Returns
               </h3>
               <p className="text-3xl font-bold text-white mb-4">$150</p>
@@ -133,19 +58,15 @@ export default function Services() {
                 <li>Other common credits and deductions</li>
               </ul>
             </div>
-
-            <a
-              href="/client/scheduling"
-              className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
-            >
-              Get Started
-            </a>
+            <div className="bg-gray-900/50 border border-gray-700 rounded p-3 mb-4 text-sm text-gray-300">
+              ✔ Best for: W-2 employees with common credits & deductions
+            </div>
           </div>
 
           {/* Complex Returns */}
-          <div className="flex flex-col justify-between p-5 md:p-6 border border-gray-700 rounded bg-gray-800 hover:border-green-400 transition-colors">
+          <div className="flex flex-col justify-between p-5 md:p-6 border border-gray-700 rounded bg-gray-800 hover:border-green-500 transition-colors">
             <div>
-              <h3 className="text-green-400 font-semibold text-2xl mb-3">
+              <h3 className="text-green-500 font-semibold text-2xl mb-3">
                 Complex Returns
               </h3>
               <p className="text-3xl font-bold text-white mb-4">$350</p>
@@ -174,141 +95,84 @@ export default function Services() {
               </ul>
             </div>
 
-            <a
-              href="/client/scheduling"
-              className="block text-center bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors"
-            >
-              Get Started
-            </a>
+            <div className="bg-gray-900/50 border border-gray-700 rounded p-3 mb-4 text-sm text-gray-300">
+              ✔ Best for: Self-employed, side income, or investments
+            </div>
           </div>
         </div>
       </section>
-
-      {/* Arizona TPT */}
-      <section className="px-6 max-w-6xl mx-auto">
-        <div className="mt-4 max-w-lg mx-auto">
-          <div className="p-6 border border-gray-700 rounded bg-gray-800 hover:border-green-400 transition-colors text-center">
-            <h3 className="text-green-400 font-semibold text-2xl mb-3">
-              Arizona TPT
-            </h3>
-            <p className="text-3xl font-bold text-white mb-4">$150+</p>
-            <p className="text-gray-300 text-sm">
-              Sales tax filing and support for Arizona Transaction Privilege Tax
-              reporting.
-            </p>
-          </div>
+      {/* Schedule An Appointment */}
+      <section>
+        <div className="mt-6 text-center">
+          <Link
+            href="/client/scheduling"
+            className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block"
+          >
+            Schedule Your Appointment
+          </Link>
         </div>
       </section>
-
-      {/* Additional Services */}
+      {/* Additional Services */}{" "}
       <section className="py-12 px-6 max-w-6xl mx-auto">
-        <div className="bg-gray-800 border border-gray-700 rounded-2xl p-8">
-          <h2 className="text-3xl font-bold text-green-400 mb-6">
-            Additional Services
-          </h2>
-          <ul className="list-disc list-inside text-gray-300 text-sm space-y-2 leading-relaxed">
-            <li>Tax planning and consulting</li>
-            <li>IRS and state tax issue resolution</li>
-            <li>Amended returns</li>
-            <li>Audit support</li>
-            <li>Bookkeeping and accounting support</li>
-            <li>Payroll tax filings</li>
-            <li>And more – just ask!</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* NEW Expandable Services */}
-      <section className="py-12 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-green-400 mb-8 text-center">
-          Additional Tax Services
-        </h2>
-
+        {" "}
+        <h2 className="text-3xl font-bold text-green-500 mb-8 text-center">
+          {" "}
+          Additional Tax Services{" "}
+        </h2>{" "}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {" "}
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 transition"
+              className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-500 transition"
             >
-              <h3 className="text-xl font-semibold text-green-400 mb-2">
-                Service Name
-              </h3>
-              <p className="text-2xl font-bold text-white mb-3">$0</p>
+              {" "}
+              <h3 className="text-xl font-semibold text-green-500 mb-2">
+                {" "}
+                Service Name{" "}
+              </h3>{" "}
+              <p className="text-2xl font-bold text-white mb-3">$0</p>{" "}
               <p className="text-gray-300 text-sm">
+                {" "}
                 Description of the service. Explain what is included and who it
-                is for.
-              </p>
+                is for.{" "}
+              </p>{" "}
             </div>
-          ))}
-        </div>
+          ))}{" "}
+        </div>{" "}
       </section>
-
       {/* CTA */}
-      <section className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-10 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-green-400 mb-4">
-          Getting Started
-        </h2>
-        <p className="text-gray-300 mb-6">
-          Ready to file with us? Schedule a consultation so we can review your
-          situation.
-        </p>
-        <Link
-          href="/client/scheduling"
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg inline-block"
-        >
-          Schedule Your Consultation
-        </Link>
-      </section>
-
-      {/* Resources */}
-      <section className="py-9 px-6 max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-green-400 mb-10 text-center">
-          Tax Resources & Tools
-        </h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {resources.map((resource, index) =>
-            resource.external ? (
-              <a
-                key={index}
-                href={resource.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 transition"
-              >
-                <h3 className="text-xl font-bold text-green-400 mb-2">
-                  {resource.title}
-                </h3>
-                <p className="text-gray-300 text-sm">{resource.description}</p>
-              </a>
-            ) : (
-              <Link
-                key={index}
-                href={resource.link}
-                className="bg-gray-800 border border-gray-700 rounded-lg p-6 hover:border-green-400 transition block"
-              >
-                <h3 className="text-xl font-bold text-green-400 mb-2">
-                  {resource.title}
-                </h3>
-                <p className="text-gray-300 text-sm">{resource.description}</p>
-              </Link>
-            ),
-          )}
+      <section className="max-w-6xl mx-auto px-4 pb-10">
+        <div className="bg-gradient-to-r from-green-500/10 to-green-500/5 border border-green-500 rounded-2xl p-10 text-center">
+          <h2 className="text-3xl font-bold mb-4">Ready to Get Started?</h2>
+          <p className="text-gray-300 mb-6">
+            Book a time to meet with us and get started with GG tax Services.
+          </p>
+          <Link
+            href="/client/scheduling"
+            className="bg-green-500 hover:bg-green-600 text-gray-900 font-bold py-3 px-8 rounded-lg transition"
+          >
+            Schedule Appointment
+          </Link>
+        </div>
+        <div className="text-center mt-10">
+          <p>
+            <a
+              href="/site/privacy-policy"
+              className="text-green-500 hover:text-green-300 transition underline"
+            >
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a
+              href="/site/terms"
+              className="text-green-500 hover:text-green-300 transition underline"
+            >
+              Terms of Service
+            </a>
+          </p>
         </div>
       </section>
-
-      {/* Footer */}
-      <div className="text-center mt-10 pb-10">
-        <p>
-          <a href="/site/privacy-policy" className="text-green-400 underline">
-            Privacy Policy
-          </a>{" "}
-          |{" "}
-          <a href="/site/terms" className="text-green-400 underline">
-            Terms of Service
-          </a>
-        </p>
-      </div>
     </main>
   );
 }

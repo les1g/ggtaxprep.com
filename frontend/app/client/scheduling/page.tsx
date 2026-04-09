@@ -44,9 +44,9 @@ export default function Schedule() {
           </h3>
 
           <p className="text-gray-300">
-            Whether this is your first time working with us or you're a
+            Whether this is your first time working with us or you&apos;re a
             returning client, your appointment is designed to be simple, clear,
-            and stress‑free. Here’s what you can expect:
+            and stress‑free. Here&apos;s what you can expect:
           </p>
 
           <ul className="text-gray-300 space-y-2 mt-4">
@@ -72,10 +72,10 @@ export default function Schedule() {
             documents ready:
           </p>
           <ul className="text-gray-300 space-y-2 mt-4">
-            <li>• Photo ID or driver's license</li>
+            <li>• Photo ID or driver&apos;s license</li>
             <li>• Any relevant tax documents (e.g., W-2, 1099 forms)</li>
             <li>• Receipts for deductible expenses (if applicable)</li>
-            <li>• Previous year's tax return (if available)</li>
+            <li>• Previous year&apos;s tax return (if available)</li>
           </ul>
 
           <h3 className="text-2xl font-semibold text-green-500 mb-4 mt-10">
@@ -83,9 +83,9 @@ export default function Schedule() {
           </h3>
           <p className="text-gray-300">
             If you have any questions about the scheduling process or what to
-            expect during your appointment, please don't hesitate to contact us.
-            We're here to help and ensure you have a smooth experience with GG
-            Tax Services.
+            expect during your appointment, please don&apos;t hesitate to
+            contact us. We&apos;re here to help and ensure you have a smooth
+            experience with GG Tax Services.
           </p>
           <ul className="text-gray-300 space-y-2 mt-4">
             <li>• Ensure you have access to your tax documents</li>
@@ -100,7 +100,21 @@ export default function Schedule() {
           </ul>
         </div>
         <div className="text-center mt-10">
-          <p><a href="/site/privacy-policy" className="text-green-400 hover:text-green-300 transition underline">Privacy Policy</a> | <a href="/site/terms" className="text-green-400 hover:text-green-300 transition underline">Terms of Service</a></p>
+          <p>
+            <a
+              href="/site/privacy-policy"
+              className="text-green-500 hover:text-green-300 transition underline"
+            >
+              Privacy Policy
+            </a>{" "}
+            |{" "}
+            <a
+              href="/site/terms"
+              className="text-green-500 hover:text-green-300 transition underline"
+            >
+              Terms of Service
+            </a>
+          </p>
         </div>
       </section>
     </main>

@@ -13,7 +13,7 @@ export default function TermsOfService() {
         <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 space-y-8 text-gray-300 leading-relaxed">
           {/* AGREEMENT */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Agreement to Terms
             </h2>
             <p>
@@ -26,7 +26,7 @@ export default function TermsOfService() {
 
           {/* SERVICES PROVIDED */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Services Provided
             </h2>
             <p className="mb-3">
@@ -50,7 +50,7 @@ export default function TermsOfService() {
 
           {/* CLIENT RESPONSIBILITIES */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Client Responsibilities
             </h2>
             <p className="mb-3">As a client, you agree to:</p>
@@ -82,7 +82,7 @@ export default function TermsOfService() {
 
           {/* FEES AND PAYMENT */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Fees and Payment
             </h2>
             <p className="mb-3">
@@ -116,7 +116,7 @@ export default function TermsOfService() {
 
           {/* REFUNDS AND CORRECTIONS */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Refunds and Corrections
             </h2>
             <p className="mb-3">
@@ -144,7 +144,7 @@ export default function TermsOfService() {
 
           {/* SERVICE TIMELINE */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Service Timeline
             </h2>
             <p className="mb-3">
@@ -163,7 +163,7 @@ export default function TermsOfService() {
 
           {/* ACCURACY, LIABILITY, AND NO GUARANTEES */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Accuracy, Liability, and No Guarantees
             </h2>
             <p className="mb-3">
@@ -190,7 +190,7 @@ export default function TermsOfService() {
 
           {/* AUDIT SUPPORT */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Audit Support and Notices
             </h2>
             <p className="mb-3">
@@ -209,7 +209,7 @@ export default function TermsOfService() {
 
           {/* CONFIDENTIALITY */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Confidentiality
             </h2>
             <p>
@@ -223,7 +223,7 @@ export default function TermsOfService() {
 
           {/* DOCUMENT RETENTION */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Document Retention
             </h2>
             <p className="mb-3">
@@ -241,7 +241,7 @@ export default function TermsOfService() {
 
           {/* NO LEGAL OR INVESTMENT ADVICE */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               No Legal or Investment Advice
             </h2>
             <p>
@@ -255,7 +255,7 @@ export default function TermsOfService() {
 
           {/* TERMINATION */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Termination of Services
             </h2>
             <p className="mb-3">
@@ -277,7 +277,7 @@ export default function TermsOfService() {
 
           {/* LIMITATION OF LIABILITY */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Limitation of Liability
             </h2>
             <p>
@@ -291,7 +291,7 @@ export default function TermsOfService() {
 
           {/* GOVERNING LAW AND DISPUTE RESOLUTION */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Governing Law and Dispute Resolution
             </h2>
             <p className="mb-3">
@@ -309,7 +309,7 @@ export default function TermsOfService() {
 
           {/* CHANGES TO TERMS */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Changes to These Terms
             </h2>
             <p>
@@ -322,7 +322,7 @@ export default function TermsOfService() {
 
           {/* CONTACT INFORMATION */}
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Contact Information
             </h2>
             <p>

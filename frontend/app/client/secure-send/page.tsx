@@ -234,7 +234,7 @@ export default function SecureSend() {
           <div className="flex justify-left">
             <Link
               href="/client/services"
-              className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+              className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-500"
             >
               <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
             </Link>
@@ -255,7 +255,7 @@ export default function SecureSend() {
         {uploadComplete && (
           <div className="mb-6 p-4 bg-green-900/50 border border-green-500 rounded-lg flex items-center gap-3">
             <svg
-              className="w-6 h-6 text-green-400 flex-shrink-0"
+              className="w-6 h-6 text-green-500 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -268,7 +268,7 @@ export default function SecureSend() {
               />
             </svg>
             <div>
-              <p className="text-green-400 font-semibold">
+              <p className="text-green-500 font-semibold">
                 Documents uploaded successfully!
               </p>
               <p className="text-green-300 text-sm">
@@ -571,7 +571,7 @@ export default function SecureSend() {
             Need help?{" "}
             <a
               href="/site/contact"
-              className="text-green-400 hover:text-green-300"
+              className="text-green-500 hover:text-green-300"
             >
               Contact Support
             </a>
@@ -580,14 +580,14 @@ export default function SecureSend() {
             By uploading, you agree to our{" "}
             <a
               href="/site/privacy-policy"
-              className="text-green-400 hover:text-green-300"
+              className="text-green-500 hover:text-green-300"
             >
               Privacy Policy
             </a>{" "}
             and{" "}
             <a
               href="/site/terms"
-              className="text-green-400 hover:text-green-300"
+              className="text-green-500 hover:text-green-300"
             >
               Terms of Service
             </a>

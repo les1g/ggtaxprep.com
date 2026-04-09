@@ -22,7 +22,7 @@ export default function Navigation() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-gray-300 hover:text-green-400 text-sm transition-colors"
+            className="text-gray-300 hover:text-green-500 text-sm transition-colors"
           >
             {link.label}
           </Link>
@@ -34,10 +34,17 @@ export default function Navigation() {
         >
           Schedule
         </Link>
+        <Link
+          href="/client/client-portal"
+          className="text-gray-300 hover:text-green-500 text-sm transition-colors"
+          onClick={() => setIsOpen(false)}
+        >
+          Client Portal
+        </Link>
 
         <Link
           href="/site/contact"
-          className="text-gray-300 hover:text-green-400 text-sm transition-colors"
+          className="text-gray-300 hover:text-green-500 text-sm transition-colors"
         >
           Contact
         </Link>
@@ -51,17 +58,17 @@ export default function Navigation() {
         aria-expanded={isOpen}
       >
         <span
-          className={`block w-6 h-0.5 bg-green-400 transition-all ${
+          className={`block w-6 h-0.5 bg-green-500 transition-all ${
             isOpen ? "rotate-45 translate-y-2" : ""
           }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-green-400 transition-all ${
+          className={`block w-6 h-0.5 bg-green-500 transition-all ${
             isOpen ? "opacity-0" : ""
           }`}
         ></span>
         <span
-          className={`block w-6 h-0.5 bg-green-400 transition-all ${
+          className={`block w-6 h-0.5 bg-green-500 transition-all ${
             isOpen ? "-rotate-45 -translate-y-2" : ""
           }`}
         ></span>
@@ -74,7 +81,7 @@ export default function Navigation() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-gray-300 hover:text-green-400 transition-colors"
+              className="text-gray-300 hover:text-green-500 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               {link.label}
@@ -88,8 +95,15 @@ export default function Navigation() {
             Schedule
           </Link>
           <Link
+            href="/client/client-portal"
+            className="text-gray-300 hover:text-green-500 transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            Client Portal
+          </Link>
+          <Link
             href="/site/contact"
-            className="text-gray-300 hover:text-green-400 transition-colors"
+            className="text-gray-300 hover:text-green-500 transition-colors"
             onClick={() => setIsOpen(false)}
           >
             Contact

@@ -25,7 +25,7 @@ export default function IRSRefundCalculator() {
 
   return (
     <div className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-10">
-      <h3 className="text-2xl font-bold text-green-400 mb-6">
+      <h3 className="text-2xl font-bold text-green-500 mb-6">
         IRS Refund Date Estimator
       </h3>
 
@@ -57,7 +57,7 @@ export default function IRSRefundCalculator() {
       </button>
 
       {result && (
-        <p className="text-green-400 font-semibold mt-4 text-center">
+        <p className="text-green-500 font-semibold mt-4 text-center">
           Estimated Refund Date: {result}
         </p>
       )}

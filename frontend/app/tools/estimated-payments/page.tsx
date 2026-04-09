@@ -10,7 +10,7 @@ export default function EstimatedPayments() {
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500">
             Estimated Tax Payments Guide
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
@@ -46,7 +46,7 @@ export default function EstimatedPayments() {
 
         {/* Federal (IRS) Estimated Payments */}
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-6">
-          <h2 className="text-3xl font-bold text-green-400">
+          <h2 className="text-3xl font-bold text-green-500">
             Federal (IRS) Estimated Payments
           </h2>
 
@@ -88,9 +88,9 @@ export default function EstimatedPayments() {
                 href="https://www.irs.gov/payments/direct-pay"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">
+                <div className="font-semibold text-green-500 mb-1">
                   IRS Direct Pay
                 </div>
                 <p className="text-sm text-gray-300">
@@ -101,9 +101,9 @@ export default function EstimatedPayments() {
                 href="https://www.eftps.gov/eftps/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">EFTPS</div>
+                <div className="font-semibold text-green-500 mb-1">EFTPS</div>
                 <p className="text-sm text-gray-300">
                   Electronic Federal Tax Payment System (setup required).
                 </p>
@@ -112,9 +112,9 @@ export default function EstimatedPayments() {
                 href="https://www.irs.gov/payments/pay-your-taxes-by-debit-or-credit-card"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">
+                <div className="font-semibold text-green-500 mb-1">
                   Pay by Card
                 </div>
                 <p className="text-sm text-gray-300">Convenience fees apply.</p>
@@ -123,9 +123,9 @@ export default function EstimatedPayments() {
                 href="https://www.irs.gov/forms-pubs/about-form-1040-es"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">
+                <div className="font-semibold text-green-500 mb-1">
                   Form 1040-ES
                 </div>
                 <p className="text-sm text-gray-300">
@@ -138,7 +138,7 @@ export default function EstimatedPayments() {
 
         {/* Arizona Estimated Payments */}
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-6">
-          <h2 className="text-3xl font-bold text-green-400">
+          <h2 className="text-3xl font-bold text-green-500">
             Arizona Estimated Payments
           </h2>
 
@@ -163,9 +163,9 @@ export default function EstimatedPayments() {
                 href="https://aztaxes.gov"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">
+                <div className="font-semibold text-green-500 mb-1">
                   AZTaxes.gov
                 </div>
                 <p className="text-sm text-gray-300">
@@ -176,9 +176,9 @@ export default function EstimatedPayments() {
                 href="https://azdor.gov/payment"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-400 rounded-lg p-4 text-gray-200 transition-colors"
+                className="bg-gray-700 hover:bg-gray-650 border border-gray-600 hover:border-green-500 rounded-lg p-4 text-gray-200 transition-colors"
               >
-                <div className="font-semibold text-green-400 mb-1">
+                <div className="font-semibold text-green-500 mb-1">
                   ADOR Payments
                 </div>
                 <p className="text-sm text-gray-300">
@@ -261,7 +261,7 @@ export default function EstimatedPayments() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Want us to calculate your estimates?
           </h2>

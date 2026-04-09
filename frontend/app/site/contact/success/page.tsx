@@ -17,7 +17,7 @@ export default function ContactSuccess() {
             viewBox="0 0 24 24"
             strokeWidth={1.5}
             stroke="currentColor"
-            className="w-14 h-14 text-green-400"
+            className="w-14 h-14 text-green-500"
           >
             <path
               strokeLinecap="round"
@@ -28,7 +28,7 @@ export default function ContactSuccess() {
         </div>
 
         {/* Title */}
-        <h1 className="text-3xl font-bold text-green-400 mb-3">
+        <h1 className="text-3xl font-bold text-green-500 mb-3">
           Message Sent!
         </h1>
 
@@ -49,7 +49,7 @@ export default function ContactSuccess() {
 
           <Link
             href="/site/contact"
-            className="w-full border border-green-400 text-green-400 hover:bg-green-400 hover:text-gray-900 font-semibold py-3 rounded-lg transition-colors block text-center"
+            className="w-full border border-green-500 text-green-500 hover:bg-green-500 hover:text-gray-900 font-semibold py-3 rounded-lg transition-colors block text-center"
           >
             Back to Contact
           </Link>

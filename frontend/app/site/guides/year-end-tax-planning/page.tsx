@@ -9,16 +9,16 @@ export const metadata = {
 
 export default function YearEndTaxPlanning() {
   return (
-    <div className="min-h-screen bg-gray-900 py-8 px-4 md:px-8">
+    <div className="min-h-screen bg-gray-900 py-green-500 px-4 md:px-green-500">
       <div className="max-w-6xl mx-auto mb-12">
         <Link
           href="/site/guides"
-          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-500"
         >
           <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
         </Link>
-        <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+        <header className="mb-green-500">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-4">
             Year-End Tax Planning
           </h1>
           <div className="flex items-center gap-3 mb-4 flex-wrap">
@@ -27,7 +27,7 @@ export default function YearEndTaxPlanning() {
           </div>
         </header>
 
-        <article className="bg-gray-800 border border-gray-700 rounded-lg p-8 mb-12 space-y-6">
+        <article className="bg-gray-green-50000 border border-gray-700 rounded-lg p-green-500 mb-12 space-y-6">
           <section>
             <p className="text-gray-300 leading-relaxed">
               Don&apos;t wait until January to think about taxes. Year-end
@@ -38,7 +38,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Bunching Deductions
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -56,7 +56,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Retirement Contributions
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -64,29 +64,29 @@ export default function YearEndTaxPlanning() {
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">
+                <h4 className="font-semibold text-green-500 mb-2">
                   Traditional IRA
                 </h4>
                 <p className="text-gray-300 text-sm">
-                  2024 limit: $7,000 ($8,000 if 50+). Deadline: Tax filing date
-                  (usually April 15).
+                  2024 limit: $7,000 ($green-500,000 if 50+). Deadline: Tax
+                  filing date (usually April 15).
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">401(k)</h4>
+                <h4 className="font-semibold text-green-500 mb-2">401(k)</h4>
                 <p className="text-gray-300 text-sm">
                   2024 limit: $23,500 ($31,000 if 50+). Deadline: December 31.
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">SEP-IRA</h4>
+                <h4 className="font-semibold text-green-500 mb-2">SEP-IRA</h4>
                 <p className="text-gray-300 text-sm">
                   Self-employed: Up to 20% of net earnings. Deadline: Tax filing
                   date.
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">
+                <h4 className="font-semibold text-green-500 mb-2">
                   Solo 401(k)
                 </h4>
                 <p className="text-gray-300 text-sm">
@@ -97,7 +97,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Tax-Loss Harvesting
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -114,7 +114,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Charitable Giving
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -131,7 +131,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Business Expenses
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -147,7 +147,7 @@ export default function YearEndTaxPlanning() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Year-End Tax Planning Checklist
             </h2>
             <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4 space-y-2">
@@ -179,7 +179,7 @@ export default function YearEndTaxPlanning() {
           </section>
         </article>
 
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-green-50000/30 border border-green-500/50 rounded-lg p-green-500 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Get Personalized Year-End Planning
           </h2>

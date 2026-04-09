@@ -164,7 +164,7 @@ export default function TaxChecklist() {
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-6">
             Tax Document Checklist
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed mb-4">
@@ -173,7 +173,7 @@ export default function TaxChecklist() {
             item will apply to your situation—check only what&apos;s relevant to
             you.
           </p>
-          <div className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-400/50 rounded-lg p-4">
+          <div className="bg-gradient-to-r from-green-900/20 to-green-800/20 border border-green-500/50 rounded-lg p-4">
             <p className="text-gray-300 text-sm">
               <strong>Pro Tip:</strong> Organize your documents by category
               before your appointment. This helps us work more efficiently and
@@ -196,7 +196,7 @@ export default function TaxChecklist() {
               >
                 <div className="flex items-center gap-3">
                   <span className="text-3xl"></span>
-                  <h2 className="text-xl font-bold text-green-400">
+                  <h2 className="text-xl font-bold text-green-500">
                     {section}
                   </h2>
                 </div>
@@ -229,7 +229,7 @@ export default function TaxChecklist() {
         </div>
 
         {/* Print/Download Section */}
-        <div className="bg-gray-800 border border-green-400 rounded-lg p-8 text-center mb-12">
+        <div className="bg-gray-800 border border-green-500 rounded-lg p-8 text-center mb-12">
           <h3 className="text-2xl font-bold text-white mb-4">
             Save This Checklist
           </h3>

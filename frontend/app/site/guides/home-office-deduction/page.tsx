@@ -13,13 +13,13 @@ export default function HomeOfficeDeduction() {
       <div className="max-w-4xl mx-auto">
         <Link
           href="/site/guides"
-          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-400"
+          className="inline-flex items-center gap-2 mb-6 text-sm font-medium text-green-500 transition-colors hover:text-green-500"
         >
           <ArrowLeft className="h-6 w-9 bg-gray-700 py-1 rounded-full" />
         </Link>
 
         <header className="mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500 mb-4">
             Home Office Deduction Guide
           </h1>
           <div className="flex items-center gap-3 mb-4 flex-wrap">
@@ -38,7 +38,7 @@ export default function HomeOfficeDeduction() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Requirements
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -59,12 +59,12 @@ export default function HomeOfficeDeduction() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Two Calculation Methods
             </h2>
             <div className="space-y-4 mb-4">
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">
+                <h4 className="font-semibold text-green-500 mb-2">
                   Simplified Method
                 </h4>
                 <p className="text-gray-300 text-sm mb-2">
@@ -77,7 +77,7 @@ export default function HomeOfficeDeduction() {
                 </p>
               </div>
               <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
-                <h4 className="font-semibold text-green-400 mb-2">
+                <h4 className="font-semibold text-green-500 mb-2">
                   Regular Method
                 </h4>
                 <p className="text-gray-300 text-sm mb-2">
@@ -92,7 +92,7 @@ export default function HomeOfficeDeduction() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Deductible Expenses (Regular Method)
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
@@ -117,7 +117,7 @@ export default function HomeOfficeDeduction() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-green-400 mb-3">
+            <h2 className="text-2xl font-bold text-green-500 mb-3">
               Example Calculation
             </h2>
             <div className="bg-gray-700/50 border border-gray-600 rounded-lg p-4">
@@ -141,7 +141,7 @@ export default function HomeOfficeDeduction() {
           </section>
         </article>
 
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-8 text-center">
           <h2 className="text-2xl font-bold text-white mb-4">
             Maximize Your Home Office Deduction
           </h2>

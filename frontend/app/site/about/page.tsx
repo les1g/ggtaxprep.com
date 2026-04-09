@@ -83,14 +83,14 @@ export default function About() {
                 <br />– Gisel G.
               </p>
               <p className="text-sm text-gray-400">
-                <span className="text-green-400 font-semibold">Fun fact:</span>{" "}
+                <span className="text-green-500 font-semibold">Fun fact:</span>{" "}
                 I’m also a software engineer and built this website myself. If
                 you’re interested in learning more or working together, visit{" "}
                 <a
                   href="https://www.ggstudio.dev"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-green-400 hover:underline"
+                  className="text-green-500 hover:underline"
                 >
                   www.ggstudio.dev
                 </a>
@@ -149,7 +149,7 @@ export default function About() {
               href="https://irs.treasury.gov/rpo/rpo.jsf"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-green-400 hover:underline"
+              className="text-green-500 hover:underline"
             >
               Learn more
             </a>
@@ -161,14 +161,14 @@ export default function About() {
         <p>
           <a
             href="/site/privacy-policy"
-            className="text-green-400 hover:text-green-300 transition underline"
+            className="text-green-500 hover:text-green-300 transition underline"
           >
             Privacy Policy
           </a>{" "}
           |{" "}
           <a
             href="/site/terms"
-            className="text-green-400 hover:text-green-300 transition underline"
+            className="text-green-500 hover:text-green-300 transition underline"
           >
             Terms of Service
           </a>

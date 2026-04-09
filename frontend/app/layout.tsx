@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Geist, Geist_Mono } from "next/font/google";
 import Navigation from "./menu";
-// @ts-ignore - allow side-effect CSS import without type declarations
+// @ts-expect-error - allow side-effect CSS import without type declarations
 import "./globals.css";
 
 const geistSans = Geist({
@@ -103,14 +103,14 @@ export default function RootLayout({
                 </h4>
                 <ul className="space-y-2 text-sm leading-relaxed">
                   <li>
-                    <Link href="/" className="hover:text-green-400 transition">
+                    <Link href="/" className="hover:text-green-500 transition">
                       Home
                     </Link>
                   </li>
                   <li>
                     <Link
                       href="/site/about"
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     >
                       About
                     </Link>
@@ -118,7 +118,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/client/services"
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     >
                       Services
                     </Link>
@@ -126,7 +126,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/client/scheduling"
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     >
                       Schedule
                     </Link>
@@ -134,7 +134,7 @@ export default function RootLayout({
                   <li>
                     <Link
                       href="/site/contact"
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     >
                       Contact
                     </Link>
@@ -150,7 +150,7 @@ export default function RootLayout({
                   Email:{" "}
                   <a
                     href="mailto:info@ggtaxprep.com"
-                    className="hover:text-green-400 transition"
+                    className="hover:text-green-500 transition"
                   >
                     info@ggtaxprep.com
                   </a>
@@ -160,7 +160,7 @@ export default function RootLayout({
                   Phone:{" "}
                   <a
                     href="tel:+14805358927"
-                    className="hover:text-green-400 transition"
+                    className="hover:text-green-500 transition"
                   >
                     (480) 535-8927
                   </a>
@@ -186,7 +186,7 @@ export default function RootLayout({
                       alt="Instagram"
                       width={20}
                       height={20}
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     />
                   </a>
 
@@ -201,7 +201,7 @@ export default function RootLayout({
                       alt="Facebook"
                       width={20}
                       height={20}
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     />
                   </a>
 
@@ -216,7 +216,7 @@ export default function RootLayout({
                       alt="Google Review"
                       width={20}
                       height={20}
-                      className="hover:text-green-400 transition"
+                      className="hover:text-green-500 transition"
                     />
                   </a>
                 </div>

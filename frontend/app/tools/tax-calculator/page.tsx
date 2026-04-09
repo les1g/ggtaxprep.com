@@ -10,7 +10,7 @@ export default function TaxCalculatorPage() {
       <div className="max-w-6xl mx-auto space-y-12">
         {/* Header */}
         <header className="space-y-4">
-          <h1 className="text-4xl md:text-5xl font-bold text-green-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-green-500">
             Tax Calculator
           </h1>
           <p className="text-gray-300 text-lg leading-relaxed">
@@ -24,7 +24,7 @@ export default function TaxCalculatorPage() {
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-4">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <h2 className="text-3xl font-bold text-green-400">
+              <h2 className="text-3xl font-bold text-green-500">
                 IRS Tax Withholding Estimator
               </h2>
               <p className="text-gray-300">
@@ -68,7 +68,7 @@ export default function TaxCalculatorPage() {
         <section className="bg-gray-800 border border-gray-700 rounded-lg p-8 space-y-4">
           <div className="flex items-center justify-between gap-4 flex-wrap">
             <div>
-              <h2 className="text-3xl font-bold text-green-400">
+              <h2 className="text-3xl font-bold text-green-500">
                 Arizona Withholding Calculator
               </h2>
               <p className="text-gray-300">
@@ -130,7 +130,7 @@ export default function TaxCalculatorPage() {
         </section>
 
         {/* CTA */}
-        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-400/50 rounded-lg p-8 text-center">
+        <section className="bg-gradient-to-r from-green-900/30 to-green-800/30 border border-green-500/50 rounded-lg p-8 text-center">
           <h3 className="text-2xl font-bold text-white mb-3">
             Need help dialing it in?
           </h3>
