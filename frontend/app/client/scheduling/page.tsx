@@ -36,7 +36,8 @@ export default function Schedule() {
             GG Tax Services is currently a one-person operation. Appointments
             are scheduled based on availability. Phone appointments are strongly
             recommended, as they allow for more flexibility and faster service.
-            In-person meetings are available on a limited basis.
+            In-person meetings are available on a limited basis. You can also 
+            fill out our intake form online and get your document checklist right away. 
           </p>
 
           <h3 className="text-2xl font-semibold text-green-500 mb-4 ">

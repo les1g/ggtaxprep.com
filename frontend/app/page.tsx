@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Script from "next/script";
 
 export const metadata = {
   title: "Home | GG Tax Services",
@@ -7,7 +8,27 @@ export const metadata = {
 
 export default function Home() {
   return (
+    
     <div className="min-h-screen bg-gray-900 text-white">
+      <Script id="tally-config" strategy="afterInteractive">
+        {`
+          window.TallyConfig = {
+            formId: "D4J78Z",
+            popup: {
+              emoji: {
+                text: "👋",
+                animation: "wave"
+              }
+            }
+          };
+        `}
+      </Script>
+
+      <Script
+        src="https://tally.so/widgets/embed.js"
+        strategy="afterInteractive"
+      />
+
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-5 leading-tight">
@@ -49,7 +70,7 @@ export default function Home() {
             {[
               {
                 title: "Flexible Scheduling",
-                text: "You can schedule an appointment in-person or over the phone. We work around your schedule to make the process as easy as possible.",
+                text: "Want to skip the line? Fill out our intake form online and get your document checklist right away. You can also schedule an appointment in-person or over the phone.",
               },
               {
                 title: "Experienced & Certified",
@@ -180,12 +201,12 @@ export default function Home() {
               {
                 step: "1",
                 title: "Interview",
-                text: "We start with a phone or in‑person tax interview. You can schedule online or by calling (480) 535-8927.",
+                text: "We start with a tax interview. You can fill our intake form online or schedule an interview. During the interview, we ask questions about your income, expenses, and tax situation to determine what forms you need and how to maximize your refund or minimize your tax liability.",
               },
               {
                 step: "2",
                 title: "Documents & Preparation",
-                text: "You send your documents by email, text, or drop‑off. We prepare your return accurately and efficiently.",
+                text: "We will guide you on what documents to send. Once you provide them, we will prepare your return accurately and efficiently. We will keep you updated throughout the process and let you know if we need anything else from you.",
               },
               {
                 step: "3",
@@ -227,11 +248,11 @@ export default function Home() {
           {[
             {
               q: "How do I schedule an appointment?",
-              a: "You can schedule online or call us at (480) 535-8927",
+              a: "You can schedule online or call us at (480) 535-8927 to schedule over the phone.",
             },
             {
               q: "Do you offer virtual appointments?",
-              a: "Yes, we also do appointments over the phone.",
+              a: "Yes, we do appointments over the phone if it is more convienent you can also fill out our intake form and get your document checklist right away.",
             },
             {
               q: "How do I send documents?",

@@ -73,16 +73,16 @@ export default function Resources() {
             Submit Intake Form
           </Link>
           <Link
-            href="/client/secure-send"
+            href="https://www.dropbox.com/request/PaAuMkajFAzzodp6KWRC"
             className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors"
           >
             Upload Documents
           </Link>
           <Link
-            href="/client/invoice"
+            href="/client/make-payment"
             className="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-white font-bold rounded-lg transition-colors"
           >
-            Pay Invoice
+            Make A Payment
           </Link>
           <Link
             href="/tools/refund"
