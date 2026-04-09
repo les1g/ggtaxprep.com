@@ -132,6 +132,14 @@ export default function RootLayout({
                   </li>
                   <li>
                     <Link
+                      href="/client/client-portal"
+                      className="hover:text-green-500 transition"
+                    >
+                      Client Portal
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="/site/contact"
                       className="hover:text-green-500 transition"
                     >
@@ -167,6 +175,10 @@ export default function RootLayout({
 
                 <p className="text-sm mb-4">
                   Address: 4102 W Pershing Ave, Phoenix, AZ 85029
+                </p>
+
+                <p className="text-sm mb-4">
+                  Hours: Mon-Sat 9am-6pm, Sun Closed
                 </p>
 
                 <h4 className="text-white font-semibold mb-3 mt-6">
