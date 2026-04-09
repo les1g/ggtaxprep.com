@@ -10,24 +10,6 @@ export default function Home() {
   return (
     
     <div className="min-h-screen bg-gray-900 text-white">
-      <Script id="tally-config" strategy="afterInteractive">
-        {`
-          window.TallyConfig = {
-            formId: "D4J78Z",
-            popup: {
-              emoji: {
-                text: "👋",
-                animation: "wave"
-              }
-            }
-          };
-        `}
-      </Script>
-
-      <Script
-        src="https://tally.so/widgets/embed.js"
-        strategy="afterInteractive"
-      />
 
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 text-center">
