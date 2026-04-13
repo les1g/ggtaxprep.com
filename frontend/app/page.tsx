@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Script from "next/script";
 
 export const metadata = {
   title: "Home | GG Tax Services",
