@@ -98,14 +98,6 @@ const additionalServices = [
 export default function Services() {
   return (
     <main className="min-h-screen bg-gray-900 text-gray-100 font-sans">
-      <Script id="tally-config" strategy="afterInteractive">
-        {`window.TallyConfig = { formId: "2EJP5p", popup: {} };`}
-      </Script>
-      <Script
-        src="https://tally.so/widgets/embed.js"
-        strategy="afterInteractive"
-      />
-
       <section className="text-center py-10 bg-gray-800">
         <h2 className="text-4xl font-semibold text-green-500 mb-4">Services</h2>
         <p className="text-lg max-w-2xl mx-auto text-gray-300 leading-relaxed px-4">

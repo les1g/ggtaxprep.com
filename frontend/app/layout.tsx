@@ -178,7 +178,7 @@ export default function RootLayout({
                 </p>
 
                 <p className="text-sm mb-4">
-                  Hours: Mon-Sat 9am-6pm, Sun Closed
+                  Hours: Mon-Sat 8am-6pm, Sun Closed
                 </p>
 
                 <h4 className="text-white font-semibold mb-3 mt-6">
