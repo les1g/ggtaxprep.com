@@ -8,9 +8,7 @@ export const metadata = {
 
 export default function Home() {
   return (
-    
     <div className="min-h-screen bg-gray-900 text-white">
-
       {/* HERO */}
       <section className="max-w-7xl mx-auto px-4 md:px-8 py-14 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-green-500 mb-5 leading-tight">
@@ -238,7 +236,7 @@ export default function Home() {
             },
             {
               q: "How do I send documents?",
-              a: "You can send documents by email, text message, or drop them off in person.",
+              a: "You can send documents by going to the client portal and clicking the upload button (Dropbox), email, or drop off in person.",
             },
             {
               q: "Do you offer free estimates?",
