@@ -187,7 +187,7 @@ export default function RootLayout({
 
                 <div className="flex gap-3">
                   <a
-                    href="https://www.instagram.com/ggtaxprep_"
+                    href="https://www.instagram.com/ggtaxservices_/"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Instagram"
