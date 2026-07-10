@@ -227,7 +227,7 @@ export default function Home() {
           {[
             {
               q: "How do I schedule an appointment?",
-              a: "You can schedule online or call us at (480) 535-8927 to schedule over the phone.",
+              a: "You can schedule online or call us at (480) 535-8527 to schedule over the phone.",
             },
             {
               q: "Do you offer virtual appointments?",

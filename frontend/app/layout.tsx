@@ -166,10 +166,10 @@ export default function RootLayout({
                 <p className="text-sm mb-2">
                   Phone:{" "}
                   <a
-                    href="tel:+14805358927"
+                    href="tel:+14805358952"
                     className="hover:text-green-500 transition"
                   >
-                    (480) 535-8927
+                    (480) 535-8952
                   </a>
                 </p>
 

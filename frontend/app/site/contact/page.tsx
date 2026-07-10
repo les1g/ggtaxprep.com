@@ -37,10 +37,10 @@ export default function Contact() {
           <div className="bg-gray-800 border border-gray-700 rounded-lg p-5 text-center">
             <h3 className="text-lg font-semibold text-green-500 mb-1">Phone</h3>
             <a
-              href="tel:+14805358927"
+              href="tel:+14805358952"
               className="text-gray-300 hover:text-green-300 transition-colors"
             >
-              (480) 535‑8927
+              (480) 535‑8952
             </a>
           </div>
         </div>
