@@ -72,18 +72,8 @@ export default function About() {
                 qualify for.
               </p>
 
-              <p>GG Tax Services is for the people.</p>
-
-              <p>
-                I truly appreciate your trust and look forward to working with
-                you!
-              </p>
-
-              <p className="text-xl italic text-green-500">
-                <br />– Gisel G.
-              </p>
               <p className="text-sm text-gray-400">
-                <span className="text-green-500 font-semibold">Fun fact:</span>{" "}
+                <span className="text-green-500 font-semibold">Learn more:</span>{" "}
                 I’m also a software engineer and built this website myself. If
                 you’re interested in learning more or working together, visit{" "}
                 <a

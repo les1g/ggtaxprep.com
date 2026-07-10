@@ -8,7 +8,7 @@ export default function TermsOfService() {
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
-        <p className="text-gray-400 mb-8">Last Updated: April 7, 2026</p>
+        <p className="text-gray-400 mb-8">Last Updated: April 27, 2026</p>
 
         <div className="bg-gray-800 rounded-lg border border-gray-700 p-8 space-y-8 text-gray-300 leading-relaxed">
           {/* AGREEMENT */}
