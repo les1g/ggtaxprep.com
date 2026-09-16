@@ -50,15 +50,12 @@ export default function SecureSend() {
       return;
     }
 
-    // Redirect to Dropbox upload
     window.open(DROPBOX_LINK, "_blank");
   };
 
   return (
     <div className="min-h-screen bg-gray-900 py-12 px-4 md:px-8">
       <div className="max-w-3xl mx-auto">
-
-        {/* Header */}
         <div className="text-center mb-8">
           <div className="flex justify-left">
             <Link
@@ -78,20 +75,56 @@ export default function SecureSend() {
           </p>
         </div>
 
-        {/* Error */}
         {error && (
           <div className="mb-6 p-4 bg-red-900/50 border border-red-500 rounded-lg text-red-400">
             {error}
           </div>
         )}
 
-        {/* Form */}
         <div className="bg-gray-800 rounded-lg border border-gray-700 p-8">
           <form onSubmit={handleContinue} className="space-y-6">
+            <div className="space-y-2">
+              <label htmlFor="email" className="block text-sm font-medium text-gray-200">
+                Email address
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+                className="w-full rounded-lg border border-gray-600 bg-gray-900 px-3 py-3 text-white placeholder:text-gray-500 focus:border-green-500 focus:outline-none"
+                placeholder="your@email.com"
+              />
+            </div>
 
-            
+            <div className="space-y-2">
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-200">
+                Phone number
+              </label>
+              <input
+                id="phone"
+                type="tel"
+                value={phone}
+                onChange={(event) => setPhone(formatPhoneNumber(event.target.value))}
+                className="w-full rounded-lg border border-gray-600 bg-gray-900 px-3 py-3 text-white placeholder:text-gray-500 focus:border-green-500 focus:outline-none"
+                placeholder="(480) 555-1234"
+              />
+            </div>
 
-            {/* CTA */}
+            <div className="space-y-2">
+              <label htmlFor="message" className="block text-sm font-medium text-gray-200">
+                Brief description
+              </label>
+              <textarea
+                id="message"
+                value={message}
+                onChange={(event) => setMessage(event.target.value)}
+                rows={4}
+                className="w-full rounded-lg border border-gray-600 bg-gray-900 px-3 py-3 text-white placeholder:text-gray-500 focus:border-green-500 focus:outline-none"
+                placeholder="Tell us what documents you are uploading and any special instructions."
+              />
+            </div>
+
             <button
               type="submit"
               className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-3 rounded-lg transition"
@@ -99,28 +132,25 @@ export default function SecureSend() {
               Continue to Secure Upload
             </button>
 
-            {/* Backup link */}
             <p className="text-gray-500 text-sm text-center">
               If the button doesn’t work,{" "}
               <a
                 href={DROPBOX_LINK}
                 target="_blank"
+                rel="noreferrer"
                 className="text-green-500 underline"
               >
                 click here to upload
               </a>
               .
             </p>
-
           </form>
         </div>
 
-        {/* Security */}
         <div className="bg-gray-800 border border-gray-700 rounded-lg p-6 mt-8 text-center text-gray-300 text-sm">
           🔒 Files are securely uploaded via Dropbox with encryption in transit and at rest.
         </div>
 
-        {/* What Happens Next */}
         <div className="mt-8 bg-gray-800 rounded-lg border border-gray-700 p-6">
           <h3 className="text-xl font-bold text-white mb-4">
             What Happens Next?
@@ -131,7 +161,6 @@ export default function SecureSend() {
             <li>3. You’ll receive next steps via email</li>
           </ol>
         </div>
-
       </div>
     </div>
   );
