@@ -11,12 +11,16 @@ const BREVO_API_KEY = process.env.BREVO_API_KEY;
 const BREVO_SENDER_EMAIL = process.env.BREVO_SENDER_EMAIL;
 const BREVO_SENDER_NAME = process.env.BREVO_SENDER_NAME;
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
+const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
 
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
-const SUPABASE_SERVICE_ROLE_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY!;
+function getSupabaseClient() {
+  if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE_KEY) {
+    return null;
+  }
 
-// Secure server-side Supabase client with service role key (never exposed to client)
-const supabase = createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+  return createClient(SUPABASE_URL, SUPABASE_SERVICE_ROLE_KEY);
+}
 
 const emailAPI = new TransactionalEmailsApi();
 if (BREVO_API_KEY) {
@@ -34,6 +38,14 @@ export async function POST(request: NextRequest) {
       !SUPABASE_SERVICE_ROLE_KEY
     ) {
       console.error("Missing env vars");
+      return NextResponse.json(
+        { error: "Server is not configured properly." },
+        { status: 500 },
+      );
+    }
+
+    const supabase = getSupabaseClient();
+    if (!supabase) {
       return NextResponse.json(
         { error: "Server is not configured properly." },
         { status: 500 },
