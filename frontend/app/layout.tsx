@@ -92,7 +92,9 @@ export default function RootLayout({
                   Professional tax services for individuals and businesses.
                   Simple, clear, and stress-free service.
                 </p>
-                <p className="text-sm mt-3 italic">By appointment only</p>
+                <p className="text-sm mt-3 italic">
+                  Walk ins accepted or by appointment.{" "}
+                </p>
               </div>
 
               {/* Navigation */}
@@ -174,7 +176,7 @@ export default function RootLayout({
                 </p>
 
                 <p className="text-sm mb-4">
-                  Address: 4102 W Pershing Ave, Phoenix, AZ 85029
+                  Address: 4015 N 15th Ave, Phoenix, AZ 85015
                 </p>
 
                 <p className="text-sm mb-4">
