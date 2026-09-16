@@ -219,7 +219,7 @@ export default function RootLayout({
                   </a>
 
                   <a
-                    href="https://share.google/6EWZ0fv9gCbniIfqF"
+                    href="https://g.page/r/CQcKtP5QVl3sEAI/review"
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label="Google Reviews"
