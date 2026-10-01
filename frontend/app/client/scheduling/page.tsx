@@ -17,7 +17,7 @@ export default function Schedule() {
         <p className="text-lg max-w-2xl mx-auto text-gray-300 mb-10">
           Phone appointments are available Monday through Saturday from 8:00 AM
           to 6:00 PM. In-person appointments are available at 12:00 PM Monday
-          through Friday, and from 8:00 AM to 6:00 PM on Saturday. You may also
+          through Friday, and from 8:00 AM to 6:00 PM on Saturdays. You may also
           call us at (480) 535-8952 to schedule an appointment or ask any
           questions you may have.
         </p>
