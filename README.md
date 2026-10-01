@@ -35,6 +35,16 @@ This website was developed for **GG Tax Services, LLC** to provide clients with 
 - Educational resources and tax guides  
 - Terms of Service & Privacy Policy pages  
 
+### Appointment booking setup
+
+Online booking uses the existing Supabase and Brevo environment variables.
+Before enabling bookings, run [the appointments schema](./frontend/supabase/appointments.sql)
+in the Supabase SQL Editor. The table keeps appointment slots reserved and
+prevents overlapping bookings. The deployment must also have
+`NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`, `BREVO_API_KEY`,
+`BREVO_SENDER_EMAIL`, `BREVO_SENDER_NAME`, and `ADMIN_EMAIL` configured for
+availability and booking emails.
+
 ---
 
 ## Build Information

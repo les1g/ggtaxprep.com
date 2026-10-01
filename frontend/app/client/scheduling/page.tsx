@@ -4,7 +4,7 @@ export const metadata = {
     "Welcome to GG Tax Services, your trusted partner for tax preparation and compliance in Arizona.",
 };
 
-import GoogleScheduler from "./GoogleScheduler";
+import BookingScheduler from "./BookingScheduler";
 
 export default function Schedule() {
   return (
@@ -15,14 +15,12 @@ export default function Schedule() {
           Schedule An Appointment
         </h1>
         <p className="text-lg max-w-2xl mx-auto text-gray-300 mb-10">
-          GG Tax Services offers in-person and online tax services. To get
-          started, please schedule an appointment using the button below. Most
-          clients complete their interview in under 20 minutes.
+          Book a 30-minute appointment online. Phone appointments are available
+          Monday through Saturday from 8:00 AM to 6:00 PM. In-person appointments
+          are available at 12:00 PM Monday through Friday, and from 8:00 AM to
+          6:00 PM on Saturday, at 4015 N 15th Ave, Phoenix, AZ 85018.
         </p>
-        {/* Scheduler outside the box for better UX */}
-        <div className="rounded p-6 text-center mt-5 bg-gray-700 border border-gray-600 inline-block">
-          <GoogleScheduler />
-        </div>
+        <BookingScheduler />
       </section>
 
       {/* What to Expect Section */}
@@ -34,10 +32,12 @@ export default function Schedule() {
 
           <p className="text-gray-300 mb-10">
             GG Tax Services is currently a one-person operation. Appointments
-            are scheduled based on availability. Phone appointments are strongly
-            recommended, as they allow for more flexibility and faster service.
-            In-person meetings are available on a limited basis. You can also 
-            fill out our intake form online and get your document checklist right away. 
+            are scheduled based on availability. Phone appointments are
+            available every 30 minutes from 8:00 AM to 6:00 PM, Monday through
+            Saturday. In-person appointments are offered at 12:00 PM Monday
+            through Friday, and every 30 minutes from 8:00 AM to 6:00 PM on
+            Saturday. All times are Arizona time. You can also fill out our
+            intake form online and get your document checklist right away.
           </p>
 
           <h3 className="text-2xl font-semibold text-green-500 mb-4 ">
