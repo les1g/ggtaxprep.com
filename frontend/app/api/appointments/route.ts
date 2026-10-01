@@ -123,6 +123,19 @@ function emailIsConfigured() {
   );
 }
 
+function isSupabaseConnectionError(error: unknown) {
+  const message =
+    error instanceof Error
+      ? error.message
+      : error &&
+          typeof error === "object" &&
+          "message" in error &&
+          typeof error.message === "string"
+        ? error.message
+        : "";
+  return message.toLowerCase().includes("fetch failed");
+}
+
 export async function GET(request: NextRequest) {
   const date = request.nextUrl.searchParams.get("date") ?? "";
   const type = request.nextUrl.searchParams.get("type");
@@ -158,7 +171,21 @@ export async function GET(request: NextRequest) {
       .gte("starts_at", bounds.start)
       .lt("starts_at", bounds.end);
 
-    if (error) throw error;
+    if (error) {
+      console.error(
+        `Failed to query appointment availability: ${error.code} ${error.message} ${error.details} ${error.hint}`,
+      );
+      if (error.code === "42P01" || error.code === "PGRST205") {
+        return NextResponse.json(
+          {
+            error:
+              "Appointment booking has not been set up yet. Please contact us directly to schedule.",
+          },
+          { status: 503 },
+        );
+      }
+      throw error;
+    }
 
     const bookedTimes = new Set(
       (bookings ?? []).map((booking) =>
@@ -184,7 +211,18 @@ export async function GET(request: NextRequest) {
 
     return NextResponse.json({ slots });
   } catch (error) {
-    console.error("Failed to load appointment availability:", error);
+    console.error(
+      `Failed to load appointment availability: ${error instanceof Error ? error.message : String(error)}`,
+    );
+    if (isSupabaseConnectionError(error)) {
+      return NextResponse.json(
+        {
+          error:
+            "We can't connect to online booking right now. Please try again later or contact info@ggtaxprep.com to schedule.",
+        },
+        { status: 503 },
+      );
+    }
     return NextResponse.json(
       { error: "Unable to load appointment times. Please try again." },
       { status: 500 },
@@ -273,6 +311,15 @@ export async function POST(request: NextRequest) {
     if (error) throw error;
   } catch (error) {
     console.error("Failed to save appointment:", error);
+    if (isSupabaseConnectionError(error)) {
+      return NextResponse.json(
+        {
+          error:
+            "We can't connect to online booking right now. Please try again later or contact info@ggtaxprep.com to schedule.",
+        },
+        { status: 503 },
+      );
+    }
     return NextResponse.json(
       { error: "Unable to save your appointment. Please try again." },
       { status: 500 },
